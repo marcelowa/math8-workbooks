@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>חוברת 01 · חזקות וכתיב מדעי — מתמטיקה כיתה ח׳</title>
+<meta name="description" content="חוברת עבודה: חזקות, חוקי חזקות, חזקות שליליות, כתיב מדעי ושורשים — הסברים, דוגמאות ותרגול לפי טכניקה.">
+<meta name="theme-color" content="#1f5d7a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f5d7a'/%3E%3Ctext x='16' y='23' font-family='Arial' font-size='16' font-weight='700' fill='%23fff' text-anchor='middle'%3E2%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&amp;family=Frank+Ruhl+Libre:wght@500;700;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/booklet.css">
+</head>
+<body class="booklet" style="--accent:#1f5d7a;--accent-2:#143f54;--accent-soft:#e6eff4">
+<header class="topbar no-print">
+  <a class="backlink" href="../index.html">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6l6 6-6 6M16 12H4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    כל החוברות
+  </a>
+  <span class="topbar-title">חוברת 01 · חזקות וכתיב מדעי</span>
+  <button class="btn" data-print type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    הדפסה
+  </button>
+</header>
+<span class="sr-only doc-title">חוברת 01 · חזקות וכתיב מדעי</span>
+
+<main class="paper">
+
+<!-- ================= שער ================= -->
+<section class="sheet cover">
+  <div class="cover-head">
+    <div class="cover-series">מתמטיקה · כיתה ח׳ · חוברת 01</div>
+    <div class="cover-mark" aria-hidden="true">01</div>
+  </div>
+  <h1>חזקות<br><em>וכתיב מדעי</em></h1>
+  <p class="cover-lede">למה <span class="m">2<sup>5</sup></span> הוא לא <span class="m">2·5</span>, איך מכפילים חזקות בלי לפתוח כל גורם, ואיך כותבים מספר ענק או זעיר בלי לאבד אפסים.</p>
+
+  <div class="cover-art" aria-hidden="true">
+    <svg viewBox="0 0 640 250" role="img" aria-label="גרף עמודות שמראה את הגדילה של חזקות 2">
+      <line x1="90" y1="210" x2="560" y2="210" stroke="#cfc5b1" stroke-width="1.5"/>
+      <g>
+        <rect x="140" y="202" width="56" height="8" rx="2" fill="#1f5d7a" opacity=".45"/>
+        <rect x="216" y="194" width="56" height="16" rx="2" fill="#1f5d7a" opacity=".55"/>
+        <rect x="292" y="178" width="56" height="32" rx="2" fill="#1f5d7a" opacity=".7"/>
+        <rect x="368" y="146" width="56" height="64" rx="2" fill="#1f5d7a" opacity=".85"/>
+        <rect x="444" y="82" width="56" height="128" rx="2" fill="#1f5d7a"/>
+      </g>
+      <g fill="#1f5d7a" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle">
+        <text x="168" y="194">2</text>
+        <text x="244" y="186">4</text>
+        <text x="320" y="170">8</text>
+        <text x="396" y="138">16</text>
+        <text x="472" y="74">32</text>
+      </g>
+      <g fill="#65726c" font-family="Inter,Arial,sans-serif" font-size="15" text-anchor="middle">
+        <text x="168" y="234">2¹</text>
+        <text x="244" y="234">2²</text>
+        <text x="320" y="234">2³</text>
+        <text x="396" y="234">2⁴</text>
+        <text x="472" y="234">2⁵</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="cover-grid">
+    <div>
+      <h4>מה יש בחוברת</h4>
+      <ul class="cover-list">
+        <li>מהי חזקה, ומה תפקיד הבסיס והמעריך</li>
+        <li>ששת חוקי החזקות — עם הסבר למה הם עובדים</li>
+        <li>חזקות שליליות וסדר פעולות</li>
+        <li>כתיב מדעי: המרה, השוואה וחישוב</li>
+        <li>בונוס: שורש ריבועי</li>
+      </ul>
+    </div>
+    <div class="cover-facts">
+      <div><b>10</b> טכניקות, אחת לעמוד</div>
+      <div><b>90+</b> תרגילים מדורגים</div>
+      <div><b>4–5</b> מפגשים של כ־30 דקות</div>
+      <div><b>צריך:</b> עיפרון, מחק, דף טיוטה</div>
+      <div><b>לא צריך:</b> מחשבון</div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <span>שם</span><span class="fill"></span>
+    <span>כיתה</span><span class="fill" style="max-width:70px"></span>
+    <span>תאריך</span><span class="fill" style="max-width:100px"></span>
+  </div>
+</section>
+
+<!-- ================= איך עובדים ================= -->
+<section class="sheet">
+  <span class="kicker">לפני שמתחילים</span>
+  <h2>איך עובדים עם החוברת</h2>
+  <p class="lead">כל טכניקה תופסת עמוד אחד, ובנויה באותו סדר. לא מדלגים: קוראים את הכלל, עוברים על הדוגמה, ורק אז פותרים לבד.</p>
+
+  <div class="flow" style="margin-top:1.4em">
+    <div class="flow-step"><span class="when">1 · הכלל</span><span class="then">הנוסחה וההסבר למה היא נכונה. <b>קוראים בקול</b> ומסמנים את החלק שמבלבל.</span></div>
+    <div class="flow-step"><span class="when">2 · הדוגמה</span><span class="then">פתרון צעד־צעד. <b>מכסים את הפתרון</b> ומנסים לחזור עליו לבד.</span></div>
+    <div class="flow-step"><span class="when">3 · המלכודת</span><span class="then">הטעות שהכי הרבה תלמידים עושים. <b>קוראים לפני התרגול</b>, לא אחריו.</span></div>
+    <div class="flow-step"><span class="when">4 · תרגול</span><span class="then">פותרים בטור, על הדף. <b>לא עוברים הלאה</b> עד שיש 5 נכונות מתוך 6.</span></div>
+  </div>
+
+  <div class="two" style="margin-top:1.5em">
+    <div>
+      <h3 style="font-size:1.02rem;margin-bottom:.5em">ארבעה סימנים בדרך</h3>
+      <div class="callout callout--why"><span class="callout-title">הכלל</span>הנוסחה שצריך לזכור. אפשר לחזור אליה בכל רגע.</div>
+      <div class="callout callout--tip"><span class="callout-title">למה זה עובד</span>ההסבר שמאחורי הכלל — כדי שלא תצטרך לשנן בעל־פה.</div>
+      <div class="callout callout--warn"><span class="callout-title">מלכודת</span>טעות נפוצה. קראו אותה, ואז נסו לזהות אותה בתרגיל.</div>
+    </div>
+    <div>
+      <h3 style="font-size:1.02rem;margin-bottom:.5em">שלוש עצות שעובדות</h3>
+      <ul style="font-size:.92rem;display:grid;gap:.55em">
+        <li><b>לא מחשבון.</b> חזקות קטנות מחושבות בראש; זה חלק מהתרגול.</li>
+        <li><b>מדברים בקול.</b> "בסיס 2, מעריך 5, כופלים 2 חמש פעמים" — זה מונע טעויות.</li>
+        <li><b>בודקים בחזרה.</b> בכל משוואה או תרגיל — הציבו את התוצאה ובדקו שהיא נותנת את הנתון.</li>
+      </ul>
+      <div class="callout callout--tip" style="margin-top:1em">
+        <span class="callout-title">איך יודעים שהצלחת</span>
+        לא לפי "הבנתי בהסבר", אלא לפי תרגיל שנפתר לבד, בלי להציץ. הציון במבחן הוא נקודת פתיחה — לא תווית.
+      </div>
+    </div>
+  </div>
+
+  <p class="lead" style="margin-top:1.2em;font-size:.9rem;color:var(--ink-3)">בסוף החוברת יש נספח תשובות. אפשר לקרוע אותו, אבל רק אחרי שסיימתם את כל התרגילים בעמוד.</p>
+</section>
+
+<!-- ================= 1 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">1</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>מהי חזקה</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לכתוב מכפלה כחזקה, לזהות בסיס ומעריך, ולחשב חזקות קטנות בלי מחשבון.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">a<sup>n</sup> = a · a · a · … · a</div>
+    <p class="rule-note"><span class="m">a</span> הוא <b>הבסיס</b> — המספר שמוכפל. <span class="m">n</span> הוא <b>המעריך</b> — כמה פעמים הוא מופיע במכפלה.</p>
+    <p class="rule-note"><b>מקרים מיוחדים:</b> <span class="m">a<sup>1</sup> = a</span>; <span class="m">a<sup>0</sup> = 1</span> (כאשר <span class="m">a ≠ 0</span>); <span class="m">0<sup>n</sup> = 0</span> (כאשר <span class="m">n &gt; 0</span>).</p>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 640 200" role="img" aria-label="בחזקה 2 בחזקת 5, 2 הוא הבסיס ו־5 הוא המעריך, והתוצאה 32">
+      <defs>
+        <marker id="arr1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0 0L10 5L0 10z" fill="#65726c"/>
+        </marker>
+      </defs>
+      <g font-family="Inter,Arial,sans-serif" fill="#1b2a2a">
+        <text x="520" y="120" font-size="72" font-weight="600" text-anchor="middle">2</text>
+        <text x="558" y="74" font-size="40" font-weight="600" fill="#1f5d7a" text-anchor="middle">5</text>
+      </g>
+      <g font-family="Assistant,Arial,sans-serif" font-size="15" fill="#65726c" text-anchor="middle">
+        <text x="520" y="160">בסיס</text>
+        <text x="566" y="42">מעריך</text>
+      </g>
+      <line x1="520" y1="150" x2="520" y2="138" stroke="#65726c" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <line x1="466" y1="106" x2="398" y2="106" stroke="#65726c" stroke-width="1.5" marker-end="url(#arr1)"/>
+      <g font-family="Inter,Arial,sans-serif" fill="#1b2a2a" text-anchor="middle">
+        <text x="258" y="100" font-size="27">2·2·2·2·2</text>
+        <text x="258" y="145" font-size="27" font-weight="600" fill="#1f5d7a">= 32</text>
+      </g>
+      <text x="258" y="182" font-family="Assistant,Arial,sans-serif" font-size="14" fill="#65726c" text-anchor="middle">חמישה גורמים, כולם 2</text>
+    </svg>
+    <figcaption>החזקה היא קיצור של מכפלה חוזרת. <span class="m">2<sup>5</sup></span> אומר: חמישה גורמים של 2.</figcaption>
+  </figure>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">שני שלבים: פותחים, ואז כופלים</span></div>
+    <ol class="steps">
+      <li>כותבים את המכפלה: <span class="m">3<sup>4</sup> = 3·3·3·3</span></li>
+      <li>כופלים בזוגות: <span class="m">(3·3)·(3·3) = 9·9</span></li>
+      <li>מקבלים: <span class="m">81</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p><span class="m">2<sup>5</sup></span> אינו <span class="m">2·5 = 10</span>. המעריך אומר <b>כמה פעמים</b> לכפול את הבסיס, לא בכמה להכפיל אותו. גם <span class="m">2<sup>5</sup> ≠ 5<sup>2</sup></span>.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · כתיבה וחישוב</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">4<sup>3</sup></span></li>
+      <li><span class="m">5<sup>2</sup></span></li>
+      <li><span class="m">2<sup>6</sup></span></li>
+      <li><span class="m">10<sup>4</sup></span></li>
+      <li><span class="m">3<sup>5</sup></span></li>
+      <li><span class="m">1<sup>100</sup></span></li>
+      <li><span class="m">0<sup>5</sup></span></li>
+      <li><span class="m">6<sup>0</sup></span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="p1-t1"> סיימתי טכניקה 1 — מהי חזקה</label>
+</section>
+
+<!-- ================= 2 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">2</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>חזקה של מספר שלילי</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע מתי התוצאה חיובית ומתי שלילית, ותדע להבדיל בין <span class="m">(-3)<sup>2</sup></span> לבין <span class="m">-3<sup>2</sup></span>.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">אם n זוגי: (-a)<sup>n</sup> &gt; 0</div>
+    <div class="eq">אם n אי־זוגי: (-a)<sup>n</sup> &lt; 0</div>
+    <p class="rule-note">כשהמעריך זוגי, הזוגות "מתקזזים" לחיובי. כשהמעריך אי־זוגי, נשאר גורם שלילי אחד בודד.</p>
+  </div>
+
+  <div class="two">
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">עם סוגריים</span></div>
+      <ol class="steps">
+        <li><span class="m">(-2)<sup>3</sup> = (-2)·(-2)·(-2)</span></li>
+        <li><span class="m">(-2)·(-2) = 4</span> <span class="why">— זוג הופך לחיובי</span></li>
+        <li><span class="m">4·(-2) = -8</span></li>
+      </ol>
+    </div>
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">בלי סוגריים</span></div>
+      <ol class="steps">
+        <li><span class="m">-3<sup>2</sup> = -(3<sup>2</sup>)</span></li>
+        <li><span class="m">3<sup>2</sup> = 9</span></li>
+        <li><span class="m">-(9) = -9</span> <span class="why">— המינוס נשאר בחוץ</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p><b>הסוגריים משנים הכול.</b> <span class="m">(-3)<sup>2</sup> = 9</span>, אבל <span class="m">-3<sup>2</sup> = -9</span>. ההבדל: האם המינוס נמצא <b>בתוך</b> החזקה (בסיס שלילי) או <b>מחוץ</b> לה (מינוס על כל הביטוי).</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · זוגי או אי־זוגי</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">(-2)<sup>4</sup></span></li>
+      <li><span class="m">(-2)<sup>5</sup></span></li>
+      <li><span class="m">(-5)<sup>2</sup></span></li>
+      <li><span class="m">(-1)<sup>101</sup></span></li>
+      <li><span class="m">-4<sup>2</sup></span></li>
+      <li><span class="m">(-10)<sup>3</sup></span></li>
+      <li><span class="m">(-3)<sup>4</sup></span></li>
+      <li><span class="m">-2<sup>6</sup></span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="p1-t2"> סיימתי טכניקה 2 — בסיס שלילי</label>
+</section>
+
+<!-- ================= 3 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">3</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>כפל חזקות עם אותו בסיס</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תכפיל חזקות באותו בסיס בשנייה — בלי לפתוח אותן לגורמים.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">a<sup>m</sup> · a<sup>n</sup> = a<sup>m+n</sup></div>
+    <p class="rule-note">הבסיס נשאר, והמעריכים <b>מתחברים</b>. למה? בסך הכול מופיעים <span class="m">m+n</span> גורמים של <span class="m">a</span>.</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout-title">למה זה עובד</span>
+    <p><span class="m">2<sup>3</sup>·2<sup>4</sup> = (2·2·2)·(2·2·2·2)</span> — שלושה גורמים ועוד ארבעה, ביחד שבעה: <span class="m">2<sup>7</sup></span>. לא הוספנו כלום; רק ספרו כמה פעמים 2 מופיע.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">גם עם משתנה</span></div>
+    <ol class="steps">
+      <li><span class="m">x<sup>4</sup> · x<sup>6</sup> = x<sup>4+6</sup></span></li>
+      <li><span class="m">= x<sup>10</sup></span></li>
+      <li><span class="why">בדיקה במספרים: <span class="m">2<sup>4</sup>·2<sup>6</sup> = 16·64 = 1024 = 2<sup>10</sup></span></span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>לא מחברים את הבסיסים: <span class="m">2<sup>3</sup>·2<sup>4</sup> = 2<sup>7</sup></span>, ולא <span class="m">4<sup>7</sup></span>. הכלל עובד רק כשהבסיס <b>זהה</b>; <span class="m">2<sup>3</sup>·3<sup>4</sup></span> נשאר כמו שהוא.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · אותו בסיס</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">5<sup>2</sup>·5<sup>3</sup></span></li>
+      <li><span class="m">x<sup>4</sup>·x<sup>6</sup></span></li>
+      <li><span class="m">2<sup>5</sup>·2<sup>5</sup></span></li>
+      <li><span class="m">y·y<sup>3</sup></span></li>
+      <li><span class="m">10<sup>2</sup>·10<sup>3</sup>·10</span></li>
+      <li><span class="m">a<sup>2</sup>·a<sup>0</sup></span></li>
+      <li><span class="m">3·3<sup>4</sup></span></li>
+      <li><span class="m">2<sup>3</sup>·2<sup>2</sup>·2</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="p1-t3"> סיימתי טכניקה 3 — כפל חזקות</label>
+</section>
+
+<!-- ================= 4 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">4</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>חילוק חזקות</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לצמצם חזקות באותו בסיס, ותבין למה <span class="m">5<sup>0</sup> = 1</span>.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">a<sup>m</sup> : a<sup>n</sup> = a<sup>m-n</sup></div>
+    <p class="rule-note">הבסיס נשאר, והמעריכים <b>מתחסרים</b>: מעריך המונה פחות מעריך המכנה. <span class="m">a ≠ 0</span>.</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout-title">למה זה עובד</span>
+    <p><span class="m">2<sup>7</sup> : 2<sup>4</sup> = (2·2·2·2·2·2·2)/(2·2·2·2)</span>. ארבעה גורמים מצטמצמים, ונשארים שלושה: <span class="m">2<sup>3</sup></span>.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">כשהמעריכים שווים</span></div>
+    <ol class="steps">
+      <li><span class="m">5<sup>3</sup> : 5<sup>3</sup> = 5<sup>3-3</sup> = 5<sup>0</sup></span></li>
+      <li>אבל כל מספר חלקי עצמו הוא 1, לכן <span class="m">5<sup>0</sup> = 1</span></li>
+      <li><span class="m">x<sup>6</sup> : x<sup>2</sup> = x<sup>4</sup></span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>לא מחלקים את המעריכים: <span class="m">2<sup>6</sup>:2<sup>3</sup> = 2<sup>3</sup></span>, ולא <span class="m">2<sup>2</sup></span>. וגם לא מחסרים בין בסיסים שונים: <span class="m">6<sup>5</sup>:3<sup>5</sup> = (6:3)<sup>5</sup> = 2<sup>5</sup></span>.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · צמצום</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">3<sup>6</sup> : 3<sup>2</sup></span></li>
+      <li><span class="m">x<sup>8</sup> : x<sup>5</sup></span></li>
+      <li><span class="m">10<sup>7</sup> : 10<sup>4</sup></span></li>
+      <li><span class="m">7<sup>5</sup> : 7</span></li>
+      <li><span class="m">a<sup>9</sup> : a<sup>9</sup></span></li>
+      <li><span class="m">2<sup>5</sup> : 2<sup>7</sup></span> <span class="prompt">(התשובה תהיה שבר)</span></li>
+      <li><span class="m">5<sup>4</sup> : 5<sup>2</sup></span></li>
+      <li><span class="m">y<sup>10</sup> : y<sup>3</sup></span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="p1-t4"> סיימתי טכניקה 4 — חילוק חזקות</label>
+</section>
+
+<!-- ================= 5 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">5</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>חזקה של חזקה</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע להבדיל בין <span class="m">a<sup>m</sup>·a<sup>n</sup></span> (חיבור מעריכים) לבין <span class="m">(a<sup>m</sup>)<sup>n</sup></span> (כפל מעריכים).</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">(a<sup>m</sup>)<sup>n</sup> = a<sup>m·n</sup></div>
+    <p class="rule-note">כשחזקה נמצאת בתוך חזקה — <b>כופלים</b> את המעריכים. הבסיס לא משתנה.</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout-title">למה זה עובד</span>
+    <p><span class="m">(2<sup>3</sup>)<sup>2</sup> = 2<sup>3</sup>·2<sup>3</sup> = 2<sup>3+3</sup> = 2<sup>6</sup></span>. שתי קבוצות של שלושה גורמים — שישה גורמים בסך הכול.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">עם משתנה</span></div>
+    <ol class="steps">
+      <li><span class="m">(x<sup>4</sup>)<sup>3</sup> = x<sup>4·3</sup></span></li>
+      <li><span class="m">= x<sup>12</sup></span></li>
+      <li><span class="why">בדיקה: <span class="m">(2<sup>4</sup>)<sup>3</sup> = 16<sup>3</sup> = 4096 = 2<sup>12</sup></span></span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p><b>שני כללים, שני סימנים שונים:</b> בכפל חזקות <span class="m">2<sup>3</sup>·2<sup>2</sup> = 2<sup>5</sup></span> (חיבור), ובחזקה של חזקה <span class="m">(2<sup>3</sup>)<sup>2</sup> = 2<sup>6</sup></span> (כפל). עצרו ושאלו: יש <b>כפל בין החזקות</b> או <b>סוגריים</b>?</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · מעריך כפול</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">(5<sup>2</sup>)<sup>3</sup></span></li>
+      <li><span class="m">(2<sup>2</sup>)<sup>4</sup></span></li>
+      <li><span class="m">(x<sup>3</sup>)<sup>5</sup></span></li>
+      <li><span class="m">(a<sup>2</sup>)<sup>2</sup></span></li>
+      <li><span class="m">(10<sup>3</sup>)<sup>2</sup></span></li>
+      <li><span class="m">((2<sup>3</sup>)<sup>2</sup>)<sup>2</sup></span></li>
+      <li><span class="m">(3<sup>4</sup>)<sup>1</sup></span></li>
+      <li><span class="m">(y<sup>5</sup>)<sup>0</sup></span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="p1-t5"> סיימתי טכניקה 5 — חזקה של חזקה</label>
+</section>
+
+<!-- ================= 6 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">6</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>חזקה של מכפלה ומנה</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לפתוח סוגריים כמו <span class="m">(2x)<sup>3</sup></span> בלי לשכוח להעלות כל גורם בחזקה.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">(a·b)<sup>n</sup> = a<sup>n</sup>·b<sup>n</sup> &nbsp;&nbsp;|&nbsp;&nbsp; (a : b)<sup>n</sup> = a<sup>n</sup> : b<sup>n</sup></div>
+    <p class="rule-note">חזקה על מכפלה נוגעת <b>בכל גורם</b> בנפרד. חזקה על מנה נוגעת במונה ובמכנה.</p>
+  </div>
+
+  <div class="two">
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מכפלה</span></div>
+      <ol class="steps">
+        <li><span class="m">(2x)<sup>3</sup> = 2<sup>3</sup>·x<sup>3</sup></span></li>
+        <li><span class="m">= 8x<sup>3</sup></span></li>
+      </ol>
+    </div>
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מנה</span></div>
+      <ol class="steps">
+        <li><span class="m">(x/2)<sup>2</sup> = x<sup>2</sup>/2<sup>2</sup></span></li>
+        <li><span class="m">= x<sup>2</sup>/4</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p><span class="m">(2x)<sup>3</sup> = 8x<sup>3</sup></span> ולא <span class="m">2x<sup>3</sup></span>. גם המספר 2 נמצא בתוך הסוגריים, ולכן גם הוא מועלה בחזקה. בדיקה: <span class="m">(2·3)<sup>3</sup> = 6<sup>3</sup> = 216</span>, וגם <span class="m">8·3<sup>3</sup> = 8·27 = 216</span>.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · כל גורם בתורו</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">(4x)<sup>2</sup></span></li>
+      <li><span class="m">(2y<sup>3</sup>)<sup>3</sup></span></li>
+      <li><span class="m">(5a)<sup>0</sup></span></li>
+      <li><span class="m">(x/5)<sup>2</sup></span></li>
+      <li><span class="m">(3/4)<sup>2</sup></span></li>
+      <li><span class="m">(-2x)<sup>2</sup></span></li>
+      <li><span class="m">(2a<sup>2</sup>b)<sup>3</sup></span></li>
+      <li><span class="m">(10x)<sup>3</sup></span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="p1-t6"> סיימתי טכניקה 6 — מכפלה ומנה</label>
+</section>
+
+<!-- ================= 7 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">7</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>חזקות שליליות</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע להפוך מעריך שלילי לשבר, ותבין למה <span class="m">2<sup>-3</sup></span> הוא <b>חיובי</b> וקטן מ־1.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">a<sup>-n</sup> = 1 / a<sup>n</sup> &nbsp;&nbsp;|&nbsp;&nbsp; (a/b)<sup>-n</sup> = (b/a)<sup>n</sup></div>
+    <p class="rule-note">מעריך שלילי לא הופך את התוצאה לשלילית — הוא <b>הופך את הבסיס</b>: מכפלה הופכת למנה.</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout-title">למה זה עובד</span>
+    <p>לפי חוק החילוק: <span class="m">2<sup>2</sup> : 2<sup>5</sup> = 2<sup>-3</sup></span>. אבל גם <span class="m">(2·2)/(2·2·2·2·2) = 1/(2·2·2) = 1/8</span>. לכן <span class="m">2<sup>-3</sup> = 1/8</span>.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">שלושה סוגים</span></div>
+    <ol class="steps">
+      <li><span class="m">3<sup>-2</sup> = 1/3<sup>2</sup> = 1/9</span></li>
+      <li><span class="m">(3/4)<sup>-1</sup> = 4/3</span></li>
+      <li><span class="m">10<sup>-3</sup> = 1/1000 = 0.001</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p><span class="m">2<sup>-3</sup> = 1/8</span>, ולא <span class="m">-8</span> ולא <span class="m">-1/8</span>. אם התוצאה יוצאת שלילית, סימן שהבסיס היה שלילי — לא שהמעריך היה שלילי.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · הופכים לשבר</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">3<sup>-1</sup></span></li>
+      <li><span class="m">4<sup>-2</sup></span></li>
+      <li><span class="m">10<sup>-2</sup></span></li>
+      <li><span class="m">(2/5)<sup>-2</sup></span></li>
+      <li><span class="m">x<sup>-3</sup></span></li>
+      <li><span class="m">(1/2)<sup>-3</sup></span></li>
+      <li><span class="m">6<sup>-1</sup></span></li>
+      <li><span class="m">(3/2)<sup>-2</sup></span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="p1-t7"> סיימתי טכניקה 7 — חזקות שליליות</label>
+</section>
+
+<!-- ================= 8 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">8</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>סדר פעולות עם חזקות</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע באיזה סדר לחשב ביטוי שיש בו סוגריים, חזקות, כפל וחיבור — ותימנע מטעויות סימן.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">סוגריים → חזקות → כפל / חילוק → חיבור / חיסור</div>
+    <p class="rule-note">בתוך אותה דרגה עובדים מ<b>שמאל לימין</b>. חזקה נחשבת "דבוקה" לבסיס שלה: <span class="m">2·3<sup>2</sup></span> הוא <span class="m">2·9</span> ולא <span class="m">6<sup>2</sup></span>.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">שלושה שלבים</span></div>
+    <ol class="steps">
+      <li><span class="m">-3<sup>2</sup> + 2·2<sup>3</sup></span></li>
+      <li><span class="m">= -9 + 2·8</span> <span class="why">— קודם החזקות</span></li>
+      <li><span class="m">= -9 + 16 = 7</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p><span class="m">(5+2)<sup>2</sup> = 7<sup>2</sup> = 49</span>, אבל <span class="m">5+2<sup>2</sup> = 5+4 = 9</span>. הסוגריים משנים מה נכנס לחזקה. שימו לב גם ל־<span class="m">(-3)<sup>2</sup> = 9</span> לעומת <span class="m">-3<sup>2</sup> = -9</span>.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · לפי הסדר</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">5 + 2<sup>3</sup></span></li>
+      <li><span class="m">(5 + 2)<sup>2</sup></span></li>
+      <li><span class="m">10 - 3<sup>2</sup></span></li>
+      <li><span class="m">2 · 4<sup>2</sup></span></li>
+      <li><span class="m">20 - (2<sup>2</sup> + 1)</span></li>
+      <li><span class="m">(-3)<sup>2</sup> - 3<sup>2</sup></span></li>
+      <li><span class="m">4 + 2 · 3<sup>2</sup></span></li>
+      <li><span class="m">(8 - 2)<sup>2</sup> : 4</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="p1-t8"> סיימתי טכניקה 8 — סדר פעולות</label>
+</section>
+
+<!-- ================= 9 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">9</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>כתיב מדעי</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תעביר מספרים גדולים וקטנים לכתיב מדעי ובחזרה, ותדע לכפול ולחלק מספרים כאלה.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הצורה</p>
+    <div class="eq">בכתיב מדעי: a × 10<sup>n</sup> &nbsp;כאשר&nbsp; 1 ≤ a &lt; 10</div>
+    <p class="rule-note"><span class="m">a</span> נקרא <b>המקדם</b> והוא תמיד בין 1 ל־10 (לא כולל 10). <span class="m">n</span> הוא מספר שלם — חיובי למספר גדול, שלילי למספר קטן.</p>
+  </div>
+
+  <table class="table">
+    <thead><tr><th>מספר</th><th>כתיב מדעי</th><th>למה</th></tr></thead>
+    <tbody>
+      <tr><td class="m">47,000</td><td class="m">4.7 × 10<sup>4</sup></td><td>הנקודה זזה 4 מקומות <b>שמאלה</b> → מעריך חיובי</td></tr>
+      <tr><td class="m">0.00058</td><td class="m">5.8 × 10<sup>-4</sup></td><td>הנקודה זזה 4 מקומות <b>ימינה</b> → מעריך שלילי</td></tr>
+      <tr><td class="m">3.2 × 10<sup>5</sup></td><td class="m">320,000</td><td>מזיזים את הנקודה 5 מקומות ימינה</td></tr>
+      <tr><td class="m">6 × 10<sup>-3</sup></td><td class="m">0.006</td><td>מזיזים את הנקודה 3 מקומות שמאלה</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p><span class="m">0.47 × 10<sup>5</sup></span> ו־<span class="m">47 × 10<sup>3</sup></span> הם מספרים נכונים, אבל <b>לא כתיב מדעי</b>: המקדם חייב להיות בין 1 ל־10. גם <span class="m">12 × 10<sup>5</sup></span> צריך תיקון: <span class="m">1.2 × 10<sup>6</sup></span>.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · המרה</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">8,200</span></li>
+      <li><span class="m">0.00091</span></li>
+      <li><span class="m">4.5 × 10<sup>2</sup></span></li>
+      <li><span class="m">2.7 × 10<sup>-1</sup></span></li>
+      <li><span class="m">60,000</span></li>
+      <li><span class="m">0.003</span></li>
+      <li>איזה מהם בכתיב מדעי: <span class="m">0.9 × 10<sup>3</sup></span> או <span class="m">9.0 × 10<sup>3</sup></span>?</li>
+      <li>כתוב נכון: <span class="m">12 × 10<sup>5</sup></span></li>
+    </ol>
+  </div>
+
+  <h3 style="margin-top:1.6em;font-size:1.02rem">חישוב בכתיב מדעי</h3>
+  <div class="rule-box" style="margin-top:.6em">
+    <p class="rule-label">כפל וחילוק</p>
+    <div class="eq">(a×10<sup>m</sup>)·(b×10<sup>n</sup>) = (a·b)×10<sup>m+n</sup></div>
+    <div class="eq">(a×10<sup>m</sup>) : (b×10<sup>n</sup>) = (a:b)×10<sup>m-n</sup></div>
+    <p class="rule-note">כופלים את המקדמים, ואז מחברים (או מחסרים) את המעריכים. אם המקדם יוצא 10 או יותר — מתקנים.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">עם תיקון</span></div>
+    <ol class="steps">
+      <li><span class="m">(6×10<sup>-2</sup>)·(3×10<sup>4</sup>)</span></li>
+      <li><span class="m">= (6·3)×10<sup>-2+4</sup> = 18×10<sup>2</sup></span></li>
+      <li><span class="m">= 1.8×10<sup>3</sup></span> <span class="why">— המקדם 18 גדול מ־10, לכן מזיזים נקודה</span></li>
+    </ol>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · חישוב</h3><span class="count">4 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">(4×10<sup>3</sup>)·(2×10<sup>5</sup>)</span></li>
+      <li><span class="m">(6×10<sup>-2</sup>)·(3×10<sup>4</sup>)</span></li>
+      <li><span class="m">(9×10<sup>8</sup>) : (3×10<sup>3</sup>)</span></li>
+      <li><span class="m">(2×10<sup>-3</sup>)<sup>2</sup></span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="p1-t9"> סיימתי טכניקה 9 — כתיב מדעי</label>
+</section>
+
+<!-- ================= 10 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">10</span>
+    <div>
+      <p class="tech-kicker">בונוס</p>
+      <h2>שורש ריבועי</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לחשב שורש של ריבוע שלם, ולפרק שורש של מספר לא שלם לגורם שלם כפול שורש.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">√(a<sup>2</sup>) = a &nbsp;(a ≥ 0) &nbsp;&nbsp;|&nbsp;&nbsp; √(a·b) = √a · √b</div>
+    <p class="rule-note">שורש ריבועי שואל: "איזה מספר, כשהוא מוכפל בעצמו, נותן את המספר שתחת השורש?"</p>
+  </div>
+
+  <div class="two">
+    <div>
+      <p style="font-size:.9rem;margin-bottom:.4em"><b>ריבועים שלמים שכדאי לזכור:</b></p>
+      <p class="m" style="font-size:.92rem;line-height:2;direction:ltr;text-align:left">1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225</p>
+      <p style="font-size:.86rem;color:var(--ink-3)">אלה התוצאות של <span class="m">1<sup>2</sup></span> עד <span class="m">15<sup>2</sup></span>.</p>
+    </div>
+    <div class="example" style="margin:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">פירוק לגורמים</span></div>
+      <ol class="steps">
+        <li><span class="m">√50 = √(25·2)</span></li>
+        <li><span class="m">= √25 · √2</span></li>
+        <li><span class="m">= 5√2</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p><span class="m">√(9+16) = √25 = 5</span>, אבל <span class="m">√9 + √16 = 3+4 = 7</span>. שורש <b>לא</b> מתחלק על חיבור או חיסור — רק על כפל וחילוק.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · שורשים</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">√49</span></li>
+      <li><span class="m">√121</span></li>
+      <li><span class="m">√(9·16)</span></li>
+      <li><span class="m">√50</span></li>
+      <li><span class="m">√12</span></li>
+      <li><span class="m">√(1/4)</span></li>
+      <li><span class="m">√144</span></li>
+      <li><span class="m">√200</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="p1-t10"> סיימתי טכניקה 10 — שורש ריבועי</label>
+</section>
+
+<!-- ================= סיכום ================= -->
+<section class="sheet">
+  <span class="kicker">לפני התרגול המסכם</span>
+  <h2>מפת החלטה: איזה כלל מפעילים?</h2>
+  <p class="lead">כשיש תרגיל, קודם מזהים את <b>הצורה</b> — ורק אחר כך בוחרים כלל. המפה הזאת מחליפה שינון עיוור.</p>
+
+  <div class="flow" style="margin-top:1.3em">
+    <div class="flow-step"><span class="when">אותו בסיס · כפל</span><span class="then">מחברים מעריכים: <b class="m">a<sup>m</sup>·a<sup>n</sup> = a<sup>m+n</sup></b></span></div>
+    <div class="flow-step"><span class="when">אותו בסיס · חילוק</span><span class="then">מחסרים מעריכים: <b class="m">a<sup>m</sup>:a<sup>n</sup> = a<sup>m-n</sup></b></span></div>
+    <div class="flow-step"><span class="when">חזקה בתוך חזקה</span><span class="then">כופלים מעריכים: <b class="m">(a<sup>m</sup>)<sup>n</sup> = a<sup>m·n</sup></b></span></div>
+    <div class="flow-step"><span class="when">חזקה על סוגריים</span><span class="then">כל גורם מקבל חזקה: <b class="m">(ab)<sup>n</sup> = a<sup>n</sup>b<sup>n</sup></b></span></div>
+    <div class="flow-step"><span class="when">מעריך שלילי</span><span class="then">הופכים לשבר: <b class="m">a<sup>-n</sup> = 1/a<sup>n</sup></b></span></div>
+    <div class="flow-step"><span class="when">מספר גדול / זעיר</span><span class="then">כותבים <b class="m">a×10<sup>n</sup></b> עם <b class="m">1 ≤ a &lt; 10</b></span></div>
+  </div>
+
+  <h3 style="margin-top:1.6em;font-size:1.1rem">חמש הטעויות שעולות הכי הרבה נקודות</h3>
+  <div class="callout callout--warn"><span class="callout-title">1 · המעריך הוא לא גורם</span><span class="m">2<sup>4</sup> = 16</span>, לא <span class="m">8</span>. חזקה היא מכפלה חוזרת, לא כפל ב־2.</div>
+  <div class="callout callout--warn"><span class="callout-title">2 · מינוס בחוץ, מינוס בפנים</span><span class="m">(-3)<sup>2</sup> = 9</span> אבל <span class="m">-3<sup>2</sup> = -9</span>.</div>
+  <div class="callout callout--warn"><span class="callout-title">3 · חיבור מול כפל של מעריכים</span>בכפל חזקות מחברים; בחזקה של חזקה כופלים. הסתכלו על הסוגריים.</div>
+  <div class="callout callout--warn"><span class="callout-title">4 · חזקה שלילית היא שבר</span><span class="m">2<sup>-2</sup> = 1/4</span>, לא <span class="m">-4</span>.</div>
+  <div class="callout callout--warn"><span class="callout-title">5 · המקדם בכתיב מדעי</span><span class="m">12×10<sup>4</sup></span> אינו כתיב מדעי. מתקנים ל־<span class="m">1.2×10<sup>5</sup></span>.</div>
+</section>
+
+<!-- ================= תרגול מסכם ================= -->
+<section class="sheet">
+  <span class="kicker">מבחן קטן</span>
+  <h2>תרגול מסכם</h2>
+  <p class="lead">12 תרגילים מכל הטכניקות, בלי רמזים. כתבו את הפתרון המלא — לא רק תוצאה.</p>
+
+  <div class="drill" style="margin-top:1em">
+    <div class="drill-head"><h3>מעורב</h3><span class="count">12 תרגילים · 30 דקות</span></div>
+    <ol class="ex">
+      <li><span class="m">2<sup>4</sup>·2<sup>3</sup></span></li>
+      <li><span class="m">(3<sup>2</sup>)<sup>3</sup></span></li>
+      <li><span class="m">5<sup>0</sup>+5<sup>1</sup></span></li>
+      <li><span class="m">(-2)<sup>3</sup></span></li>
+      <li><span class="m">6x<sup>2</sup>·2x<sup>3</sup></span></li>
+      <li><span class="m">(4a)<sup>2</sup></span></li>
+      <li><span class="m">2<sup>-4</sup></span></li>
+      <li><span class="m">8,500</span> <span class="prompt">לכתיב מדעי</span></li>
+      <li><span class="m">0.00062</span> <span class="prompt">לכתיב מדעי</span></li>
+      <li><span class="m">(3×10<sup>4</sup>)·(2×10<sup>-2</sup>)</span></li>
+      <li><span class="m">3 + 2<sup>2</sup>·5</span></li>
+      <li><span class="m">√75</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= בדיקת עצמי ================= -->
+<section class="sheet">
+  <span class="kicker">לפני שממשיכים</span>
+  <h2>בדיקת עצמי</h2>
+  <p class="lead">שש שאלות, בלי מחשבון, עד 10 דקות. לא מציצים בתשובות באמצע.</p>
+
+  <div class="drill" style="margin-top:1em">
+    <div class="drill-head"><h3>שש שאלות</h3><span class="count">6 נקודות</span></div>
+    <ol class="ex">
+      <li><span class="m">2<sup>5</sup></span></li>
+      <li><span class="m">(-4)<sup>2</sup></span></li>
+      <li><span class="m">x<sup>3</sup>·x<sup>7</sup></span></li>
+      <li><span class="m">(2x<sup>3</sup>)<sup>2</sup></span></li>
+      <li><span class="m">5<sup>-2</sup></span></li>
+      <li><span class="m">0.00045</span> <span class="prompt">לכתיב מדעי</span></li>
+    </ol>
+  </div>
+
+  <div class="score">
+    <div><b>6</b>מוכן. אפשר לעבור לנושא הבא.</div>
+    <div><b>4–5</b>חזרו על הטכניקה שבה טעיתם, ופתרו שוב את התרגול שלה.</div>
+    <div><b>0–3</b>קראו שוב את מפת ההחלטה, ואז עשו את התרגול המסכם.</div>
+  </div>
+</section>
+
+<!-- ================= תשובות ================= -->
+<section class="sheet answers">
+  <h2>נספח תשובות</h2>
+  <div class="cut">לקרוע רק אחרי שסיימתם</div>
+
+  <div class="ans-grid">
+    <p><b>1 · מהי חזקה</b><br>1) 64 · 2) 25 · 3) 64 · 4) 10,000 · 5) 243 · 6) 1 · 7) 0 · 8) 1</p>
+    <p><b>2 · בסיס שלילי</b><br>1) 16 · 2) −32 · 3) 25 · 4) −1 · 5) −16 · 6) −1,000 · 7) 81 · 8) −64</p>
+    <p><b>3 · כפל חזקות</b><br>1) <span class="m">5<sup>5</sup>=3,125</span> · 2) <span class="m">x<sup>10</sup></span> · 3) <span class="m">2<sup>10</sup>=1,024</span> · 4) <span class="m">y<sup>4</sup></span> · 5) <span class="m">10<sup>6</sup></span> · 6) <span class="m">a<sup>2</sup></span> · 7) <span class="m">3<sup>5</sup>=243</span> · 8) <span class="m">2<sup>6</sup>=64</span></p>
+    <p><b>4 · חילוק חזקות</b><br>1) <span class="m">3<sup>4</sup>=81</span> · 2) <span class="m">x<sup>3</sup></span> · 3) <span class="m">10<sup>3</sup>=1,000</span> · 4) <span class="m">7<sup>4</sup>=2,401</span> · 5) 1 · 6) <span class="m">2<sup>-2</sup>=1/4</span> · 7) 25 · 8) <span class="m">y<sup>7</sup></span></p>
+    <p><b>5 · חזקה של חזקה</b><br>1) <span class="m">5<sup>6</sup>=15,625</span> · 2) <span class="m">2<sup>8</sup>=256</span> · 3) <span class="m">x<sup>15</sup></span> · 4) <span class="m">a<sup>4</sup></span> · 5) <span class="m">10<sup>6</sup></span> · 6) <span class="m">2<sup>12</sup>=4,096</span> · 7) 81 · 8) 1</p>
+    <p><b>6 · מכפלה ומנה</b><br>1) <span class="m">16x<sup>2</sup></span> · 2) <span class="m">8y<sup>9</sup></span> · 3) 1 · 4) <span class="m">x<sup>2</sup>/25</span> · 5) 9/16 · 6) <span class="m">4x<sup>2</sup></span> · 7) <span class="m">8a<sup>6</sup>b<sup>3</sup></span> · 8) <span class="m">1000x<sup>3</sup></span></p>
+    <p><b>7 · חזקות שליליות</b><br>1) 1/3 · 2) 1/16 · 3) 1/100 · 4) 25/4 · 5) <span class="m">1/x<sup>3</sup></span> · 6) 8 · 7) 1/6 · 8) 4/9</p>
+    <p><b>8 · סדר פעולות</b><br>1) 13 · 2) 49 · 3) 1 · 4) 32 · 5) 15 · 6) 0 · 7) 22 · 8) 9</p>
+    <p><b>9 · כתיב מדעי — המרה</b><br>1) <span class="m">8.2×10<sup>3</sup></span> · 2) <span class="m">9.1×10<sup>-4</sup></span> · 3) 450 · 4) 0.27 · 5) <span class="m">6×10<sup>4</sup></span> · 6) <span class="m">3×10<sup>-3</sup></span> · 7) <span class="m">9.0×10<sup>3</sup></span> · 8) <span class="m">1.2×10<sup>6</sup></span></p>
+    <p><b>9 · חישוב</b><br>1) <span class="m">8×10<sup>8</sup></span> · 2) <span class="m">1.8×10<sup>3</sup></span> · 3) <span class="m">3×10<sup>5</sup></span> · 4) <span class="m">4×10<sup>-6</sup></span></p>
+    <p><b>10 · שורש</b><br>1) 7 · 2) 11 · 3) 12 · 4) <span class="m">5√2</span> · 5) <span class="m">2√3</span> · 6) 1/2 · 7) 12 · 8) <span class="m">10√2</span></p>
+    <p><b>תרגול מסכם</b><br>1) 128 · 2) 729 · 3) 6 · 4) −8 · 5) <span class="m">12x<sup>5</sup></span> · 6) <span class="m">16a<sup>2</sup></span> · 7) 1/16 · 8) <span class="m">8.5×10<sup>3</sup></span> · 9) <span class="m">6.2×10<sup>-4</sup></span> · 10) 600 · 11) 23 · 12) <span class="m">5√3</span></p>
+    <p><b>בדיקת עצמי</b><br>1) 32 · 2) 16 · 3) <span class="m">x<sup>10</sup></span> · 4) <span class="m">4x<sup>6</sup></span> · 5) 1/25 · 6) <span class="m">4.5×10<sup>-4</sup></span></p>
+  </div>
+
+  <p style="margin-top:1.4em;font-size:.8rem;color:var(--ink-3)">עוד לא בטוחים? חזרו לעמוד של הטכניקה, קראו את תיבת "למה זה עובד", ופתרו שני תרגילים דומים. ואז חזרו לכאן.</p>
+</section>
+
+</main>
+<script src="../assets/booklet.js"></script>
+</body>
+</html>

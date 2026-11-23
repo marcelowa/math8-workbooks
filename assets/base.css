@@ -1,0 +1,188 @@
+/* ============================================================
+   בסיס — משתנים, טיפוגרפיה, רכיבים משותפים
+   ============================================================ */
+
+:root{
+  /* נייר ודיו */
+  --paper:#fffdf7;
+  --paper-2:#faf6ec;
+  --bg:#e9e4d8;
+  --ink:#1b2a2a;
+  --ink-2:#3c4b47;
+  --ink-3:#65726c;
+  --line:#ded6c6;
+  --line-2:#cfc5b1;
+
+  /* מבטא */
+  --accent:#2f5d50;
+  --accent-2:#1f443b;
+  --accent-soft:#e6efea;
+  --clay:#a3542f;
+  --clay-soft:#f6e9e1;
+  --blue:#1f5d7a;
+  --blue-soft:#e5eef3;
+
+  /* צבעים סמנטיים לשרטוטים */
+  --d-blue:#1f5d7a;
+  --d-clay:#b0552c;
+  --d-olive:#5c6b39;
+  --d-plum:#7b4b6b;
+  --d-sand:#c29a3a;
+
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 1px 2px rgba(27,42,42,.05), 0 18px 40px -28px rgba(27,42,42,.45);
+
+  --font-body:"Assistant","Heebo","Arial Hebrew",Arial,sans-serif;
+  --font-display:"Frank Ruhl Libre","Assistant","Arial Hebrew",serif;
+  --font-math:"Inter","Assistant","Arial Hebrew",Arial,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.62;
+  color:var(--ink);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%}
+a{color:var(--clay);text-underline-offset:.2em;text-decoration-thickness:1px}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px;border-radius:4px}
+
+h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+p{margin:0 0 .9em}
+ul,ol{margin:0;padding-inline-start:1.25em}
+
+/* ---------- מתמטיקה ---------- */
+.m{
+  direction:ltr;
+  unicode-bidi:isolate;
+  font-family:var(--font-math);
+  white-space:nowrap;
+  font-feature-settings:"tnum" 1;
+}
+.eq{
+  direction:ltr;
+  unicode-bidi:plaintext;
+  text-align:center;
+  font-family:var(--font-math);
+  font-size:1.32rem;
+  line-height:1.9;
+  letter-spacing:.01em;
+}
+sup{font-size:.66em;line-height:0;vertical-align:super}
+sub{font-size:.66em;line-height:0;vertical-align:sub}
+
+.frac{
+  display:inline-flex;flex-direction:column;vertical-align:middle;
+  text-align:center;font-size:.92em;line-height:1.15;margin:0 .12em;
+}
+.frac>span:last-child{border-top:1.4px solid currentColor;padding-top:.04em}
+.frac>span:first-child{padding-bottom:.04em}
+
+/* ---------- רכיבי בסיס ---------- */
+.kicker{
+  display:inline-flex;align-items:center;gap:.5em;
+  font-size:.78rem;font-weight:600;letter-spacing:.14em;
+  color:var(--accent);text-transform:uppercase;
+}
+.kicker::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+
+.chip{
+  display:inline-flex;align-items:center;gap:.35em;
+  padding:.22em .7em;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent-2);
+  font-size:.78rem;font-weight:600;line-height:1.7;
+}
+.chip--plain{background:#f2eee4;color:var(--ink-2);border:1px solid var(--line)}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  padding:.62em 1.1em;border-radius:999px;border:1px solid transparent;
+  background:var(--accent);color:#fff;font:600 .9rem/1 var(--font-body);
+  text-decoration:none;cursor:pointer;transition:transform .15s ease,background .15s ease;
+}
+.btn:hover{background:var(--accent-2);transform:translateY(-1px)}
+.btn--ghost{background:transparent;color:var(--accent-2);border-color:var(--line-2)}
+.btn--ghost:hover{background:var(--accent-soft)}
+.btn svg{width:1.05em;height:1.05em;flex:none}
+
+.sr-only{
+  position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+
+/* ---------- גיליון ---------- */
+.paper{max-width:880px;margin:0 auto;padding:34px 18px 90px}
+.sheet{
+  position:relative;
+  background:var(--paper);
+  border:1px solid rgba(27,42,42,.07);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:clamp(26px,5vw,54px) clamp(22px,5.5vw,58px);
+  margin:0 0 26px;
+}
+
+/* כותרות מדור */
+.sheet h2{
+  font-family:var(--font-display);
+  font-size:clamp(1.6rem,3.6vw,2.15rem);
+  font-weight:700;
+  margin:0 0 .55em;
+}
+.sheet h2 .num{
+  color:var(--accent);
+  font-family:var(--font-math);
+  font-size:.72em;
+  margin-inline-end:.3em;
+}
+.lead{font-size:1.06rem;color:var(--ink-2);max-width:62ch}
+.lede{font-size:1.14rem;color:var(--ink-2);line-height:1.6}
+
+/* ---------- טבלאות ---------- */
+.table{width:100%;border-collapse:collapse;font-size:.93rem;margin:.4em 0 1.2em}
+.table th,.table td{padding:.5em .65em;border:1px solid var(--line);text-align:right;vertical-align:top}
+.table thead th{background:var(--accent-soft);color:var(--accent-2);font-weight:700;font-size:.85rem}
+.table tbody tr:nth-child(even){background:#fbf8f0}
+.table .c{text-align:center}
+
+/* ---------- רשימות סימון ---------- */
+.checklist{list-style:none;padding:0;margin:0;display:grid;gap:.4em}
+.checklist li{display:flex;gap:.6em;align-items:flex-start}
+.checklist input{
+  appearance:none;width:1.05em;height:1.05em;margin:.28em 0 0;flex:none;
+  border:1.6px solid var(--line-2);border-radius:4px;background:#fff;position:relative;
+}
+.checklist input:checked{background:var(--accent);border-color:var(--accent)}
+.checklist input:checked::after{
+  content:"";position:absolute;inset:0;
+  background:no-repeat center/70% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.5' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* ---------- קישור חזרה ---------- */
+.backlink{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-size:.85rem;font-weight:600;color:var(--ink-3);text-decoration:none;
+}
+.backlink:hover{color:var(--accent-2)}
+.backlink svg{width:1em;height:1em}
+
+/* ---------- מפת החלטה ---------- */
+.flow{display:grid;gap:.5em;margin:1em 0}
+.flow-step{
+  display:flex;gap:.75em;align-items:center;
+  border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:.6em .85em;background:#fff;
+  font-size:.9rem;
+}
+.flow-step .when{
+  flex:none;min-width:9.5em;font-weight:700;color:var(--accent-2);
+  font-size:.82rem;
+}
+.flow-step .then{color:var(--ink-2)}
+.flow-step .then b{color:var(--ink)}

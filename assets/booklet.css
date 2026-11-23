@@ -1,0 +1,351 @@
+/* ============================================================
+   חוברת עבודה — רכיבים, עמוד שער, תרגול, הדפסה
+   ============================================================ */
+
+body.booklet{
+  background-color:var(--bg);
+  background-image:radial-gradient(60rem 30rem at 88% -12%, rgba(47,93,80,.10), transparent 62%);
+  background-attachment:fixed;
+}
+
+/* ---------- סרגל עליון (מסך בלבד) ---------- */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  display:flex;align-items:center;gap:14px;
+  padding:10px clamp(14px,4vw,30px);
+  background:rgba(233,228,216,.88);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(27,42,42,.1);
+}
+.topbar .backlink{flex:none}
+.topbar-title{
+  flex:1;min-width:0;text-align:center;
+  font-size:.82rem;font-weight:600;color:var(--ink-2);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.topbar .btn{padding:.5em .95em;font-size:.82rem}
+
+/* ---------- שער ---------- */
+.cover{overflow:hidden;padding-top:0}
+.cover::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:9px;
+  background:linear-gradient(90deg,var(--accent) 0 62%,var(--clay) 62% 100%);
+}
+.cover-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:20px;
+  padding-top:clamp(26px,5vw,44px);
+}
+.cover-series{
+  font-size:.76rem;font-weight:600;letter-spacing:.14em;color:var(--accent);
+  text-transform:uppercase;padding-top:.5em;
+}
+.cover-mark{
+  font-family:var(--font-math);font-weight:700;line-height:.75;
+  font-size:clamp(3.4rem,10vw,6rem);
+  color:var(--accent);opacity:.14;letter-spacing:-.04em;
+}
+.cover h1{
+  font-family:var(--font-display);
+  font-size:clamp(2.7rem,8vw,4.5rem);
+  font-weight:900;line-height:1.02;letter-spacing:-.025em;
+  margin:.35em 0 .28em;max-width:18ch;
+}
+.cover h1 em{font-style:normal;color:var(--accent)}
+.cover-lede{font-size:clamp(1rem,2.2vw,1.16rem);color:var(--ink-2);max-width:46ch;margin-bottom:1.4em}
+.cover-art{
+  margin:1.4em 0 1.6em;border-radius:var(--radius);
+  background:
+    repeating-linear-gradient(0deg,transparent 0 23px,rgba(27,42,42,.06) 23px 24px),
+    repeating-linear-gradient(90deg,transparent 0 23px,rgba(27,42,42,.06) 23px 24px);
+  background-color:var(--accent-soft);
+  padding:clamp(12px,3vw,26px);
+  border:1px solid color-mix(in srgb,var(--accent) 14%,transparent);
+}
+.cover-art svg{display:block;width:100%;height:auto}
+.cover-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(18px,4vw,40px);
+  padding-top:1.4em;border-top:1px solid var(--line);
+}
+.cover-grid h4{
+  font-size:.74rem;letter-spacing:.14em;color:var(--accent);
+  text-transform:uppercase;margin-bottom:.7em;
+}
+.cover-list{list-style:none;padding:0;margin:0;display:grid;gap:.42em;font-size:.94rem}
+.cover-list li{display:flex;gap:.55em;align-items:baseline}
+.cover-list li::before{content:"—";color:var(--clay);flex:none}
+.cover-facts{font-size:.86rem;color:var(--ink-2);display:grid;gap:.4em}
+.cover-facts b{color:var(--ink);font-weight:700}
+.cover-foot{
+  display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap;
+  margin-top:2em;padding-top:1.1em;border-top:1px solid var(--line);
+  font-size:.82rem;color:var(--ink-3);
+}
+.cover-foot .fill{flex:1;min-width:90px;border-bottom:1px dotted var(--line-2);height:1.4em}
+
+/* ---------- כותרת טכניקה ---------- */
+.tech-head{
+  display:flex;align-items:flex-start;gap:14px;
+  margin-bottom:.9em;
+}
+.tech-num{
+  flex:none;display:grid;place-items:center;
+  width:2.15em;height:2.15em;border-radius:50%;
+  background:var(--accent);color:#fff;
+  font-family:var(--font-math);font-size:1.05rem;font-weight:700;
+  line-height:1;margin-top:.25em;
+}
+.tech-kicker{
+  font-size:.72rem;font-weight:700;letter-spacing:.16em;
+  color:var(--accent);text-transform:uppercase;margin:0 0 .2em;
+}
+.tech-head h2{margin:0;font-size:clamp(1.5rem,3.4vw,2rem)}
+.tech-goal{
+  display:block;
+  font-size:.88rem;color:var(--ink-2);
+  background:var(--paper-2);border:1px solid var(--line);
+  border-radius:var(--radius-sm);padding:.65em .9em;margin:0 0 1.2em;
+}
+.tech-goal b{color:var(--accent-2);font-weight:700}
+
+/* ---------- תיבת כלל ---------- */
+.rule-box{
+  position:relative;
+  background:var(--accent-soft);
+  border-inline-start:4px solid var(--accent);
+  border-radius:var(--radius-sm) 0 0 var(--radius-sm);
+  padding:1em 1.2em 1.05em;
+  margin:1.1em 0 1.2em;
+}
+.rule-label{
+  font-size:.72rem;font-weight:700;letter-spacing:.14em;
+  color:var(--accent);margin:0 0 .35em;text-transform:uppercase;
+}
+.rule-box .eq{margin:.15em 0 .3em}
+.rule-note{font-size:.9rem;color:var(--ink-2);margin:.2em 0 0}
+.rule-note:last-child{margin-bottom:0}
+
+/* ---------- דוגמה ---------- */
+.example{
+  border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+  background:#fffdf9;
+  padding:1em 1.15em 1.05em;
+  margin:1.1em 0;
+}
+.example-head{display:flex;align-items:center;gap:.6em;flex-wrap:wrap;margin-bottom:.55em}
+.tag{
+  display:inline-block;padding:.16em .6em;border-radius:4px;
+  background:var(--clay);color:#fff;font-size:.7rem;font-weight:700;
+  letter-spacing:.06em;
+}
+.example-head .hint{font-size:.8rem;color:var(--ink-3)}
+.steps{list-style:none;counter-reset:step;padding:0;margin:0;display:grid;gap:.5em}
+.steps>li{
+  counter-increment:step;position:relative;padding-inline-start:2.1em;
+  font-size:.95rem;
+}
+.steps>li::before{
+  content:counter(step);
+  position:absolute;inset-inline-start:0;top:.15em;
+  width:1.45em;height:1.45em;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--accent-soft);color:var(--accent-2);
+  font-family:var(--font-math);font-size:.72rem;font-weight:700;
+}
+.steps .eq{text-align:right;font-size:1.08rem;margin:.1em 0 .15em}
+.steps .why{font-size:.8rem;color:var(--ink-3)}
+
+/* ---------- קריאות ---------- */
+.callout{
+  position:relative;
+  border-radius:var(--radius-sm);
+  padding:.85em 1em .85em 1em;
+  margin:1em 0;
+  font-size:.9rem;
+  border:1px solid;
+}
+.callout p:last-child{margin-bottom:0}
+.callout .callout-title{
+  display:block;font-weight:700;font-size:.78rem;letter-spacing:.08em;
+  margin-bottom:.2em;
+}
+.callout--warn{background:var(--clay-soft);border-color:#e7c9b8;color:#6b3a22}
+.callout--warn .callout-title{color:var(--clay)}
+.callout--tip{background:var(--blue-soft);border-color:#c7dae4;color:#1d4257}
+.callout--tip .callout-title{color:var(--blue)}
+.callout--why{background:#eef0e4;border-color:#d8dcc4;color:#404a28}
+.callout--why .callout-title{color:var(--d-olive)}
+
+/* ---------- שרטוט ---------- */
+.fig{
+  margin:1.1em 0 1.2em;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+  padding:12px 12px 8px;
+}
+.fig svg{display:block;width:100%;height:auto;margin:0 auto}
+.fig figcaption{
+  font-size:.78rem;color:var(--ink-3);text-align:center;
+  padding:.55em .5em 0;border-top:1px dashed var(--line);margin-top:.55em;
+}
+.fig--plain{background:transparent;border:0;padding:0}
+
+/* ---------- תרגול ---------- */
+.drill{margin-top:1.4em}
+.drill-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:.3em;margin-bottom:.9em;
+}
+.drill-head h3{font-size:1.05rem;letter-spacing:.02em}
+.drill-head .count{font-size:.75rem;color:var(--ink-3);font-weight:600}
+.ex{
+  list-style:none;counter-reset:ex;padding:0;margin:0;
+  display:grid;grid-template-columns:1fr 1fr;gap:.55em 1.8em;
+}
+.ex>li{
+  counter-increment:ex;position:relative;
+  padding:.35em 2.3em .5em 0;
+  border-bottom:1px dotted var(--line-2);
+  font-size:.98rem;min-height:3.1em;
+}
+.ex>li::before{
+  content:counter(ex);
+  position:absolute;inset-inline-start:auto;right:0;top:.32em;
+  width:1.6em;height:1.6em;border-radius:50%;
+  display:grid;place-items:center;
+  border:1.2px solid var(--line-2);color:var(--ink-3);
+  font-family:var(--font-math);font-size:.72rem;font-weight:700;
+}
+.ex>li .m{font-size:1rem}
+.ex--wide{grid-template-columns:1fr}
+.ex--three{grid-template-columns:repeat(3,1fr)}
+.ex .prompt{display:block;font-size:.9rem;color:var(--ink-2)}
+.ex .answer-line{display:block;height:1.1em}
+
+/* ---------- רשימת "סיימתי" ---------- */
+.done{
+  display:flex;align-items:center;gap:.6em;
+  margin-top:1.5em;padding:.6em .8em;
+  border:1px dashed var(--line-2);border-radius:var(--radius-sm);
+  font-size:.82rem;color:var(--ink-3);width:fit-content;
+}
+.done input{appearance:none;width:1.15em;height:1.15em;border:1.6px solid var(--line-2);border-radius:4px;background:#fff;margin:0;position:relative;flex:none}
+.done input:checked{background:var(--accent);border-color:var(--accent)}
+.done input:checked::after{
+  content:"";position:absolute;inset:0;
+  background:no-repeat center/68% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.5' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+
+/* ---------- תשובות ---------- */
+.answers{background:var(--paper-2)}
+.answers h2{font-size:1.5rem}
+.answers .cut{
+  display:flex;align-items:center;gap:.6em;margin:0 0 1em;
+  font-size:.72rem;letter-spacing:.1em;color:var(--ink-3);
+}
+.answers .cut::before,.answers .cut::after{content:"";flex:1;border-top:1px dashed var(--line-2)}
+.ans-grid{columns:2;column-gap:2.4em;font-size:.84rem;line-height:1.55}
+.ans-grid p{margin:0 0 .55em;break-inside:avoid}
+.ans-grid b{color:var(--accent-2);font-weight:700}
+.ans-grid .m{font-size:.92em}
+
+/* ---------- טבלת ניקוד ---------- */
+.score{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:.6em;margin:1em 0;
+}
+.score div{
+  border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:.7em .8em;background:#fff;font-size:.85rem;
+}
+.score b{display:block;font-family:var(--font-math);font-size:1.25rem;color:var(--accent)}
+
+/* ---------- עטיפת שני טורים ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.4em 2em;align-items:start}
+.two--wide{grid-template-columns:1.25fr .75fr}
+
+/* ---------- כרטיסיית בונוס ---------- */
+.bonus{
+  border:1px solid #e2d3b6;background:#fbf3e2;border-radius:var(--radius-sm);
+  padding:1em 1.1em;margin:1.1em 0;
+}
+.bonus .tag{background:var(--d-sand)}
+
+/* ---------- התאמות מסך צר ---------- */
+@media (max-width:640px){
+  body{font-size:16px}
+  .ex,.ex--three{grid-template-columns:1fr}
+  .cover-grid,.two,.two--wide{grid-template-columns:1fr}
+  .score{grid-template-columns:1fr}
+  .ans-grid{columns:1}
+  .topbar-title{display:none}
+  .cover h1{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+
+/* ============================================================
+   הדפסה — A4
+   ============================================================ */
+.doc-title{string-set:doctitle content()}
+
+@media print{
+  @page{
+    size:A4;
+    margin:16mm 14mm 17mm;
+    @top-left{
+      content:string(doctitle);
+      font-family:"Assistant","Arial Hebrew",Arial,sans-serif;
+      font-size:8pt;color:#8b958d;
+    }
+    @bottom-center{
+      content:counter(page);
+      font-family:"Inter","Assistant",Arial,sans-serif;
+      font-size:9pt;color:#8b958d;
+    }
+  }
+  @page :first{
+    @top-left{content:none}
+    @bottom-center{content:none}
+  }
+
+  html,body{
+    background:#fff!important;
+    font-size:10.7pt;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .no-print,.topbar{display:none!important}
+  .paper{max-width:none;margin:0;padding:0}
+  .sheet{
+    box-shadow:none;border:0;border-radius:0;
+    margin:0;padding:0;background:transparent;
+    break-before:page;page-break-before:always;
+  }
+  .sheet:first-of-type{break-before:auto;page-break-before:auto}
+  .cover{padding:0}
+  .cover::before{height:7px}
+  .cover-head{padding-top:0}
+  .cover h1{font-size:44pt;margin-top:.3em}
+  .cover-lede{font-size:11pt}
+  .cover-art{margin:1em 0 1.2em;padding:10px}
+  .cover-grid{padding-top:1em}
+  .cover-foot{margin-top:1.2em}
+  .cover-mark{font-size:64pt}
+
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+  .tech-head,.drill-head{break-after:avoid;page-break-after:avoid}
+  .rule-box,.example,.callout,.fig,.bonus,.tech-goal,
+  .flow-step,.score>div,.tech-head{break-inside:avoid;page-break-inside:avoid}
+  .ex>li,.steps>li,.cover-list li{break-inside:avoid;page-break-inside:avoid}
+  .ex>li{min-height:2.9em}
+  .answers{break-before:page;page-break-before:always}
+  .ans-grid{columns:2;column-gap:8mm;font-size:8.6pt}
+  .table{font-size:9pt}
+  .drill{margin-top:1em}
+  .done{margin-top:1em}
+  a{color:inherit;text-decoration:none}
+  .cover-art{background-color:var(--accent-soft)}
+}

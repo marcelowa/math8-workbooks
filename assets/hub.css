@@ -1,0 +1,239 @@
+/* ============================================================
+   דף הבית — מסלול החוברות
+   ============================================================ */
+
+body{
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(60rem 34rem at 88% -12%, rgba(47,93,80,.16), transparent 62%),
+    radial-gradient(48rem 30rem at -10% 18%, rgba(163,84,47,.10), transparent 60%),
+    radial-gradient(40rem 26rem at 50% 110%, rgba(75,93,138,.10), transparent 60%);
+  background-attachment:fixed;
+}
+.wrap{max-width:1140px;margin:0 auto;padding:0 clamp(16px,4vw,30px)}
+
+/* ---------- ניווט ---------- */
+.nav{
+  position:sticky;top:0;z-index:80;
+  background:rgba(233,228,216,.82);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(27,42,42,.09);
+}
+.nav-inner{display:flex;align-items:center;gap:20px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;font-size:.95rem}
+.brand-mark{
+  width:34px;height:34px;border-radius:10px;background:var(--accent);color:#fff;
+  display:grid;place-items:center;font-family:var(--font-math);font-size:.78rem;font-weight:700;
+  box-shadow:0 6px 14px -8px rgba(27,42,42,.8);
+}
+.brand span small{display:block;font-size:.68rem;font-weight:600;color:var(--ink-3);letter-spacing:.06em}
+.nav-links{display:flex;gap:26px;margin-inline-start:auto;font-size:.87rem;font-weight:600}
+.nav-links a{color:var(--ink-2);text-decoration:none;position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;inset-inline:0;bottom:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .18s ease;transform-origin:right}
+.nav-links a:hover{color:var(--accent-2)}
+.nav-links a:hover::after{transform:scaleX(1)}
+
+/* ---------- כותרת ---------- */
+.hero{
+  display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,5vw,56px);
+  align-items:center;padding:clamp(44px,7vw,82px) 0 clamp(30px,5vw,54px);
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.55em;
+  padding:.32em .85em;border-radius:999px;
+  background:rgba(47,93,80,.1);color:var(--accent-2);
+  font-size:.74rem;font-weight:700;letter-spacing:.12em;
+}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(2.5rem,5.8vw,4.15rem);
+  font-weight:900;line-height:1.02;letter-spacing:-.03em;
+  margin:.42em 0 .32em;
+}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-lede{font-size:clamp(1rem,1.8vw,1.13rem);color:var(--ink-2);max-width:47ch;line-height:1.6}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero-actions .btn{padding:.8em 1.35em;font-size:.95rem}
+.hero-note{display:flex;gap:.5em;align-items:flex-start;margin-top:18px;font-size:.8rem;color:var(--ink-3);max-width:44ch}
+.hero-note svg{width:1.15em;height:1.15em;flex:none;margin-top:.15em;color:var(--accent)}
+
+/* ---------- מגדל חוברות ---------- */
+.stack{position:relative;height:430px;perspective:900px}
+.stack-card{
+  position:absolute;top:50%;left:50%;width:196px;height:274px;
+  margin:-137px 0 0 -98px;padding:16px 16px 18px;
+  background:var(--paper);border:1px solid rgba(27,42,42,.12);border-radius:11px;
+  box-shadow:0 2px 3px rgba(27,42,42,.08), 0 22px 40px -22px rgba(27,42,42,.55);
+  display:flex;flex-direction:column;
+  transform:translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+  transition:transform .35s cubic-bezier(.2,.8,.3,1);
+}
+.stack-card::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;border-radius:10px 10px 0 0;background:var(--a)}
+.stack-card .s-num{font-family:var(--font-math);font-size:.72rem;font-weight:700;color:var(--a);letter-spacing:.1em;margin-top:6px}
+.stack-card .s-title{font-family:var(--font-display);font-weight:700;font-size:1.22rem;line-height:1.12;margin-top:.25em;color:var(--ink)}
+.stack-card .s-art{margin-top:auto;opacity:.85}
+.stack-card .s-art svg{display:block;width:100%;height:auto}
+.stack:hover .stack-card{transform:translateX(calc(var(--x) * 1.18)) translateY(calc(var(--y) * 1.12)) rotate(calc(var(--r) * 1.12))}
+
+/* ---------- רצועת נתונים ---------- */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(27,42,42,.1);border:1px solid rgba(27,42,42,.1);border-radius:16px;overflow:hidden;
+}
+.stats div{background:rgba(255,253,247,.72);padding:18px 20px}
+.stats b{display:block;font-family:var(--font-math);font-size:1.55rem;font-weight:700;color:var(--accent-2);line-height:1.1}
+.stats span{font-size:.8rem;color:var(--ink-3)}
+
+/* ---------- מדורים ---------- */
+.section{padding:clamp(42px,6vw,72px) 0}
+.section-head{max-width:64ch;margin-bottom:clamp(20px,3vw,32px)}
+.section-head .kicker{margin-bottom:.5em}
+.section-head h2{
+  font-family:var(--font-display);font-size:clamp(1.8rem,3.4vw,2.6rem);
+  font-weight:900;line-height:1.08;letter-spacing:-.02em;margin:0 0 .4em;
+}
+.section-head p{color:var(--ink-2);font-size:1rem;margin:0}
+
+/* ---------- כרטיס אבחון ---------- */
+.diag{
+  display:grid;grid-template-columns:auto 1fr auto;gap:clamp(18px,3vw,34px);align-items:center;
+  background:
+    radial-gradient(28rem 18rem at 100% 0%, rgba(255,255,255,.10), transparent 60%),
+    var(--accent-2);
+  color:#f6f2e8;border-radius:20px;padding:clamp(22px,3.4vw,36px);
+  box-shadow:0 2px 3px rgba(27,42,42,.1), 0 30px 60px -40px rgba(27,42,42,.7);
+}
+.diag-num{
+  font-family:var(--font-math);font-size:clamp(2.6rem,6vw,4rem);font-weight:700;
+  color:rgba(255,255,255,.22);line-height:.9;letter-spacing:-.05em;
+}
+.diag h3{font-family:var(--font-display);font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:700;margin:0 0 .3em;color:#fff}
+.diag p{margin:0;color:rgba(255,255,255,.78);font-size:.92rem;max-width:52ch}
+.diag .meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:.8em;font-size:.76rem;color:rgba(255,255,255,.65)}
+.diag .btn{background:#fdf9ef;color:var(--accent-2);white-space:nowrap}
+.diag .btn:hover{background:#fff}
+
+/* ---------- כרטיסי חוברות ---------- */
+.books{display:grid;grid-template-columns:repeat(auto-fill,minmax(288px,1fr));gap:clamp(16px,2.4vw,24px)}
+.book{
+  display:flex;flex-direction:column;background:var(--paper);
+  border:1px solid rgba(27,42,42,.1);border-radius:16px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(27,42,42,.05), 0 18px 34px -30px rgba(27,42,42,.5);
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.book:hover{transform:translateY(-4px);box-shadow:0 2px 3px rgba(27,42,42,.06), 0 26px 50px -32px rgba(27,42,42,.6)}
+.book-cover{
+  position:relative;height:168px;padding:20px 22px;overflow:hidden;
+  background:var(--as);border-bottom:1px solid rgba(27,42,42,.08);
+}
+.book-cover::before{content:"";position:absolute;inset:0 0 auto 0;height:7px;background:var(--a)}
+.book-cover .ghost{
+  position:absolute;left:12px;top:-16px;
+  font-family:var(--font-math);font-size:6.2rem;font-weight:700;line-height:.8;
+  color:var(--a);opacity:.13;letter-spacing:-.06em;
+}
+.book-cover h3{
+  font-family:var(--font-display);font-size:1.55rem;font-weight:900;line-height:1.05;
+  color:var(--ink);max-width:11ch;margin:.15em 0 0;position:relative;z-index:1;
+}
+.book-cover .cover-kicker{font-size:.68rem;font-weight:700;letter-spacing:.14em;color:var(--a);text-transform:uppercase;position:relative;z-index:1}
+.book-cover .motif{position:absolute;left:18px;bottom:16px;width:38%;opacity:.8}
+.book-cover .motif svg{display:block;width:100%;height:auto}
+.book-body{padding:18px 22px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.book-body .desc{font-size:.88rem;color:var(--ink-2);margin:0;line-height:1.5}
+.book-meta{display:flex;gap:6px;flex-wrap:wrap}
+.book-meta .chip{font-size:.68rem;padding:.18em .6em}
+.book-actions{margin-top:auto;padding-top:14px;display:flex;align-items:center;gap:10px;border-top:1px solid var(--line)}
+.book-actions .open{font-weight:700;font-size:.86rem;text-decoration:none;color:var(--a);display:inline-flex;align-items:center;gap:.35em}
+.book-actions .open:hover{text-decoration:underline}
+.book-actions .print{
+  margin-inline-start:auto;font-size:.78rem;color:var(--ink-3);text-decoration:none;
+  display:inline-flex;align-items:center;gap:.35em;background:none;border:0;cursor:pointer;font-family:inherit;
+}
+.book-actions .print:hover{color:var(--ink)}
+.book-actions svg{width:1em;height:1em}
+
+/* ---------- איך עובדים ---------- */
+.how{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.how-step{
+  background:rgba(255,253,247,.62);border:1px solid rgba(27,42,42,.1);
+  border-radius:14px;padding:20px;
+}
+.how-step .n{
+  display:inline-grid;place-items:center;width:2em;height:2em;border-radius:50%;
+  background:var(--accent);color:#fff;font-family:var(--font-math);font-size:.8rem;font-weight:700;
+  margin-bottom:12px;
+}
+.how-step h3{font-size:1rem;margin-bottom:.35em}
+.how-step p{font-size:.85rem;color:var(--ink-2);margin:0}
+
+/* ---------- טבלה ---------- */
+.cover-table{background:rgba(255,253,247,.7);border:1px solid rgba(27,42,42,.1);border-radius:16px;overflow:hidden}
+.cover-table table{margin:0}
+
+/* ---------- הדפסה ---------- */
+.printbox{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,4vw,40px);
+  background:var(--paper);border:1px solid rgba(27,42,42,.1);border-radius:18px;padding:clamp(22px,3.4vw,34px);
+  box-shadow:0 18px 40px -34px rgba(27,42,42,.55);
+}
+.printbox h3{font-family:var(--font-display);font-size:1.4rem;margin-bottom:.4em}
+.printbox ol{margin:0;padding-inline-start:1.2em;display:grid;gap:.55em;font-size:.9rem;color:var(--ink-2)}
+.printbox ol b{color:var(--ink)}
+.print-side{background:var(--paper-2);border:1px dashed var(--line-2);border-radius:12px;padding:18px}
+.print-side h4{font-size:.8rem;letter-spacing:.1em;color:var(--accent);margin-bottom:.6em}
+.print-side table{width:100%;border-collapse:collapse;font-size:.82rem}
+.print-side td{padding:.32em .2em;border-bottom:1px dotted var(--line);color:var(--ink-2)}
+.print-side td:last-child{text-align:left;font-family:var(--font-math);color:var(--ink)}
+
+/* ---------- הערה ---------- */
+.note{
+  display:flex;gap:.8em;align-items:flex-start;
+  padding:16px 18px;border-radius:12px;
+  background:rgba(163,84,47,.08);border:1px solid rgba(163,84,47,.18);
+  color:#6b3a22;font-size:.86rem;margin-top:22px;
+}
+.note svg{width:1.2em;height:1.2em;flex:none;margin-top:.15em}
+
+/* ---------- כותרת תחתונה ---------- */
+.footer{padding:40px 0 60px;border-top:1px solid rgba(27,42,42,.1);margin-top:30px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;font-size:.8rem;color:var(--ink-3)}
+.footer a{color:var(--ink-2);text-decoration:none}
+.footer a:hover{color:var(--accent-2)}
+
+/* ---------- רספונסיביות ---------- */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;padding-top:40px}
+  .stack{height:340px;order:-1;max-width:520px;margin:0 auto;width:100%}
+  .stack-card{width:160px;height:224px;margin:-112px 0 0 -80px;padding:13px}
+  .stack-card .s-title{font-size:1rem}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .how{grid-template-columns:repeat(2,1fr)}
+  .diag{grid-template-columns:auto 1fr}
+  .diag .btn{grid-column:1/-1;justify-self:start}
+  .printbox{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .nav-links{display:none}
+  .stack{height:290px}
+  .stack-card{width:136px;height:192px;margin:-96px 0 0 -68px;padding:11px}
+  .stack-card .s-title{font-size:.86rem}
+  .stack-card .s-num{font-size:.62rem}
+  .hero-actions .btn{width:100%}
+  .stats{grid-template-columns:1fr 1fr}
+  .how{grid-template-columns:1fr}
+  .diag{grid-template-columns:1fr;text-align:right}
+  .diag-num{display:none}
+  .diag .btn{justify-self:stretch}
+  .book-cover{height:150px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+  .stack:hover .stack-card{transform:translateX(var(--x)) translateY(var(--y)) rotate(var(--r))}
+}
+
+/* ---------- עוגנים ---------- */
+html{scroll-behavior:smooth}
+.section[id]{scroll-margin-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

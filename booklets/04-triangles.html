@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>חוברת 04 · משולשים — מתמטיקה כיתה ח׳</title>
+<meta name="description" content="חוברת עבודה: סוגי משולשים, משולש שווה־שוקיים, אי־שוויון במשולש, תיכון וגובה, שטח משולש ומשפט פיתגורס.">
+<meta name="theme-color" content="#5c6b39">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%235c6b39'/%3E%3Cpath d='M7 25L16 7l9 18z' fill='none' stroke='%23fff' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&amp;family=Frank+Ruhl+Libre:wght@500;700;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/booklet.css">
+</head>
+<body class="booklet" style="--accent:#5c6b39;--accent-2:#414d26;--accent-soft:#eef0e2">
+<header class="topbar no-print">
+  <a class="backlink" href="../index.html">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6l6 6-6 6M16 12H4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    כל החוברות
+  </a>
+  <span class="topbar-title">חוברת 04 · משולשים</span>
+  <button class="btn" data-print type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    הדפסה
+  </button>
+</header>
+<span class="sr-only doc-title">חוברת 04 · משולשים</span>
+
+<main class="paper">
+
+<!-- ================= שער ================= -->
+<section class="sheet cover">
+  <div class="cover-head">
+    <div class="cover-series">מתמטיקה · כיתה ח׳ · חוברת 04</div>
+    <div class="cover-mark" aria-hidden="true">04</div>
+  </div>
+  <h1>משולשים<br><em>צלעות, זוויות ושטח</em></h1>
+  <p class="cover-lede">למה במשולש שווה־שוקיים זוויות הבסיס שוות, מתי שלוש צלעות בכלל יכולות להיפגש, ואיך משפט אחד — פיתגורס — פותח עשרות תרגילים.</p>
+
+  <div class="cover-art" aria-hidden="true">
+    <svg viewBox="0 0 640 440" role="img" aria-label="משולש ישר זווית שצלעותיו 3, 4 ו־5 ועל כל צלע ריבוע">
+      <rect x="200" y="210" width="90" height="90" fill="#e6eff4" stroke="#1f5d7a" stroke-width="1.4"/>
+      <rect x="290" y="300" width="120" height="120" fill="#f8ebe3" stroke="#a3542f" stroke-width="1.4"/>
+      <polygon points="290,210 410,300 500,180 380,90" fill="#eef0e2" stroke="#5c6b39" stroke-width="1.4"/>
+      <path d="M290 210 L410 300 L290 300 Z" fill="#fffdf7" stroke="#1b2a2a" stroke-width="2"/>
+      <path d="M290 285 H305 V300" fill="none" stroke="#1b2a2a" stroke-width="1.4"/>
+      <g font-family="Inter,Arial,sans-serif" font-size="22" font-weight="600" text-anchor="middle">
+        <text x="245" y="260" fill="#1f5d7a">9</text>
+        <text x="350" y="365" fill="#a3542f">16</text>
+        <text x="395" y="205" fill="#5c6b39">25</text>
+      </g>
+      <g font-family="Inter,Arial,sans-serif" font-size="15" fill="#65726c" text-anchor="middle">
+        <text x="278" y="255" transform="rotate(-90 278 255)">3</text>
+        <text x="350" y="292">4</text>
+        <text x="330" y="230" transform="rotate(37 330 230)">5</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="cover-grid">
+    <div>
+      <h4>מה יש בחוברת</h4>
+      <ul class="cover-list">
+        <li>שישה סוגי משולשים</li>
+        <li>משולש שווה־שוקיים: זוויות, גובה וציר סימטריה</li>
+        <li>אי־שוויון במשולש</li>
+        <li>תיכון, גובה, חוצה זווית ואנך אמצעי</li>
+        <li>שטח משולש ומשפט פיתגורס — בשני הכיוונים</li>
+      </ul>
+    </div>
+    <div class="cover-facts">
+      <div><b>8</b> טכניקות, אחת לעמוד</div>
+      <div><b>70+</b> תרגילים מדורגים</div>
+      <div><b>4</b> מפגשים של כ־30 דקות</div>
+      <div><b>צריך:</b> עיפרון, סרגל, מחשבון לשורשים</div>
+      <div><b>חשוב:</b> כל שרטוט — עם נתונים</div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <span>שם</span><span class="fill"></span>
+    <span>כיתה</span><span class="fill" style="max-width:70px"></span>
+    <span>תאריך</span><span class="fill" style="max-width:100px"></span>
+  </div>
+</section>
+
+<!-- ================= איך עובדים ================= -->
+<section class="sheet">
+  <span class="kicker">לפני שמתחילים</span>
+  <h2>משולש הוא שלוש צלעות ושלוש זוויות — אבל לא רק</h2>
+  <p class="lead">בכל משולש יש קשרים קבועים בין הצלעות לזוויות. ברגע שמזהים את הקשר, השאלה הופכת לחישוב אחד. הדבר היחיד שאסור — להסתמך על מה ש"נראה" בשרטוט.</p>
+
+  <div class="two" style="margin-top:1.4em">
+    <div>
+      <h3 style="font-size:1.02rem;margin-bottom:.5em">ארבעה צעדים בכל שאלה</h3>
+      <div class="flow">
+        <div class="flow-step"><span class="when">1 · מזהים</span><span class="then">מה נתון — צלעות או זוויות? האם המשולש ישר־זווית? שווה־שוקיים?</span></div>
+        <div class="flow-step"><span class="when">2 · בוחרים כלי</span><span class="then">סכום 180°, זוויות בסיס, אי־שוויון, שטח או פיתגורס.</span></div>
+        <div class="flow-step"><span class="when">3 · מחשבים</span><span class="then">רושמים את הנוסחה, מציבים, ומשאירים יחידות.</span></div>
+        <div class="flow-step"><span class="when">4 · בודקים</span><span class="then">היתר הוא הצלע הארוכה. שטח לא יכול לצאת שלילי. זווית במשולש — פחות מ־180°.</span></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:1.02rem;margin-bottom:.5em">שלוש מלכודות קבועות</h3>
+      <div class="callout callout--warn"><span class="callout-title">היתר הוא לא תמיד הצלע "התחתונה"</span>הוא הצלע שמול הזווית הישרה — ותמיד הארוכה ביותר.</div>
+      <div class="callout callout--warn"><span class="callout-title">גובה הוא לא צלע</span>בשטח משתמשים בגובה <b>מאונך</b> לבסיס, גם אם הוא מחוץ למשולש.</div>
+      <div class="callout callout--why"><span class="callout-title">פיתגורס רק במשולש ישר־זווית</span>אם אין זווית ישרה — אין פיתגורס. קודם מוכיחים שיש זווית ישרה.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 1 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">1</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>שישה סוגי משולשים</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תסווג משולש לפי צלעות ולפי זוויות — שני סיווגים בלתי תלויים.</p>
+
+  <figure class="fig" style="margin-top:.4em">
+    <svg viewBox="0 0 640 310" role="img" aria-label="שישה סוגי משולשים: שונה צלעות, שווה שוקיים, שווה צלעות, חד זווית, ישר זווית וקהה זווית">
+      <g stroke="#1b2a2a" stroke-width="2" stroke-linejoin="round">
+        <path d="M30 120 L130 120 L85 30 Z" fill="#fffdf7"/>
+        <path d="M180 120 L280 120 L230 30 Z" fill="#eef0e2"/>
+        <path d="M330 120 L430 120 L380 30 Z" fill="#eef0e2"/>
+        <path d="M30 270 L130 270 L75 180 Z" fill="#fffdf7"/>
+        <path d="M180 270 L280 270 L180 180 Z" fill="#fffdf7"/>
+        <path d="M330 270 L430 270 L470 200 Z" fill="#fffdf7"/>
+      </g>
+      <g stroke="#5c6b39" stroke-width="3" fill="none" stroke-linecap="round">
+        <path d="M180 120 L230 30"/><path d="M230 30 L280 120"/>
+        <path d="M330 120 L380 30"/><path d="M380 30 L430 120"/><path d="M330 120 L430 120"/>
+      </g>
+      <path d="M180 255 H195 V270" fill="none" stroke="#1b2a2a" stroke-width="1.4"/>
+      <g font-family="Assistant,Arial,sans-serif" font-size="13" fill="#3c4b47" text-anchor="middle">
+        <text x="80" y="145">שונה צלעות</text>
+        <text x="230" y="145">שווה שוקיים</text>
+        <text x="380" y="145">שווה צלעות</text>
+        <text x="80" y="298">חד זווית</text>
+        <text x="230" y="298">ישר זווית</text>
+        <text x="400" y="298">קהה זווית</text>
+      </g>
+    </svg>
+    <figcaption>שורה עליונה: סיווג לפי <b>צלעות</b>. שורה תחתונה: סיווג לפי <b>זוויות</b>. משולש יכול להיות גם שווה־שוקיים וגם ישר־זווית.</figcaption>
+  </figure>
+
+  <div class="rule-box">
+    <p class="rule-label">ההגדרות</p>
+    <div class="eq">כל משולש שווה־צלעות הוא גם שווה־שוקיים</div>
+    <p class="rule-note">לפי זוויות: <b>חד־זווית</b> — כל הזוויות קטנות מ־90°. <b>ישר־זווית</b> — זווית אחת שווה 90°. <b>קהה־זווית</b> — זווית אחת גדולה מ־90°.</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>משולש שווה־צלעות הוא <b>בפרט</b> שווה־שוקיים, אבל לא להפך. ובמשולש ישר־זווית הזווית הישרה היא תמיד הגדולה — לכן הצלע שמולה (היתר) היא הארוכה.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · סיווג</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex">
+      <li>זוויות <span class="m">90°, 45°, 45°</span></li>
+      <li>צלעות <span class="m">6, 6, 6</span></li>
+      <li>זוויות <span class="m">100°, 40°, 40°</span></li>
+      <li>צלעות <span class="m">3, 4, 5</span></li>
+      <li>זוויות <span class="m">60°, 60°, 60°</span></li>
+      <li>צלעות <span class="m">7, 7, 10</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="t4-t1"> סיימתי טכניקה 1 — סוגי משולשים</label>
+</section>
+
+<!-- ================= 2 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">2</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>משולש שווה־שוקיים</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תמצא זוויות בסיס וזווית ראש, ותדע שציר הסימטריה הוא גם תיכון, גובה וחוצה זווית.</p>
+
+  <div class="two">
+    <figure class="fig" style="margin-top:0">
+      <svg viewBox="0 0 640 300" role="img" aria-label="משולש שווה שוקיים עם ציר סימטריה, זוויות בסיס שוות וזווית ראש">
+        <path d="M320 50 L170 240 L470 240 Z" fill="#eef0e2" stroke="#1b2a2a" stroke-width="2"/>
+        <line x1="320" y1="50" x2="320" y2="240" stroke="#5c6b39" stroke-width="1.6" stroke-dasharray="6 5"/>
+        <path d="M320 225 v15 h-15" fill="none" stroke="#5c6b39" stroke-width="1.4"/>
+        <path d="M170 240 l18 -8 M470 240 l-18 -8" stroke="#5c6b39" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M208 240 A38 38 0 0 0 193.5 210.2" fill="none" stroke="#a3542f" stroke-width="1.8"/>
+        <path d="M432 240 A38 38 0 0 1 446.5 210.2" fill="none" stroke="#a3542f" stroke-width="1.8"/>
+        <g font-family="Inter,Arial,sans-serif" font-size="17" text-anchor="middle">
+          <text x="320" y="105" fill="#1f5d7a">α</text>
+          <text x="228" y="222" fill="#a3542f">β</text>
+          <text x="412" y="222" fill="#a3542f">β</text>
+        </g>
+        <g font-family="Assistant,Arial,sans-serif" font-size="13" fill="#65726c" text-anchor="middle">
+          <text x="320" y="268">בסיס</text>
+          <text x="330" y="150" transform="rotate(90 330 150)">ציר סימטריה</text>
+        </g>
+      </svg>
+      <figcaption>במשולש שווה־שוקיים: שתי השוקיים שוות, ושתי זוויות הבסיס שוות. ציר הסימטריה יוצא מקודקוד הראש.</figcaption>
+    </figure>
+    <div>
+      <div class="rule-box" style="margin-top:0">
+        <p class="rule-label">הכלל</p>
+        <div class="eq">זוויות הבסיס שוות</div>
+        <div class="eq">זווית ראש = 180° - 2 · זווית בסיס</div>
+        <p class="rule-note">ובכיוון ההפוך: אם שתי זוויות במשולש שוות — גם הצלעות שמולן שוות, והמשולש שווה־שוקיים.</p>
+      </div>
+      <div class="callout callout--tip">
+        <span class="callout-title">הקו האמצעי</span>
+        <p>במשולש שווה־שוקיים, הקטע מקודקוד הראש אל אמצע הבסיס הוא <b>בבת אחת</b> תיכון, גובה, חוצה זווית הראש ואנך אמצעי לבסיס. ארבעה תפקידים בקו אחד.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מזווית ראש לבסיס</span></div>
+    <ol class="steps">
+      <li>זווית הראש <span class="m">46°</span></li>
+      <li>שתי זוויות הבסיס יחד: <span class="m">180 - 46 = 134°</span></li>
+      <li>כל אחת: <span class="m">134 : 2 = 67°</span></li>
+      <li>בדיקה: <span class="m">46 + 67 + 67 = 180</span> ✓</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>זווית הראש <b>אינה</b> שווה לזוויות הבסיס. אם נתונה זווית בסיס, מכפילים אותה ב־2 ומחסירים מ־180. אם נתונה זווית ראש, מחסירים מ־180 ומחלקים ב־2.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · זוויות</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li>זווית ראש <span class="m">80°</span>. מצאו זווית בסיס.</li>
+      <li>זווית בסיס <span class="m">65°</span>. מצאו זווית ראש.</li>
+      <li>זווית בסיס <span class="m">45°</span>. מצאו זווית ראש.</li>
+      <li>זווית ראש <span class="m">100°</span>. מצאו זווית בסיס.</li>
+      <li>זווית חיצונית ליד הראש <span class="m">110°</span>. מצאו את זוויות הבסיס.</li>
+      <li>זוויות בסיס: <span class="m">3x</span> ו־<span class="m">2x + 20</span>. מצאו <span class="m">x</span> ואת כל הזוויות.</li>
+      <li>זווית ראש <span class="m">2x</span>, זווית בסיס <span class="m">x</span>. מצאו את כולן.</li>
+      <li>זווית בסיס כפולה מזווית הראש. מצאו את כולן.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="t4-t2"> סיימתי טכניקה 2 — שווה־שוקיים</label>
+</section>
+
+<!-- ================= 3 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">3</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>אי־שוויון במשולש</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע אם שלוש צלעות יכולות ליצור משולש, ותמצא את הטווח האפשרי של הצלע השלישית.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">a + b &gt; c &nbsp;&nbsp;|&nbsp;&nbsp; a + c &gt; b &nbsp;&nbsp;|&nbsp;&nbsp; b + c &gt; a</div>
+    <p class="rule-note">כל צלע חייבת להיות <b>קצרה</b> מסכום שתי האחרות. אם היא שווה בדיוק לסכום — שלושת הקטעים מונחים על קו ישר, ואין משולש.</p>
+  </div>
+
+  <div class="two">
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">כן או לא</span></div>
+      <ol class="steps">
+        <li><span class="m">3, 4, 5</span>: <span class="m">3+4=7&gt;5</span> ✓</li>
+        <li><span class="m">3, 4, 8</span>: <span class="m">3+4=7&lt;8</span> ✗</li>
+        <li>המסקנה: 3, 4, 8 לא יוצרים משולש.</li>
+      </ol>
+    </div>
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">טווח לצלע שלישית</span></div>
+      <ol class="steps">
+        <li>נתונות צלעות <span class="m">5</span> ו־<span class="m">7</span>.</li>
+        <li>הצלע השלישית <span class="m">x</span> מקיימת: <span class="m">7-5 &lt; x &lt; 7+5</span></li>
+        <li><span class="m">2 &lt; x &lt; 12</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>לא מספיק לבדוק זוג אחד. אם <span class="m">2+3=5</span> בדיוק, אין משולש — הקו "נשטח". ובטווח, הגבולות <b>לא כלולים</b>: <span class="m">x=2</span> או <span class="m">x=12</span> נותנים קו ישר.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · אפשר או אי־אפשר</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">3, 4, 5</span></li>
+      <li><span class="m">6, 8, 10</span></li>
+      <li><span class="m">2, 3, 6</span></li>
+      <li><span class="m">5, 5, 12</span></li>
+      <li>צלעות <span class="m">4</span> ו־<span class="m">9</span>. מה הטווח של השלישית?</li>
+      <li>צלעות <span class="m">7</span> ו־<span class="m">7</span>. מה הטווח של השלישית?</li>
+      <li><span class="m">10, 10, 19</span></li>
+      <li>הצלע הארוכה <span class="m">12</span>, צלע נוספת <span class="m">5</span>. מה הטווח של השלישית?</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="t4-t3"> סיימתי טכניקה 3 — אי־שוויון</label>
+</section>
+
+<!-- ================= 4 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">4</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>תיכון, גובה, חוצה ואנך אמצעי</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תזהה כל קטע לפי ההגדרה שלו, ותדע שבמשולש שווה־שוקיים כולם מתלכדים.</p>
+
+  <figure class="fig" style="margin-top:.4em">
+    <svg viewBox="0 0 640 180" role="img" aria-label="ארבעה קטעים מיוחדים במשולש: תיכון, גובה, חוצה זווית ואנך אמצעי">
+      <g stroke="#1b2a2a" stroke-width="1.8" stroke-linejoin="round" fill="#fffdf7">
+        <path d="M20 120 L140 120 L105 30 Z"/>
+        <path d="M170 120 L290 120 L210 30 Z"/>
+        <path d="M320 120 L440 120 L350 30 Z"/>
+        <line x1="470" y1="120" x2="590" y2="120"/>
+      </g>
+      <g stroke="#5c6b39" stroke-width="2" stroke-linecap="round">
+        <line x1="105" y1="30" x2="80" y2="120"/>
+        <line x1="210" y1="30" x2="210" y2="120"/>
+        <line x1="350" y1="30" x2="371" y2="120"/>
+        <line x1="530" y1="95" x2="530" y2="145"/>
+      </g>
+      <path d="M210 105 h15 v15" fill="none" stroke="#5c6b39" stroke-width="1.3"/>
+      <path d="M530 105 h15 v15" fill="none" stroke="#5c6b39" stroke-width="1.3"/>
+      <path d="M80 112 v8 h-8" fill="none" stroke="#5c6b39" stroke-width="1.3"/>
+      <g font-family="Inter,Arial,sans-serif" font-size="11" fill="#65726c" text-anchor="middle">
+        <text x="68" y="117">M</text>
+      </g>
+      <g font-family="Assistant,Arial,sans-serif" font-size="12" fill="#3c4b47" text-anchor="middle">
+        <text x="80" y="152">תיכון</text>
+        <text x="210" y="152">גובה</text>
+        <text x="380" y="152">חוצה זווית</text>
+        <text x="530" y="168">אנך אמצעי</text>
+      </g>
+    </svg>
+    <figcaption><b>תיכון</b> — אל אמצע הצלע. <b>גובה</b> — מאונך לצלע (או להמשכה). <b>חוצה זווית</b> — מחלק את הזווית לשניים שווים. <b>אנך אמצעי</b> — מאונך לקטע בנקודת האמצע שלו.</figcaption>
+  </figure>
+
+  <div class="rule-box">
+    <p class="rule-label">ההבחנה</p>
+    <div class="eq">תיכון = אמצע &nbsp;|&nbsp; גובה = מאונך &nbsp;|&nbsp; חוצה = חצי זווית</div>
+    <p class="rule-note">אנך אמצעי הוא היחיד שאינו חייב לעבור בקודקוד. כל נקודה עליו נמצאת במרחק שווה משני קצות הקטע.</p>
+  </div>
+
+  <div class="callout callout--tip">
+    <span class="callout-title">בשווה־שוקיים</span>
+    <p>הקטע מקודקוד הראש אל אמצע הבסיס הוא <b>גם</b> תיכון, <b>גם</b> גובה, <b>גם</b> חוצה זווית הראש, <b>וגם</b> אנך אמצעי לבסיס. לכן במשולש כזה אפשר להשתמש בו ככל מה שנוח.</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>במשולש קהה־זווית, הגובה יכול ליפול <b>מחוץ</b> למשולש. זה עדיין גובה — הוא מאונך ל<b>המשך</b> הצלע. אין "למתוח" את הצלע בלי להאריך את הקו המקווקו.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · זיהוי</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex">
+      <li>קטע היוצא מקודקוד אל אמצע הצלע שמולו — מה הוא?</li>
+      <li>קטע היוצא מקודקוד ומאונך לצלע שמולו — מה הוא?</li>
+      <li>קטע המחלק זווית לשתי זוויות שוות — מה הוא?</li>
+      <li>קטע המאונך לקטע בנקודת האמצע שלו — מה הוא?</li>
+      <li>במשולש שווה־שוקיים, התיכון לבסיס שאורכו <span class="m">8</span>. מה אורך כל חצי?</li>
+      <li>האם גובה חייב לעבור בתוך המשולש? נמקו.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="t4-t4"> סיימתי טכניקה 4 — קטעים מיוחדים</label>
+</section>
+
+<!-- ================= 5 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">5</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>שטח משולש</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תחשב שטח מנתוני בסיס וגובה, ותמצא גובה או בסיס מתוך שטח נתון.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">S = (b · h) / 2</div>
+    <p class="rule-note"><b class="m">b</b> הוא הבסיס, <b class="m">h</b> הוא הגובה. הגובה הוא תמיד <b>מאונך</b> לבסיס — או להמשך הבסיס. בכל משולש אפשר לבחור איזו צלע שתרצו כבסיס, אבל אז הגובה הוא בהתאם.</p>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 640 260" role="img" aria-label="שני משולשים: אחד עם גובה בתוך המשולש ואחד עם גובה מחוץ לו">
+      <path d="M60 190 L300 190 L170 60 Z" fill="#eef0e2" stroke="#1b2a2a" stroke-width="1.8"/>
+      <line x1="170" y1="60" x2="170" y2="190" stroke="#5c6b39" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M170 175 h15 v15" fill="none" stroke="#5c6b39" stroke-width="1.3"/>
+      <text x="180" y="130" font-family="Inter,Arial,sans-serif" font-size="14" fill="#5c6b39">h</text>
+      <text x="180" y="215" font-family="Assistant,Arial,sans-serif" font-size="13" fill="#3c4b47" text-anchor="middle">בסיס</text>
+
+      <path d="M360 190 L560 190 L620 80 Z" fill="#f8ebe3" stroke="#1b2a2a" stroke-width="1.8"/>
+      <line x1="620" y1="80" x2="620" y2="190" stroke="#a3542f" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <line x1="560" y1="190" x2="620" y2="190" stroke="#a3542f" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <path d="M620 175 h-15 v15" fill="none" stroke="#a3542f" stroke-width="1.3"/>
+      <text x="630" y="140" font-family="Inter,Arial,sans-serif" font-size="14" fill="#a3542f">h</text>
+      <text x="590" y="215" font-family="Assistant,Arial,sans-serif" font-size="13" fill="#3c4b47" text-anchor="middle">המשך הבסיס</text>
+    </svg>
+    <figcaption>במשולש קהה־זווית הגובה נופל מחוץ למשולש — אבל הוא עדיין מאונך לבסיס. השטח מחושב באותה נוסחה.</figcaption>
+  </figure>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">שני כיוונים</span></div>
+    <ol class="steps">
+      <li>נתון בסיס <span class="m">12</span> וגובה <span class="m">7</span>: <span class="m">S = 12·7/2 = 84/2 = 42</span></li>
+      <li>נתון שטח <span class="m">60</span> ובסיס <span class="m">15</span>: <span class="m">60 = 15·h/2</span></li>
+      <li><span class="m">120 = 15h</span> → <span class="m">h = 8</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>לא שוכחים לחלק ב־2. וגם לא משתמשים בצלע שאינה הבסיס המתאים לגובה: <span class="m">S = a·b/2</span> נכון רק במשולש ישר־זווית, כששתי הצלעות הן הניצבים.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · שטח</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li>בסיס <span class="m">10</span>, גובה <span class="m">6</span></li>
+      <li>בסיס <span class="m">14</span>, גובה <span class="m">5</span></li>
+      <li>שטח <span class="m">48</span>, בסיס <span class="m">12</span>. מצאו גובה.</li>
+      <li>שטח <span class="m">36</span>, גובה <span class="m">9</span>. מצאו בסיס.</li>
+      <li>משולש ישר־זווית עם ניצבים <span class="m">6</span> ו־<span class="m">8</span></li>
+      <li>משולש שווה־שוקיים: שוקיים <span class="m">5, 5</span>, בסיס <span class="m">6</span>. מצאו גובה ושטח.</li>
+      <li>משולש קהה־זווית: בסיס <span class="m">10</span>, גובה <span class="m">4</span></li>
+      <li>שטח <span class="m">30</span>, בסיס <span class="m">12</span>. מצאו גובה.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="t4-t5"> סיימתי טכניקה 5 — שטח</label>
+</section>
+
+<!-- ================= 6 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">6</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>פיתגורס — מציאת היתר</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תזהו את היתר ותמצא אותו משני הניצבים, כולל בשלשות מוכרות.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">המשפט</p>
+    <div class="eq">a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></div>
+    <p class="rule-note"><span class="m">a</span> ו־<span class="m">b</span> הם הניצבים (הצלעות שליד הזווית הישרה), <span class="m">c</span> הוא היתר — הצלע שמול הזווית הישרה, והארוכה ביותר.</p>
+  </div>
+
+  <div class="two">
+    <figure class="fig" style="margin-top:0">
+      <svg viewBox="0 0 360 230" role="img" aria-label="משולש ישר זווית עם ניצבים a ו-b ויתר c">
+        <path d="M50 190 L290 190 L50 50 Z" fill="#eef0e2" stroke="#1b2a2a" stroke-width="1.8"/>
+        <path d="M50 175 h15 v15" fill="none" stroke="#1b2a2a" stroke-width="1.4"/>
+        <text x="170" y="212" font-family="Inter,Arial,sans-serif" font-size="16" text-anchor="middle" fill="#3c4b47">b</text>
+        <text x="30" y="125" font-family="Inter,Arial,sans-serif" font-size="16" text-anchor="middle" fill="#3c4b47">a</text>
+        <text x="185" y="105" font-family="Inter,Arial,sans-serif" font-size="16" text-anchor="middle" fill="#5c6b39" transform="rotate(-30 185 105)">c</text>
+      </svg>
+      <figcaption>היתר <span class="m">c</span> מול הזווית הישרה — תמיד הארוך.</figcaption>
+    </figure>
+    <div>
+      <div class="example" style="margin-top:0">
+        <div class="example-head"><span class="tag">דוגמה</span><span class="hint">6 ו־8</span></div>
+        <ol class="steps">
+          <li><span class="m">6<sup>2</sup> + 8<sup>2</sup> = c<sup>2</sup></span></li>
+          <li><span class="m">36 + 64 = 100</span></li>
+          <li><span class="m">c = √100 = 10</span></li>
+        </ol>
+      </div>
+      <div class="callout callout--tip">
+        <span class="callout-title">שלשות שכדאי לזכור</span>
+        <p><span class="m">3-4-5</span>, <span class="m">6-8-10</span>, <span class="m">5-12-13</span>, <span class="m">8-15-17</span>, <span class="m">7-24-25</span>. מזהים אותן — וחוסכים חישוב.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p><span class="m">√(a<sup>2</sup>+b<sup>2</sup>) ≠ a+b</span>. דוגמה: <span class="m">√(9+16) = 5</span>, ולא <span class="m">3+4=7</span>. וגם לא מחברים את הצלעות לפני ההעלאה בריבוע.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · מצאו את היתר</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li>ניצבים <span class="m">3, 4</span></li>
+      <li>ניצבים <span class="m">6, 8</span></li>
+      <li>ניצבים <span class="m">5, 12</span></li>
+      <li>ניצבים <span class="m">8, 15</span></li>
+      <li>ניצבים <span class="m">9, 12</span></li>
+      <li>ניצבים <span class="m">7, 24</span></li>
+      <li>ניצבים <span class="m">1, 1</span> <span class="prompt">(השאירו שורש)</span></li>
+      <li>ניצבים <span class="m">10, 24</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="t4-t6"> סיימתי טכניקה 6 — פיתגורס: יתר</label>
+</section>
+
+<!-- ================= 7 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">7</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>פיתגורס — ניצב והמשפט ההפוך</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תמצא ניצב כשהיתר נתון, ותבדוק אם משולש הוא ישר־זווית לפי אורכי הצלעות.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">b<sup>2</sup> = c<sup>2</sup> - a<sup>2</sup></div>
+    <div class="eq">a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></div>
+    <p class="rule-note">השוויון מתקיים אם ורק אם המשולש ישר־זווית. בבדיקה: מעלים בריבוע את <b>שתי הצלעות הקצרות</b>, מחברים, ומשווים לריבוע הארוכה. אם שווה — יש זווית ישרה מול הארוכה.</p>
+  </div>
+
+  <div class="two">
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">ניצב חסר</span></div>
+      <ol class="steps">
+        <li>יתר <span class="m">13</span>, ניצב <span class="m">5</span></li>
+        <li><span class="m">b<sup>2</sup> = 13<sup>2</sup> - 5<sup>2</sup> = 169 - 25</span></li>
+        <li><span class="m">b<sup>2</sup> = 144</span> → <span class="m">b = 12</span></li>
+      </ol>
+    </div>
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">בדיקה</span></div>
+      <ol class="steps">
+        <li>צלעות <span class="m">9, 12, 15</span></li>
+        <li><span class="m">9<sup>2</sup>+12<sup>2</sup> = 81+144 = 225</span></li>
+        <li><span class="m">15<sup>2</sup> = 225</span> ✓ — ישר־זווית</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>בבדיקה משווים תמיד לריבוע הצלע <b>הארוכה</b>. אם משווים לקצרה, כמעט תמיד יוצא לא נכון. וגם: אם <span class="m">a<sup>2</sup>+b<sup>2</sup> &lt; c<sup>2</sup></span> — המשולש קהה־זווית; אם גדול — חד־זווית.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · ניצב ובדיקה</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li>יתר <span class="m">10</span>, ניצב <span class="m">6</span></li>
+      <li>יתר <span class="m">25</span>, ניצב <span class="m">7</span></li>
+      <li>יתר <span class="m">17</span>, ניצב <span class="m">8</span></li>
+      <li>יתר <span class="m">15</span>, ניצב <span class="m">9</span></li>
+      <li><span class="m">9, 12, 15</span> — ישר־זווית?</li>
+      <li><span class="m">4, 5, 6</span> — ישר־זווית?</li>
+      <li><span class="m">7, 24, 25</span> — ישר־זווית?</li>
+      <li><span class="m">10, 24, 26</span> — ישר־זווית?</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="t4-t7"> סיימתי טכניקה 7 — פיתגורס: ניצב</label>
+</section>
+
+<!-- ================= 8 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">8</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>פיתגורס בשטח</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תזהו משולש ישר־זווית בתוך סיפור — סולם, מלבן, תורן — ותיישמו את המשפט.</p>
+
+  <figure class="fig" style="margin-top:.4em">
+    <svg viewBox="0 0 640 280" role="img" aria-label="סולם נשען על קיר ויוצר משולש ישר זווית">
+      <line x1="100" y1="230" x2="570" y2="230" stroke="#1b2a2a" stroke-width="2.4"/>
+      <line x1="500" y1="40" x2="500" y2="230" stroke="#1b2a2a" stroke-width="2.4"/>
+      <path d="M500 215 h-15 v15" fill="none" stroke="#1b2a2a" stroke-width="1.4"/>
+      <line x1="500" y1="70" x2="380" y2="230" stroke="#5c6b39" stroke-width="4" stroke-linecap="round"/>
+      <g stroke="#8a9468" stroke-width="1.6">
+        <line x1="470" y1="110" x2="492" y2="103"/>
+        <line x1="450" y1="137" x2="472" y2="130"/>
+        <line x1="431" y1="164" x2="453" y2="157"/>
+        <line x1="411" y1="191" x2="433" y2="184"/>
+      </g>
+      <g font-family="Inter,Arial,sans-serif" font-size="15" fill="#3c4b47" text-anchor="middle">
+        <text x="455" y="135" transform="rotate(-53 455 135)" fill="#5c6b39">5 מ׳</text>
+        <text x="512" y="150" fill="#a3542f">4 מ׳</text>
+        <text x="440" y="252">3 מ׳</text>
+      </g>
+      <text x="320" y="26" font-family="Assistant,Arial,sans-serif" font-size="14" fill="#65726c" text-anchor="middle">הסולם, הקיר והקרקע יוצרים משולש ישר־זווית.</text>
+    </svg>
+    <figcaption>בסיס <span class="m">3</span>, גובה <span class="m">4</span>, סולם <span class="m">5</span>: <span class="m">3<sup>2</sup>+4<sup>2</sup>=5<sup>2</sup></span>.</figcaption>
+  </figure>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">אלכסון מלבן</span></div>
+    <ol class="steps">
+      <li>מלבן <span class="m">6 × 8</span>. האלכסון הוא היתר.</li>
+      <li><span class="m">6<sup>2</sup> + 8<sup>2</sup> = 36 + 64 = 100</span></li>
+      <li><span class="m">d = 10</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--tip">
+    <span class="callout-title">איך מזהים</span>
+    <p>חפשו <b>זווית ישרה</b> בסיפור: קיר מול קרקע, אלכסון מלבן, גובה במשולש שווה־שוקיים (שהוא גם תיכון, ולכן יוצר שני משולשים ישרי־זווית).</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · סיפורים</h3><span class="count">5 בעיות</span></div>
+    <ol class="ex ex--wide">
+      <li>סולם באורך <span class="m">10</span> מ׳ נשען על קיר, ובסיסו במרחק <span class="m">6</span> מ׳ מהקיר. לאיזה גובה הוא מגיע?</li>
+      <li>מלבן שאורכו <span class="m">9</span> ורוחבו <span class="m">12</span>. מה אורך האלכסון?</li>
+      <li>משולש שווה־שוקיים: שוקיים <span class="m">13, 13</span>, בסיס <span class="m">10</span>. מצאו את הגובה לבסיס ואת השטח.</li>
+      <li>תורן בגובה <span class="m">8</span> מ׳. חבל נמתח מראשו אל נקודה בקרקע, במרחק <span class="m">6</span> מ׳ מהבסיס. מה אורך החבל?</li>
+      <li>ריבוע שצלעו <span class="m">5</span>. מה אורך האלכסון? <span class="prompt">(השאירו שורש)</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="t4-t8"> סיימתי טכניקה 8 — יישומים</label>
+</section>
+
+<!-- ================= סיכום ================= -->
+<section class="sheet">
+  <span class="kicker">לפני התרגול המסכם</span>
+  <h2>מפת החלטה: איזה כלי מתאים?</h2>
+  <p class="lead">בכל שאלת משולש, שאלו קודם: <b>מה נתון — זוויות, צלעות, שטח או זווית ישרה?</b> הנתון בוחר את הכלי.</p>
+
+  <div class="flow" style="margin-top:1.3em">
+    <div class="flow-step"><span class="when">נתונות זוויות</span><span class="then">סכום 180°. אם המשולש שווה־שוקיים — זוויות הבסיס שוות.</span></div>
+    <div class="flow-step"><span class="when">נתונות שלוש צלעות</span><span class="then">בודקים אי־שוויון. אם יש זווית ישרה — גם פיתגורס.</span></div>
+    <div class="flow-step"><span class="when">יש זווית ישרה</span><span class="then">פיתגורס: מחפשים יתר, ואז ניצב חסר או בדיקה.</span></div>
+    <div class="flow-step"><span class="when">מבקשים שטח</span><span class="then">בסיס × גובה ÷ 2. הגובה מאונך — גם אם מחוץ למשולש.</span></div>
+    <div class="flow-step"><span class="when">שווה־שוקיים + גובה</span><span class="then">הגובה חוצה את הבסיס → שני משולשים ישרי־זווית → פיתגורס.</span></div>
+  </div>
+
+  <h3 style="margin-top:1.6em;font-size:1.1rem">חמש הטעויות שעולות הכי הרבה נקודות</h3>
+  <div class="callout callout--warn"><span class="callout-title">1 · היתר</span>הוא תמיד מול הזווית הישרה — לא בהכרח הצלע "התחתונה" או "האופקית".</div>
+  <div class="callout callout--warn"><span class="callout-title">2 · שטח בלי גובה</span>הגובה מאונך לבסיס. אורך השוק אינו הגובה, אלא אם השוק מאונך לבסיס.</div>
+  <div class="callout callout--warn"><span class="callout-title">3 · בסיס מול ראש</span>בשווה־שוקיים, זוויות הבסיס שוות. לא מכפילים את זווית הראש.</div>
+  <div class="callout callout--warn"><span class="callout-title">4 · גבול הכלול</span>באי־שוויון המשולש הגבולות פתוחים: <span class="m">2 &lt; x &lt; 12</span>, לא <span class="m">2 ≤ x ≤ 12</span>.</div>
+  <div class="callout callout--warn"><span class="callout-title">5 · פיתגורס בלי זווית ישרה</span>אם אין זווית ישרה — אין פיתגורס. קודם מוכיחים שהיא קיימת.</div>
+</section>
+
+<!-- ================= תרגול מסכם ================= -->
+<section class="sheet">
+  <span class="kicker">מבחן קטן</span>
+  <h2>תרגול מסכם</h2>
+  <p class="lead">12 תרגילים מכל הטכניקות. בכל תרגיל — רשמו נוסחה לפני הצבה.</p>
+
+  <div class="drill" style="margin-top:1em">
+    <div class="drill-head"><h3>מעורב</h3><span class="count">12 תרגילים · 30 דקות</span></div>
+    <ol class="ex">
+      <li>סווגו: צלעות <span class="m">8, 8, 8</span></li>
+      <li>זווית ראש <span class="m">30°</span>. מצאו זווית בסיס.</li>
+      <li>האם <span class="m">4, 7, 12</span> יוצרים משולש?</li>
+      <li>צלעות <span class="m">6</span> ו־<span class="m">10</span>. מה טווח השלישית?</li>
+      <li>בסיס <span class="m">16</span>, גובה <span class="m">9</span>. שטח?</li>
+      <li>שטח <span class="m">54</span>, בסיס <span class="m">12</span>. גובה?</li>
+      <li>ניצבים <span class="m">12, 16</span>. יתר?</li>
+      <li>יתר <span class="m">26</span>, ניצב <span class="m">10</span>. ניצב שני?</li>
+      <li><span class="m">6, 8, 10</span> — ישר־זווית?</li>
+      <li><span class="m">5, 6, 8</span> — ישר־זווית?</li>
+      <li>שווה־שוקיים: שוקיים <span class="m">5, 5</span>, בסיס <span class="m">8</span>. גובה ושטח?</li>
+      <li>סולם <span class="m">13</span> מ׳, בסיס <span class="m">12</span> מ׳ מהקיר. לגובה כמה יגיע?</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= בדיקת עצמי ================= -->
+<section class="sheet">
+  <span class="kicker">לפני שממשיכים</span>
+  <h2>בדיקת עצמי</h2>
+  <p class="lead">שש שאלות, עד 12 דקות, בלי להציץ.</p>
+
+  <div class="drill" style="margin-top:1em">
+    <div class="drill-head"><h3>שש שאלות</h3><span class="count">6 נקודות</span></div>
+    <ol class="ex">
+      <li>זווית ראש <span class="m">50°</span>. מצאו זווית בסיס.</li>
+      <li>צלעות <span class="m">5</span> ו־<span class="m">6</span>. טווח השלישית?</li>
+      <li>בסיס <span class="m">14</span>, גובה <span class="m">9</span>. שטח?</li>
+      <li>ניצבים <span class="m">9, 40</span>. יתר?</li>
+      <li>יתר <span class="m">13</span>, ניצב <span class="m">12</span>. ניצב שני?</li>
+      <li><span class="m">8, 15, 17</span> — ישר־זווית?</li>
+    </ol>
+  </div>
+
+  <div class="score">
+    <div><b>6</b>מוכן. אפשר לעבור לנושא הבא.</div>
+    <div><b>4–5</b>חזרו על הטכניקה שבה טעיתם, ופתרו שוב את התרגול שלה.</div>
+    <div><b>0–3</b>קראו שוב את מפת ההחלטה, ואז עשו את התרגול המסכם.</div>
+  </div>
+</section>
+
+<!-- ================= תשובות ================= -->
+<section class="sheet answers">
+  <h2>נספח תשובות</h2>
+  <div class="cut">לקרוע רק אחרי שסיימתם</div>
+
+  <div class="ans-grid">
+    <p><b>1 · סוגים</b><br>1) ישר־זווית ושווה־שוקיים · 2) שווה־צלעות · 3) קהה־זווית ושווה־שוקיים · 4) שונה־צלעות וישר־זווית · 5) שווה־צלעות וחד־זווית · 6) שווה־שוקיים</p>
+    <p><b>2 · שווה־שוקיים</b><br>1) 50° · 2) 50° · 3) 90° · 4) 40° · 5) 55° כל אחת · 6) x=20; 60°, 60°, 60° · 7) x=45; ראש 90°, בסיס 45° · 8) ראש 36°, בסיס 72°</p>
+    <p><b>3 · אי־שוויון</b><br>1) כן · 2) כן · 3) לא (2+3&lt;6) · 4) לא (5+5&lt;12) · 5) <span class="m">5&lt;x&lt;13</span> · 6) <span class="m">0&lt;x&lt;14</span> · 7) כן · 8) <span class="m">7&lt;x&lt;12</span></p>
+    <p><b>4 · קטעים</b><br>1) תיכון · 2) גובה · 3) חוצה זווית · 4) אנך אמצעי · 5) 4 · 6) לא — במשולש קהה־זווית הגובה יכול ליפול מחוץ למשולש</p>
+    <p><b>5 · שטח</b><br>1) 30 · 2) 35 · 3) 8 · 4) 8 · 5) 24 · 6) גובה 4, שטח 12 · 7) 20 · 8) 5</p>
+    <p><b>6 · יתר</b><br>1) 5 · 2) 10 · 3) 13 · 4) 17 · 5) 15 · 6) 25 · 7) <span class="m">√2</span> · 8) 26</p>
+    <p><b>7 · ניצב ובדיקה</b><br>1) 8 · 2) 24 · 3) 15 · 4) 12 · 5) כן · 6) לא (<span class="m">16+25≠36</span>) · 7) כן · 8) כן</p>
+    <p><b>8 · יישומים</b><br>1) 8 מ׳ · 2) 15 · 3) גובה 12, שטח 60 · 4) 10 מ׳ · 5) <span class="m">5√2</span></p>
+    <p><b>תרגול מסכם</b><br>1) שווה־צלעות · 2) 75° · 3) לא · 4) <span class="m">4&lt;x&lt;16</span> · 5) 72 · 6) 9 · 7) 20 · 8) 24 · 9) כן · 10) לא · 11) גובה 3, שטח 12 · 12) 5 מ׳</p>
+    <p><b>בדיקת עצמי</b><br>1) 65° · 2) <span class="m">1&lt;x&lt;11</span> · 3) 63 · 4) 41 · 5) 5 · 6) כן</p>
+  </div>
+
+  <p style="margin-top:1.4em;font-size:.8rem;color:var(--ink-3)">תשובה בלי יחידות היא תשובה חסרה. בשטח — יחידות בריבוע; בהיקף ובאורך — יחידות רגילות.</p>
+</section>
+
+</main>
+<script src="../assets/booklet.js"></script>
+</body>
+</html>

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>חוברת 06 · חפיפת משולשים — מתמטיקה כיתה ח׳</title>
+<meta name="description" content="חוברת עבודה: מהי חפיפה, משפטי צ.צ.צ, צ.ז.צ, ז.צ.ז וז.ז.צ, למה צ.צ.ז לא עובד, והוכחות עם צלע משותפת.">
+<meta name="theme-color" content="#8a3b4a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238a3b4a'/%3E%3Cpath d='M6 24L14 8l8 16zM18 20l4-8 4 8z' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&amp;family=Frank+Ruhl+Libre:wght@500;700;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/booklet.css">
+</head>
+<body class="booklet" style="--accent:#8a3b4a;--accent-2:#63232f;--accent-soft:#f7e7eb">
+<header class="topbar no-print">
+  <a class="backlink" href="../index.html">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6l6 6-6 6M16 12H4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    כל החוברות
+  </a>
+  <span class="topbar-title">חוברת 06 · חפיפת משולשים</span>
+  <button class="btn" data-print type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    הדפסה
+  </button>
+</header>
+<span class="sr-only doc-title">חוברת 06 · חפיפת משולשים</span>
+
+<main class="paper">
+
+<!-- ================= שער ================= -->
+<section class="sheet cover">
+  <div class="cover-head">
+    <div class="cover-series">מתמטיקה · כיתה ח׳ · חוברת 06</div>
+    <div class="cover-mark" aria-hidden="true">06</div>
+  </div>
+  <h1>חפיפת<br><em>משולשים</em></h1>
+  <p class="cover-lede">מתי שני משולשים הם למעשה אותו משולש — ואיך מוכיחים את זה בשלושה נתונים, בלי למדוד ובלי לנחש.</p>
+
+  <div class="cover-art" aria-hidden="true">
+    <svg viewBox="0 0 640 300" role="img" aria-label="שני משולשים חופפים שצלעות מתאימות מסומנות באותם צבעים">
+      <path d="M60 240 L240 240 L120 80 Z" fill="#f7e7eb" stroke="#1b2a2a" stroke-width="2"/>
+      <path d="M360 240 L540 240 L420 80 Z" fill="#fffdf7" stroke="#1b2a2a" stroke-width="2"/>
+      <g stroke-width="4" stroke-linecap="round">
+        <line x1="60" y1="240" x2="240" y2="240" stroke="#1f5d7a"/>
+        <line x1="60" y1="240" x2="120" y2="80" stroke="#a3542f"/>
+        <line x1="240" y1="240" x2="120" y2="80" stroke="#5c6b39"/>
+        <line x1="360" y1="240" x2="540" y2="240" stroke="#1f5d7a"/>
+        <line x1="360" y1="240" x2="420" y2="80" stroke="#a3542f"/>
+        <line x1="540" y1="240" x2="420" y2="80" stroke="#5c6b39"/>
+      </g>
+      <g font-family="Inter,Arial,sans-serif" font-size="13" fill="#65726c" text-anchor="middle">
+        <text x="150" y="256">1</text>
+        <text x="84" y="155">2</text>
+        <text x="190" y="155">3</text>
+        <text x="450" y="256">1</text>
+        <text x="384" y="155">2</text>
+        <text x="490" y="155">3</text>
+      </g>
+      <g font-family="Inter,Arial,sans-serif" font-size="16" fill="#3c4b47" text-anchor="middle">
+        <text x="46" y="258">A</text><text x="254" y="258">B</text><text x="112" y="70">C</text>
+        <text x="346" y="258">D</text><text x="554" y="258">E</text><text x="412" y="70">F</text>
+      </g>
+      <text x="300" y="180" font-family="Inter,Arial,sans-serif" font-size="46" fill="#8a3b4a" text-anchor="middle">≅</text>
+    </svg>
+  </div>
+
+  <div class="cover-grid">
+    <div>
+      <h4>מה יש בחוברת</h4>
+      <ul class="cover-list">
+        <li>מהי חפיפה, ואיך קוראים נכון את הסימון</li>
+        <li>שלושת משפטי החפיפה — צ.צ.צ, צ.ז.צ, ז.צ.ז</li>
+        <li>ז.ז.צ שכן עובד, וצ.צ.ז שלא</li>
+        <li>צלע משותפת, זוויות קודקודיות ומקבילים</li>
+        <li>הוכחות ומסקנות: מה מותר להסיק אחרי חפיפה</li>
+      </ul>
+    </div>
+    <div class="cover-facts">
+      <div><b>8</b> טכניקות, אחת לעמוד</div>
+      <div><b>60+</b> תרגילים מדורגים</div>
+      <div><b>4</b> מפגשים של כ־30 דקות</div>
+      <div><b>צריך:</b> עיפרון, סרגל, מחק</div>
+      <div><b>חשוב:</b> סדר הקודקודים</div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <span>שם</span><span class="fill"></span>
+    <span>כיתה</span><span class="fill" style="max-width:70px"></span>
+    <span>תאריך</span><span class="fill" style="max-width:100px"></span>
+  </div>
+</section>
+
+<!-- ================= איך עובדים ================= -->
+<section class="sheet">
+  <span class="kicker">לפני שמתחילים</span>
+  <h2>חפיפה היא לא "נראה אותו דבר"</h2>
+  <p class="lead">שני משולשים יכולים להיראות דומים לגמרי — ועדיין לא להיות חופפים. חפיפה נקבעת רק מנתונים, ובגיאומטריה כל טענה צריכה נימוק. שלושה נתונים נכונים מספיקים; שלושה נתונים לא נכונים — לא.</p>
+
+  <div class="two" style="margin-top:1.4em">
+    <div>
+      <h3 style="font-size:1.02rem;margin-bottom:.5em">ארבעה צעדים בכל הוכחה</h3>
+      <div class="flow">
+        <div class="flow-step"><span class="when">1 · מסמנים</span><span class="then">מעבירים את הנתונים לשרטוט: קו על צלע, קשת על זווית, נקודת אמצע.</span></div>
+        <div class="flow-step"><span class="when">2 · מוצאים שלישייה</span><span class="then">שלושה זוגות מתאימים: צלע־צלע־צלע, צלע־זווית־צלע או זווית־צלע־זווית.</span></div>
+        <div class="flow-step"><span class="when">3 · כותבים חפיפה</span><span class="then">בסדר הנכון: <span class="m">△ABC ≅ △DEF</span>. קודקוד מול קודקוד מתאים.</span></div>
+        <div class="flow-step"><span class="when">4 · מסיקים</span><span class="then">במשולשים חופפים — כל הצלעות והזוויות המתאימות שוות. כותבים מה מבקשים.</span></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:1.02rem;margin-bottom:.5em">שלוש החלטות שמונעות טעויות</h3>
+      <div class="callout callout--warn"><span class="callout-title">סדר הוא הכול</span><span class="m">△ABC ≅ △DEF</span> אומר A↔D, B↔E, C↔F. לא לפי מה שנוח.</div>
+      <div class="callout callout--tip"><span class="callout-title">מחפשים את הצלע המשותפת</span>אם לשני המשולשים יש אותה צלע — היא שווה לעצמה, וזה נתון חינם.</div>
+      <div class="callout callout--why"><span class="callout-title">לא צ.צ.ז</span>שתי צלעות וזווית שאינה ביניהן לא קובעות משולש יחיד. בהמשך נראה למה.</div>
+    </div>
+  </div>
+
+  <div class="callout callout--tip" style="margin-top:1.2em">
+    <span class="callout-title">איך יודעים שהצלחת</span>
+    לא לפי "המשולשים נראים אותו דבר", אלא לפי הוכחה שכל שורה בה נשענת על נתון או על משפט — ומסתיימת במסקנה המבוקשת.
+  </div>
+</section>
+
+<!-- ================= 1 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">1</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>מהי חפיפה — וסדר הקודקודים</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לקרוא נכון <span class="m">△ABC ≅ △DEF</span>, ולמצוא לכל צלע וזווית את בת הזוג המתאימה.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">△ABC ≅ △DEF</div>
+    <p class="rule-note">הסימן <span class="m">≅</span> אומר: אפשר להניח משולש אחד על השני כך שיכסה אותו בדיוק. לכן <b>כל שש</b> הצלעות והזוויות שוות — אבל רק בזוגות הנכונים.</p>
+  </div>
+
+  <div class="two">
+    <div>
+      <table class="table" style="margin-top:0">
+        <thead><tr><th>ב־<span class="m">△ABC</span></th><th>ב־<span class="m">△DEF</span></th></tr></thead>
+        <tbody>
+          <tr><td class="m">AB</td><td class="m">DE</td></tr>
+          <tr><td class="m">BC</td><td class="m">EF</td></tr>
+          <tr><td class="m">AC</td><td class="m">DF</td></tr>
+          <tr><td class="m">∠A</td><td class="m">∠D</td></tr>
+          <tr><td class="m">∠B</td><td class="m">∠E</td></tr>
+          <tr><td class="m">∠C</td><td class="m">∠F</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="callout callout--why" style="margin-top:0">
+        <span class="callout-title">למה הסדר חשוב</span>
+        <p>האות הראשונה בשני המשולשים היא הקודקוד המתאים: <span class="m">A ↔ D</span>. אם כותבים <span class="m">△ABC ≅ △EDF</span>, זו טענה אחרת לגמרי — בה <span class="m">A ↔ E</span>.</p>
+      </div>
+      <div class="callout callout--tip">
+        <span class="callout-title">טריק לקריאה</span>
+        <p>כותבים את שני השמות זה מתחת לזה, ומחברים בקו אנכי:</p>
+        <p class="m" style="direction:ltr;text-align:center;font-size:1.05rem;line-height:1.7">A B C<br>D E F</p>
+        <p>כל אות מעל בת הזוג שלה.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מהסימון לנתונים</span></div>
+    <ol class="steps">
+      <li>נתון: <span class="m">△ABC ≅ △KLM</span></li>
+      <li>מתאימים: <span class="m">A↔K, B↔L, C↔M</span></li>
+      <li>מכאן: <span class="m">AB=KL, BC=LM, AC=KM</span> וגם <span class="m">∠A=∠K, ∠B=∠L, ∠C=∠M</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>אם <span class="m">△ABC ≅ △DEF</span>, אז <span class="m">AB=DE</span> — ולא <span class="m">AB=EF</span>. האותיות B ו־C מתאימות ל־E ו־F, אבל B לבדה מתאימה ל־E. קוראים לפי <b>המקום</b>, לא לפי מה שנראה בשרטוט.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · התאמה</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex ex--wide">
+      <li>נתון <span class="m">△ABC ≅ △DEF</span>. איזו צלע מתאימה ל־<span class="m">BC</span>?</li>
+      <li>נתון <span class="m">△ABC ≅ △DEF</span>. איזו זווית מתאימה ל־<span class="m">∠A</span>?</li>
+      <li>נתון <span class="m">△PQR ≅ △XYZ</span>. כתבו את שלושת זוגות הצלעות השוות.</li>
+      <li>נתון <span class="m">△ABC ≅ △DEF</span> ו־<span class="m">AB = 7.5</span>. מה אורך <span class="m">DE</span>?</li>
+      <li>נתון <span class="m">△ABC ≅ △DEF</span> ו־<span class="m">∠B = 48°</span>. מה גודל <span class="m">∠E</span>?</li>
+      <li>כתבו את סימון החפיפה עבור <span class="m">A↔K, B↔L, C↔M</span>.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="c6-t1"> סיימתי טכניקה 1 — מהי חפיפה</label>
+</section>
+
+<!-- ================= 2 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">2</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>צ.צ.צ — שלוש צלעות</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לזהות שלושה זוגות צלעות שוות, ולהסיק מהם חפיפה.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">המשפט</p>
+    <div class="eq">שלוש צלעות שוות = חפיפה</div>
+    <p class="rule-note">אם שלוש הצלעות של משולש אחד שוות לשלוש הצלעות המתאימות במשולש אחר — המשולשים חופפים. אין צורך לדעת אף זווית.</p>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 420 240" role="img" aria-label="משולש שכל שלוש צלעותיו מסומנות, המחשה לצ.צ.צ">
+      <path d="M70 200 L330 200 L190 60 Z" fill="#f7e7eb" stroke="#1b2a2a" stroke-width="2"/>
+      <g stroke-width="4" stroke-linecap="round">
+        <line x1="70" y1="200" x2="330" y2="200" stroke="#1f5d7a"/>
+        <line x1="70" y1="200" x2="190" y2="60" stroke="#a3542f"/>
+        <line x1="330" y1="200" x2="190" y2="60" stroke="#5c6b39"/>
+      </g>
+      <g font-family="Assistant,Arial,sans-serif" font-size="14" fill="#3c4b47" text-anchor="middle">
+        <text x="200" y="224">צלע 1</text>
+        <text x="105" y="120">צלע 2</text>
+        <text x="280" y="120">צלע 3</text>
+      </g>
+    </svg>
+    <figcaption>שלוש הצלעות מסומנות בשלושה צבעים; אם כל שלושת הזוגות שווים — החפיפה מובטחת.</figcaption>
+  </figure>
+
+  <div class="callout callout--why">
+    <span class="callout-title">למה זה עובד</span>
+    <p>שלוש צלעות קובעות משולש אחד ויחיד (עד כדי הזזה). אין "מרווח תמרון" לשינוי זווית: ברגע שהצלעות נעולות, גם הזוויות נעולות.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">שלושה זוגות</span></div>
+    <ol class="steps">
+      <li>נתון: <span class="m">AB = DE = 5</span>, <span class="m">BC = EF = 6</span>, <span class="m">AC = DF = 7</span></li>
+      <li>שלושת הזוגות שווים, ולכן: <span class="m">△ABC ≅ △DEF</span></li>
+      <li>הנימוק: <b>צ.צ.צ</b></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>חייבים <b>שלושה</b> זוגות מתאימים. שתי צלעות שוות לא מספיקות, ואם הזוג השלישי לא מתאים — אין חפיפה. גם לא "מסדרים" את הצלעות לפי גודל; מתאימים לפי הקודקודים.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · צ.צ.צ</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex ex--wide">
+      <li><span class="m">AB=DE=5</span>, <span class="m">BC=EF=6</span>, <span class="m">AC=DF=7</span>. האם המשולשים חופפים? באיזה משפט?</li>
+      <li>שלושת הזוגות שווים. כיצד נסמן את החפיפה בין <span class="m">△ABC</span> ל־<span class="m">△DEF</span>?</li>
+      <li>בשני משולשים צלע <span class="m">BD</span> משותפת, וגם <span class="m">AB=CD</span> ו־<span class="m">AD=BC</span>. באיזה משפט אפשר להשתמש?</li>
+      <li>אם <span class="m">△ABC ≅ △DEF</span> לפי צ.צ.צ, איזו זווית שווה ל־<span class="m">∠A</span>?</li>
+      <li>משולש עם צלעות <span class="m">3, 4, 5</span> ומשולש עם צלעות <span class="m">3, 4, 5</span>. האם הם חופפים?</li>
+      <li>נתון <span class="m">AB = 2x + 1</span>, <span class="m">DE = 9</span>, והמשולשים חופפים. מצאו <span class="m">x</span>.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="c6-t2"> סיימתי טכניקה 2 — צ.צ.צ</label>
+</section>
+
+<!-- ================= 3 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">3</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>צ.ז.צ — שתי צלעות והזווית שביניהן</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תזהה את הזווית ה"כלואה" בין שתי צלעות, ותשתמש בה לחפיפה.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">המשפט</p>
+    <div class="eq">שתי צלעות והזווית שביניהן = חפיפה</div>
+    <p class="rule-note">שתי צלעות שוות, והזווית <b>ביניהן</b> שווה. אם הזווית נמצאת מחוץ לזוג הצלעות — זה לא צ.ז.צ.</p>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 420 240" role="img" aria-label="משולש שבו שתי צלעות והזווית שביניהן מסומנות, המחשה לצ.ז.צ">
+      <path d="M70 200 L330 200 L190 60 Z" fill="#fffdf7" stroke="#1b2a2a" stroke-width="2"/>
+      <g stroke-width="4" stroke-linecap="round">
+        <line x1="70" y1="200" x2="190" y2="60" stroke="#a3542f"/>
+        <line x1="70" y1="200" x2="330" y2="200" stroke="#1f5d7a"/>
+      </g>
+      <path d="M105 200 A35 35 0 0 0 92.8 173.4" fill="none" stroke="#8a3b4a" stroke-width="2"/>
+      <text x="140" y="188" font-family="Assistant,Arial,sans-serif" font-size="13" fill="#8a3b4a">זווית כלואה</text>
+      <text x="112" y="120" font-family="Assistant,Arial,sans-serif" font-size="13" fill="#a3542f">צלע</text>
+      <text x="200" y="224" font-family="Assistant,Arial,sans-serif" font-size="13" fill="#1f5d7a" text-anchor="middle">צלע</text>
+    </svg>
+    <figcaption>הזווית נמצאת בין שתי הצלעות — היא "כלואה" ביניהן. זו הזווית שצריך לדעת.</figcaption>
+  </figure>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">הזווית באמצע</span></div>
+    <ol class="steps">
+      <li>נתון: <span class="m">AB = DE = 5</span>, <span class="m">AC = DF = 7</span>, <span class="m">∠A = ∠D = 50°</span></li>
+      <li>הזווית <span class="m">∠A</span> נמצאת בין <span class="m">AB</span> ל־<span class="m">AC</span>; גם <span class="m">∠D</span> בין <span class="m">DE</span> ל־<span class="m">DF</span>.</li>
+      <li>לכן <span class="m">△ABC ≅ △DEF</span> לפי <b>צ.ז.צ</b>.</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>שתי צלעות וזווית שאינה ביניהן זה <b>לא</b> צ.ז.צ. בדקו היטב: הזווית חייבת להיות בקודקוד שבו נפגשות שתי הצלעות הנתונות. אם היא בקודקוד אחר — אין כאן צ.ז.צ.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · צ.ז.צ</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex ex--wide">
+      <li>במשולש <span class="m">ABC</span>: איזו זווית כלואה בין <span class="m">AB</span> ל־<span class="m">AC</span>?</li>
+      <li><span class="m">AB=DE</span>, <span class="m">AC=DF</span>, <span class="m">∠A=∠D</span>. מה המשפט?</li>
+      <li><span class="m">AB=DE</span>, <span class="m">BC=EF</span>, <span class="m">∠B=∠E</span>. מה המשפט?</li>
+      <li><span class="m">AB=DE</span>, <span class="m">BC=EF</span>, <span class="m">∠A=∠D</span>. האם זה צ.ז.צ? נמקו.</li>
+      <li>נתון <span class="m">AB=DE</span>, <span class="m">AC=DF</span>, <span class="m">∠A=∠D</span>, וגם <span class="m">AB=3x</span>, <span class="m">DE=12</span>. מצאו <span class="m">x</span>.</li>
+      <li>כתבו את מסקנת החפיפה עבור <span class="m">AB=DE</span>, <span class="m">∠B=∠E</span>, <span class="m">BC=EF</span>.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="c6-t3"> סיימתי טכניקה 3 — צ.ז.צ</label>
+</section>
+
+<!-- ================= 4 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">4</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>ז.צ.ז — שתי זוויות והצלע שביניהן</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תזהה את הצלע ה"כלואה" בין שתי זוויות, ותוכיח חפיפה גם בלי לדעת את כל הצלעות.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">המשפט</p>
+    <div class="eq">שתי זוויות והצלע שביניהן = חפיפה</div>
+    <p class="rule-note">שתי זוויות שוות, והצלע <b>שביניהן</b> שווה. אם הצלע אינה בין שתי הזוויות — זה עדיין יכול לעבוד (ז.ז.צ), אבל זה משפט אחר.</p>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 420 240" role="img" aria-label="משולש שבו שתי זוויות והצלע שביניהן מסומנות, המחשה לז.צ.ז">
+      <path d="M70 200 L330 200 L190 60 Z" fill="#fffdf7" stroke="#1b2a2a" stroke-width="2"/>
+      <line x1="70" y1="200" x2="330" y2="200" stroke="#1f5d7a" stroke-width="4" stroke-linecap="round"/>
+      <path d="M105 200 A35 35 0 0 0 92.8 173.4" fill="none" stroke="#a3542f" stroke-width="2"/>
+      <path d="M295 200 A35 35 0 0 1 305.3 175.3" fill="none" stroke="#a3542f" stroke-width="2"/>
+      <text x="200" y="224" font-family="Assistant,Arial,sans-serif" font-size="13" fill="#1f5d7a" text-anchor="middle">צלע כלואה</text>
+      <text x="86" y="150" font-family="Assistant,Arial,sans-serif" font-size="13" fill="#a3542f">זווית</text>
+      <text x="318" y="150" font-family="Assistant,Arial,sans-serif" font-size="13" fill="#a3542f" text-anchor="end">זווית</text>
+    </svg>
+    <figcaption>הצלע נמצאת בין שתי הזוויות הנתונות — היא "כלואה" ביניהן.</figcaption>
+  </figure>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">הצלע באמצע</span></div>
+    <ol class="steps">
+      <li>נתון: <span class="m">∠A = ∠D = 60°</span>, <span class="m">∠B = ∠E = 70°</span>, <span class="m">AB = DE = 8</span></li>
+      <li>הצלע <span class="m">AB</span> נמצאת בין <span class="m">∠A</span> ל־<span class="m">∠B</span>; גם <span class="m">DE</span> בין <span class="m">∠D</span> ל־<span class="m">∠E</span>.</li>
+      <li>לכן <span class="m">△ABC ≅ △DEF</span> לפי <b>ז.צ.ז</b>.</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>הצלע חייבת להיות בין שתי הזוויות: <span class="m">AB</span> בין <span class="m">∠A</span> ל־<span class="m">∠B</span>. אם נתונה דווקא <span class="m">BC</span> — היא נמצאת בין <span class="m">∠B</span> ל־<span class="m">∠C</span>, ולכן עם <span class="m">∠A</span> ו־<span class="m">∠B</span> זה לא ז.צ.ז.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · ז.צ.ז</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex ex--wide">
+      <li>במשולש <span class="m">ABC</span>: איזו צלע כלואה בין <span class="m">∠A</span> ל־<span class="m">∠B</span>?</li>
+      <li><span class="m">∠A=∠D</span>, <span class="m">∠B=∠E</span>, <span class="m">AB=DE</span>. מה המשפט?</li>
+      <li><span class="m">∠A=∠D</span>, <span class="m">∠C=∠F</span>, <span class="m">AC=DF</span>. מה המשפט?</li>
+      <li><span class="m">∠A=∠D</span>, <span class="m">∠B=∠E</span>, <span class="m">BC=EF</span>. האם זו ז.צ.ז? נמקו.</li>
+      <li>נתון <span class="m">AB=DE</span>, <span class="m">∠A=∠D</span>, <span class="m">∠B=∠E</span>, וגם <span class="m">AB=2x+2</span>, <span class="m">DE=10</span>. מצאו <span class="m">x</span>.</li>
+      <li>כתבו את מסקנת החפיפה עבור <span class="m">∠B=∠E</span>, <span class="m">BC=EF</span>, <span class="m">∠C=∠F</span>.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="c6-t4"> סיימתי טכניקה 4 — ז.צ.ז</label>
+</section>
+
+<!-- ================= 5 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">5</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>ז.ז.צ שכן עובד — וצ.צ.ז שלא</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע מתי שתי זוויות וצלע מספיקים, ותזהה את המלכודת של שתי צלעות וזווית לא כלואה.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">שני משפטים, רק אחד תקף</p>
+    <div class="eq">ז.ז.צ — שתי זוויות וצלע מתאימה: <b>חפיפה</b></div>
+    <div class="eq">צ.צ.ז — שתי צלעות וזווית לא כלואה: <b>לא בהכרח</b></div>
+    <p class="rule-note">בז.ז.צ הזווית השלישית נקבעת מיד (סכום 180°), ואז חוזרים לז.צ.ז. בצ.צ.ז אין זווית שלישית ידועה — ולפעמים יש שני משולשים שונים לאותם נתונים.</p>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 640 300" role="img" aria-label="שני משולשים שונים עם שתי צלעות שוות וזווית לא כלואה שווה, המחשה לכך שצ.צ.ז אינו משפט חפיפה">
+      <line x1="90" y1="240" x2="320" y2="110" stroke="#65726c" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <path d="M90 240 L250 240 L158 200.7 Z" fill="#e6eff4" stroke="#1f5d7a" stroke-width="2"/>
+      <path d="M90 240 L250 240 L261.9 140.7 Z" fill="#f8ebe3" stroke="#a3542f" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="90" y1="240" x2="250" y2="240" stroke="#1b2a2a" stroke-width="2.4"/>
+      <path d="M135 240 A45 45 0 0 0 129 217.5" fill="none" stroke="#5c6b39" stroke-width="2"/>
+      <g font-family="Inter,Arial,sans-serif" font-size="15" fill="#3c4b47" text-anchor="middle">
+        <text x="76" y="258">A</text>
+        <text x="258" y="254">B</text>
+        <text x="148" y="194">C1</text>
+        <text x="274" y="134">C2</text>
+        <text x="170" y="232">8</text>
+        <text x="196" y="214">5</text>
+        <text x="262" y="184">5</text>
+        <text x="146" y="232" font-size="13" fill="#5c6b39">30°</text>
+      </g>
+    </svg>
+    <figcaption>שני המשולשים חולקים <span class="m">AB = 8</span>, <span class="m">BC = 5</span> ו־<span class="m">∠A = 30°</span> — אבל הם שונים. הזווית אינה בין שתי הצלעות, ולכן אין חפיפה.</figcaption>
+  </figure>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">ז.ז.צ בפעולה</span></div>
+    <ol class="steps">
+      <li>נתון: <span class="m">∠A = ∠D</span>, <span class="m">∠B = ∠E</span>, <span class="m">BC = EF</span></li>
+      <li>מחשבים את הזווית השלישית: <span class="m">∠C = 180 - ∠A - ∠B = 180 - ∠D - ∠E = ∠F</span></li>
+      <li>עכשיו יש שתי זוויות והצלע שביניהן: <span class="m">∠B=∠E</span>, <span class="m">BC=EF</span>, <span class="m">∠C=∠F</span></li>
+      <li>לכן <span class="m">△ABC ≅ △DEF</span> לפי ז.צ.ז (או בקצרה: ז.ז.צ).</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>כשנתונות שתי צלעות וזווית — בדקו אם הזווית <b>בין</b> הצלעות. אם כן: צ.ז.צ. אם לא: <b>אין</b> משפט חפיפה. הציור למעלה מראה בדיוק למה: אותם נתונים בדיוק מייצרים שני משולשים שונים.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · איזה משפט?</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex ex--wide">
+      <li><span class="m">∠A=∠D</span>, <span class="m">∠B=∠E</span>, <span class="m">BC=EF</span>. האם זה מספיק? באיזה משפט?</li>
+      <li><span class="m">AB=DE</span>, <span class="m">BC=EF</span>, <span class="m">∠C=∠F</span>. האם זה מספיק? נמקו.</li>
+      <li><span class="m">∠A=∠D</span>, <span class="m">∠C=∠F</span>, <span class="m">AB=DE</span>. באיזה משפט?</li>
+      <li>מה תקף: ז.ז.צ או צ.צ.ז? הסבירו במשפט אחד.</li>
+      <li>מדוע צ.צ.ז לא קובע חפיפה? היעזרו בשרטוט.</li>
+      <li>נתונות שתי זוויות וצלע מתאימה (לא כלואה). האם אפשר להסיק חפיפה? נמקו.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="c6-t5"> סיימתי טכניקה 5 — ז.ז.צ וצ.צ.ז</label>
+</section>
+
+<!-- ================= 6 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">6</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>איך מוצאים את שלושת הנתונים</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לזהות צלע משותפת, זוויות קודקודיות, זוויות מתחלפות, אמצע וחוצה — ולהפוך אותן לנתוני חפיפה.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">מקורות לנתון חינם</p>
+    <div class="eq">צלע משותפת &nbsp;|&nbsp; זוויות קודקודיות &nbsp;|&nbsp; זוויות מתחלפות</div>
+    <div class="eq">אמצע קטע &nbsp;|&nbsp; חוצה זווית &nbsp;|&nbsp; זווית ישרה</div>
+    <p class="rule-note">לפני שמחפשים משפט, סורקים את השרטוט: איזה חלק שייך <b>לשני</b> המשולשים? אילו זוויות נוצרות מישרים מצטלבים או ממקבילים?</p>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 640 300" role="img" aria-label="מקבילית עם אלכסון שיוצר שני משולשים חופפים">
+      <path d="M100 90 L320 90 L380 230 L160 230 Z" fill="#fffdf7" stroke="#1b2a2a" stroke-width="2"/>
+      <path d="M100 90 L320 90 L160 230 Z" fill="#f7e7eb" opacity=".75"/>
+      <path d="M320 90 L380 230 L160 230 Z" fill="#e6eff4" opacity=".75"/>
+      <line x1="320" y1="90" x2="160" y2="230" stroke="#8a3b4a" stroke-width="3"/>
+      <path d="M300 105 A30 30 0 0 0 291 122" fill="none" stroke="#a3542f" stroke-width="2"/>
+      <path d="M180 215 A30 30 0 0 1 189 198" fill="none" stroke="#a3542f" stroke-width="2"/>
+      <g font-family="Inter,Arial,sans-serif" font-size="15" fill="#3c4b47" text-anchor="middle">
+        <text x="86" y="84">A</text><text x="334" y="84">B</text>
+        <text x="394" y="240">C</text><text x="146" y="240">D</text>
+      </g>
+    </svg>
+    <figcaption><span class="m">BD</span> צלע משותפת. אם <span class="m">AB∥CD</span> ו־<span class="m">AD∥BC</span>, הזוויות המסומנות מתחלפות ושוות — ומתקבל ז.צ.ז.</figcaption>
+  </figure>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מקבילית בשלושה נתונים</span></div>
+    <ol class="steps">
+      <li>נתון: <span class="m">AB ∥ CD</span>, <span class="m">AD ∥ BC</span>, <span class="m">BD</span> משותף.</li>
+      <li><span class="m">∠ABD = ∠CDB</span> (מתחלפות), <span class="m">∠ADB = ∠CBD</span> (מתחלפות), <span class="m">BD</span> משותף.</li>
+      <li>לכן <span class="m">△ABD ≅ △CDB</span> לפי ז.צ.ז.</li>
+      <li>מסקנה: <span class="m">AB = CD</span> וגם <span class="m">AD = BC</span> — צלעות נגדיות במקבילית שוות.</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>צלע משותפת שווה לעצמה — אבל רק אם היא באמת <b>אותה</b> צלע בשני המשולשים. אם בשרטוט יש שני קטעים נפרדים באותו אורך, זה לא "משותף"; צריך לנמק אחרת.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · מציאת הנתון</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex ex--wide">
+      <li>לשני משולשים יש צלע <span class="m">AC</span> משותפת. מה אפשר לומר עליה?</li>
+      <li>הישרים <span class="m">AB</span> ו־<span class="m">CD</span> נחתכים ב־<span class="m">O</span>. מדוע <span class="m">∠AOB = ∠COD</span>?</li>
+      <li><span class="m">M</span> היא אמצע <span class="m">AB</span>. מה אפשר להסיק על <span class="m">AM</span> ו־<span class="m">MB</span>?</li>
+      <li><span class="m">AD</span> חוצה את <span class="m">∠BAC</span>. אילו זוויות שוות?</li>
+      <li><span class="m">AB ∥ CD</span>. איזו זווית שווה ל־<span class="m">∠ABD</span>? נמקו.</li>
+      <li><span class="m">AB ⊥ BD</span> וגם <span class="m">CD ⊥ BD</span>. מה גודל <span class="m">∠ABD</span> ו־<span class="m">∠CDB</span>?</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="c6-t6"> סיימתי טכניקה 6 — מציאת הנתונים</label>
+</section>
+
+<!-- ================= 7 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">7</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>מה מסיקים אחרי החפיפה</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע להשתמש בחפיפה כדי להוכיח שקטעים או זוויות שווים — בלי למדוד.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">המסקנה</p>
+    <div class="eq">מחפיפה נובע: כל הצלעות והזוויות המתאימות שוות</div>
+    <p class="rule-note">זו התמורה של החפיפה: אחרי שהוכחנו חפיפה, מותר "להעביר" שוויון מהמשולש האחד לשני — אבל רק בין חלקים מתאימים.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מחפיפה למסקנה</span></div>
+    <ol class="steps">
+      <li>הוכחנו: <span class="m">△ABD ≅ △ACD</span> לפי צ.ז.צ.</li>
+      <li>מתאימים: <span class="m">B↔C</span>, <span class="m">D↔D</span>.</li>
+      <li>לכן <span class="m">BD = CD</span> וגם <span class="m">∠B = ∠C</span> — צלעות וזוויות מתאימות במשולשים חופפים.</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>לא מסיקים <span class="m">∠A = ∠D</span> אם A ו־D אינם מתאימים בסדר החפיפה. קודם בודקים את הסדר, ואז כותבים את השוויון. גם לא "מעבירים" תכונה שלא נשמרת בחפיפה — חפיפה שומרת אורכים וזוויות, לא שטח או היקף בנפרד (אבל הם נובעים מכך).</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · מסקנות</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex ex--wide">
+      <li><span class="m">△ABC ≅ △DEF</span>. איזו צלע שווה ל־<span class="m">AB</span>?</li>
+      <li><span class="m">△ABC ≅ △DEF</span>. איזו זווית שווה ל־<span class="m">∠C</span>?</li>
+      <li><span class="m">△ABC ≅ △DEF</span>. מה אפשר לומר על <span class="m">BC</span>?</li>
+      <li>אם <span class="m">△ABC ≅ △DEF</span> ו־<span class="m">AB = 9</span>, מה אורך <span class="m">DE</span>?</li>
+      <li>אם <span class="m">△ABC ≅ △DEF</span> ו־<span class="m">∠A = 35°</span>, מה גודל <span class="m">∠D</span>?</li>
+      <li>כדי להוכיח <span class="m">∠B = ∠E</span>, באילו שני משולשים נשווה?</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="c6-t7"> סיימתי טכניקה 7 — מסקנות</label>
+</section>
+
+<!-- ================= 8 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">8</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>חפיפה בפעולה: שווה־שוקיים ומורכבות</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תבנה הוכחה מלאה בשני שלבים — קודם חפיפה, אחר כך מסקנה — ותיישם אותה במשולש שווה־שוקיים.</p>
+
+  <figure class="fig" style="margin-top:.4em">
+    <svg viewBox="0 0 640 300" role="img" aria-label="משולש שווה שוקיים עם חוצה זווית הראש שיוצר שני משולשים חופפים">
+      <path d="M320 50 L160 240 L480 240 Z" fill="#fffdf7" stroke="#1b2a2a" stroke-width="2"/>
+      <path d="M320 50 L160 240 L320 240 Z" fill="#f7e7eb" opacity=".8"/>
+      <path d="M320 50 L480 240 L320 240 Z" fill="#e6eff4" opacity=".8"/>
+      <line x1="320" y1="50" x2="320" y2="240" stroke="#8a3b4a" stroke-width="3"/>
+      <path d="M320 225 h15 v15" fill="none" stroke="#8a3b4a" stroke-width="1.4"/>
+      <path d="M320 84 A34 34 0 0 1 298.1 76" fill="none" stroke="#5c6b39" stroke-width="2"/>
+      <path d="M320 84 A34 34 0 0 0 341.9 76" fill="none" stroke="#5c6b39" stroke-width="2"/>
+      <g font-family="Inter,Arial,sans-serif" font-size="15" fill="#3c4b47" text-anchor="middle">
+        <text x="306" y="44">A</text><text x="146" y="256">B</text><text x="486" y="256">C</text><text x="332" y="256">D</text>
+      </g>
+    </svg>
+    <figcaption><span class="m">AB = AC</span>, <span class="m">AD</span> חוצה את זווית הראש, ו־<span class="m">AD</span> משותף. לכן <span class="m">△ABD ≅ △ACD</span> לפי צ.ז.צ.</figcaption>
+  </figure>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">הוכחה בשני שלבים</span></div>
+    <ol class="steps">
+      <li><b>נתון:</b> <span class="m">AB = AC</span>, <span class="m">AD</span> חוצה את <span class="m">∠A</span>. <b>צריך להוכיח:</b> <span class="m">∠B = ∠C</span>.</li>
+      <li>במשולשים <span class="m">ABD</span> ו־<span class="m">ACD</span>: <span class="m">AB = AC</span> (נתון), <span class="m">∠BAD = ∠CAD</span> (חוצה), <span class="m">AD = AD</span> (משותף).</li>
+      <li>לכן <span class="m">△ABD ≅ △ACD</span> לפי <b>צ.ז.צ</b>.</li>
+      <li>מסקנה: <span class="m">∠B = ∠C</span> (זוויות מתאימות במשולשים חופפים).</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>הוכחה אינה "המשולשים נראים שווים". צריך לרשום שלושה נתונים, לבחור משפט, ולסיים במסקנה. אם חסר נתון — לא ממציאים אותו; מחפשים צלע משותפת, זווית קודקודית או זווית מתחלפת.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · הוכחות</h3><span class="count">5 תרגילים</span></div>
+    <ol class="ex ex--wide">
+      <li><span class="m">AB=AC</span> ו־<span class="m">D</span> אמצע <span class="m">BC</span>. באיזה משפט <span class="m">△ABD ≅ △ACD</span>?</li>
+      <li><span class="m">AB=AC</span> ו־<span class="m">AD</span> חוצה את זווית הראש. באיזה משפט?</li>
+      <li>מהסעיף הקודם — מה ניתן להסיק על <span class="m">BD</span> ו־<span class="m">DC</span>? על <span class="m">∠B</span> ו־<span class="m">∠C</span>?</li>
+      <li><span class="m">AB=AD</span>, <span class="m">BC=DC</span>, ו־<span class="m">AC</span> משותף. באיזה משפט <span class="m">△ABC ≅ △ADC</span>? מה המסקנה לגבי <span class="m">∠B</span> ו־<span class="m">∠D</span>?</li>
+      <li><span class="m">AD ⊥ BC</span> ו־<span class="m">BD=DC</span>. באיזה משפט <span class="m">△ABD ≅ △ACD</span>? מה המסקנה לגבי <span class="m">AB</span> ו־<span class="m">AC</span>?</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="c6-t8"> סיימתי טכניקה 8 — הוכחות מורכבות</label>
+</section>
+
+<!-- ================= סיכום ================= -->
+<section class="sheet">
+  <span class="kicker">לפני התרגול המסכם</span>
+  <h2>מפת החלטה: איזה משפט מתאים?</h2>
+  <p class="lead">לא מחפשים "מה שנראה מתאים" — מסתכלים על <b>סוג הנתונים</b>. שלושה נתונים נכונים, ומשפט אחד שמתאים להם.</p>
+
+  <div class="flow" style="margin-top:1.3em">
+    <div class="flow-step"><span class="when">3 צלעות</span><span class="then"><b>צ.צ.צ</b> — שלוש צלעות מתאימות שוות.</span></div>
+    <div class="flow-step"><span class="when">2 צלעות + זווית ביניהן</span><span class="then"><b>צ.ז.צ</b> — הזווית כלואה בין הצלעות.</span></div>
+    <div class="flow-step"><span class="when">2 זוויות + צלע ביניהן</span><span class="then"><b>ז.צ.ז</b> — הצלע כלואה בין הזוויות.</span></div>
+    <div class="flow-step"><span class="when">2 זוויות + צלע אחרת</span><span class="then"><b>ז.ז.צ</b> — משלימים את הזווית השלישית וחוזרים לז.צ.ז.</span></div>
+    <div class="flow-step"><span class="when">2 צלעות + זווית לא כלואה</span><span class="then"><b>אין משפט</b> — זו אינה הוכחת חפיפה.</span></div>
+    <div class="flow-step"><span class="when">חסר נתון</span><span class="then">מחפשים צלע משותפת, זוויות קודקודיות, זוויות מתחלפות, אמצע או חוצה.</span></div>
+  </div>
+
+  <h3 style="margin-top:1.6em;font-size:1.1rem">חמש הטעויות שעולות הכי הרבה נקודות</h3>
+  <div class="callout callout--warn"><span class="callout-title">1 · סדר הקודקודים</span><span class="m">△ABC ≅ △DEF</span> הוא לא <span class="m">△ABC ≅ △EFD</span>. קודם כותבים נכון, אחר כך מסיקים.</div>
+  <div class="callout callout--warn"><span class="callout-title">2 · זווית לא כלואה</span>בצ.ז.צ הזווית חייבת להיות בין שתי הצלעות. אחרת — אין חפיפה.</div>
+  <div class="callout callout--warn"><span class="callout-title">3 · צ.צ.ז</span>שתי צלעות וזווית שאינה ביניהן לא קובעות משולש יחיד. אין להשתמש בזה כהוכחה.</div>
+  <div class="callout callout--warn"><span class="callout-title">4 · מסקנה לא מתאימה</span>אחרי חפיפה משווים רק חלקים מתאימים — לא כל זוג שנראה נוח.</div>
+  <div class="callout callout--warn"><span class="callout-title">5 · בלי נימוק</span>כל שורה בהוכחה צריכה נימוק: נתון, צלע משותפת, זוויות מתחלפות, או משפט חפיפה.</div>
+</section>
+
+<!-- ================= תרגול מסכם ================= -->
+<section class="sheet">
+  <span class="kicker">מבחן קטן</span>
+  <h2>תרגול מסכם</h2>
+  <p class="lead">10 תרגילים מכל הטכניקות. בכל סעיף — כתבו את המשפט או את הנימוק, לא רק "כן".</p>
+
+  <div class="drill" style="margin-top:1em">
+    <div class="drill-head"><h3>מעורב</h3><span class="count">10 תרגילים · 25 דקות</span></div>
+    <ol class="ex ex--wide">
+      <li><span class="m">△ABC ≅ △DEF</span> ו־<span class="m">AB = 8</span>. מה אורך <span class="m">DE</span>?</li>
+      <li><span class="m">AB=DE</span>, <span class="m">BC=EF</span>, <span class="m">AC=DF</span>. באיזה משפט?</li>
+      <li><span class="m">AB=DE</span>, <span class="m">∠B=∠E</span>, <span class="m">BC=EF</span>. באיזה משפט?</li>
+      <li><span class="m">∠A=∠D</span>, <span class="m">∠B=∠E</span>, <span class="m">AB=DE</span>. באיזה משפט?</li>
+      <li><span class="m">∠A=∠D</span>, <span class="m">∠B=∠E</span>, <span class="m">BC=EF</span>. באיזה משפט?</li>
+      <li><span class="m">AB=DE</span>, <span class="m">BC=EF</span>, <span class="m">∠C=∠F</span>. האם אפשר להסיק חפיפה?</li>
+      <li><span class="m">AB=AD</span>, <span class="m">BC=DC</span>, ו־<span class="m">AC</span> משותף. באיזה משפט <span class="m">△ABC ≅ △ADC</span>?</li>
+      <li><span class="m">△ABC ≅ △DEF</span>. מה ניתן להסיק על <span class="m">∠C</span> ו־<span class="m">∠F</span>?</li>
+      <li><span class="m">AB=AC</span> ו־<span class="m">AD</span> חוצה את זווית הראש. מה ניתן להסיק על <span class="m">∠B</span> ו־<span class="m">∠C</span>?</li>
+      <li><span class="m">AB = 2x + 3</span>, <span class="m">DE = 11</span>, והמשולשים חופפים. מצאו <span class="m">x</span>.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= בדיקת עצמי ================= -->
+<section class="sheet">
+  <span class="kicker">לפני שממשיכים</span>
+  <h2>בדיקת עצמי</h2>
+  <p class="lead">חמש שאלות, עד 10 דקות, בלי להציץ.</p>
+
+  <div class="drill" style="margin-top:1em">
+    <div class="drill-head"><h3>חמש שאלות</h3><span class="count">5 נקודות</span></div>
+    <ol class="ex ex--wide">
+      <li><span class="m">△ABC ≅ △DEF</span> ו־<span class="m">BC = 7</span>. מה אורך <span class="m">EF</span>?</li>
+      <li><span class="m">AB=DE</span>, <span class="m">AC=DF</span>, <span class="m">∠A=∠D</span>. באיזה משפט?</li>
+      <li><span class="m">∠A=∠D</span>, <span class="m">∠B=∠E</span>, <span class="m">AB=DE</span>. באיזה משפט?</li>
+      <li><span class="m">AB=DE</span>, <span class="m">BC=EF</span>, <span class="m">∠A=∠D</span>. האם זו הוכחת חפיפה?</li>
+      <li><span class="m">AB=AC</span> ו־<span class="m">D</span> אמצע <span class="m">BC</span>. באיזה משפט <span class="m">△ABD ≅ △ACD</span>? מה המסקנה לגבי <span class="m">∠B</span> ו־<span class="m">∠C</span>?</li>
+    </ol>
+  </div>
+
+  <div class="score">
+    <div><b>5</b>מוכן. אפשר לעבור לנושא הבא.</div>
+    <div><b>3–4</b>חזרו על המשפט שבו טעיתם, ופתרו שוב את התרגול שלו.</div>
+    <div><b>0–2</b>קראו שוב את מפת ההחלטה, ואז עשו את התרגול המסכם.</div>
+  </div>
+</section>
+
+<!-- ================= תשובות ================= -->
+<section class="sheet answers">
+  <h2>נספח תשובות</h2>
+  <div class="cut">לקרוע רק אחרי שסיימתם</div>
+
+  <div class="ans-grid">
+    <p><b>1 · חפיפה וסדר</b><br>1) <span class="m">EF</span> · 2) <span class="m">∠D</span> · 3) <span class="m">PQ=XY, QR=YZ, PR=XZ</span> · 4) 7.5 · 5) 48° · 6) <span class="m">△ABC ≅ △KLM</span></p>
+    <p><b>2 · צ.צ.צ</b><br>1) כן, צ.צ.צ · 2) <span class="m">△ABC ≅ △DEF</span> · 3) צ.צ.צ · 4) <span class="m">∠D</span> · 5) כן · 6) <span class="m">x=4</span></p>
+    <p><b>3 · צ.ז.צ</b><br>1) <span class="m">∠A</span> · 2) צ.ז.צ · 3) צ.ז.צ · 4) לא — הזווית אינה כלואה · 5) <span class="m">x=4</span> · 6) <span class="m">△ABC ≅ △DEF</span> לפי צ.ז.צ</p>
+    <p><b>4 · ז.צ.ז</b><br>1) <span class="m">AB</span> · 2) ז.צ.ז · 3) ז.צ.ז · 4) לא — זו ז.ז.צ, לא ז.צ.ז · 5) <span class="m">x=4</span> · 6) <span class="m">△ABC ≅ △DEF</span> לפי ז.צ.ז</p>
+    <p><b>5 · ז.ז.צ וצ.צ.ז</b><br>1) כן, ז.ז.צ · 2) לא — צ.צ.ז · 3) ז.ז.צ · 4) ז.ז.צ תקף, צ.צ.ז לא · 5) כי אותם נתונים יכולים ליצור שני משולשים שונים · 6) כן, ז.ז.צ</p>
+    <p><b>6 · מציאת הנתונים</b><br>1) <span class="m">AC=AC</span> (משותפת) · 2) זוויות קודקודיות · 3) <span class="m">AM=MB</span> · 4) <span class="m">∠BAD=∠DAC</span> · 5) <span class="m">∠CDB</span> (מתחלפות) · 6) 90° כל אחת</p>
+    <p><b>7 · מסקנות</b><br>1) <span class="m">DE</span> · 2) <span class="m">∠F</span> · 3) <span class="m">BC=EF</span> · 4) 9 · 5) 35° · 6) <span class="m">△ABC</span> ו־<span class="m">△DEF</span></p>
+    <p><b>8 · הוכחות</b><br>1) צ.צ.צ · 2) צ.ז.צ · 3) <span class="m">BD=DC</span> וגם <span class="m">∠B=∠C</span> · 4) צ.צ.צ; <span class="m">∠B=∠D</span> · 5) צ.ז.צ; <span class="m">AB=AC</span></p>
+    <p><b>תרגול מסכם</b><br>1) 8 · 2) צ.צ.צ · 3) צ.ז.צ · 4) ז.צ.ז · 5) ז.ז.צ · 6) לא — צ.צ.ז · 7) צ.צ.צ · 8) <span class="m">∠C=∠F</span> · 9) <span class="m">∠B=∠C</span> · 10) <span class="m">x=4</span></p>
+    <p><b>בדיקת עצמי</b><br>1) 7 · 2) צ.ז.צ · 3) ז.צ.ז · 4) לא · 5) צ.צ.צ; <span class="m">∠B=∠C</span></p>
+  </div>
+
+  <p style="margin-top:1.4em;font-size:.8rem;color:var(--ink-3)">בהוכחה, כל שורה צריכה נימוק. אם אינכם יודעים איזה משפט להשתמש — חזרו למפת ההחלטה ובדקו מה סוג הנתונים.</p>
+</section>
+
+</main>
+<script src="../assets/booklet.js"></script>
+</body>
+</html>

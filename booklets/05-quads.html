@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>חוברת 05 · מרובעים — מתמטיקה כיתה ח׳</title>
+<meta name="description" content="חוברת עבודה: מקבילית, מלבן, מעוין, ריבוע וטרפז — תכונות, זיהוי, אלכסונים, שטחים והיקפים.">
+<meta name="theme-color" content="#7b4b6b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%237b4b6b'/%3E%3Cpath d='M8 11h16v10H8z' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&amp;family=Frank+Ruhl+Libre:wght@500;700;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/booklet.css">
+</head>
+<body class="booklet" style="--accent:#7b4b6b;--accent-2:#57344c;--accent-soft:#f1e8ee">
+<header class="topbar no-print">
+  <a class="backlink" href="../index.html">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6l6 6-6 6M16 12H4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    כל החוברות
+  </a>
+  <span class="topbar-title">חוברת 05 · מרובעים</span>
+  <button class="btn" data-print type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    הדפסה
+  </button>
+</header>
+<span class="sr-only doc-title">חוברת 05 · מרובעים</span>
+
+<main class="paper">
+
+<!-- ================= שער ================= -->
+<section class="sheet cover">
+  <div class="cover-head">
+    <div class="cover-series">מתמטיקה · כיתה ח׳ · חוברת 05</div>
+    <div class="cover-mark" aria-hidden="true">05</div>
+  </div>
+  <h1>מרובעים<br><em>מקבילית ומשפחתה</em></h1>
+  <p class="cover-lede">מקבילית, מלבן, מעוין, ריבוע וטרפז — אותה משפחה, תכונות שונות. מי יורש מה, ואיך תכונה אחת מספיקה כדי לזהות את הצורה.</p>
+
+  <div class="cover-art" aria-hidden="true">
+    <svg viewBox="0 0 640 390" role="img" aria-label="עץ משפחה של מרובעים: מרובע, טרפז, מקבילית, מלבן, מעוין וריבוע">
+      <g stroke="#7b4b6b" stroke-width="1.4" fill="none">
+        <path d="M320 62 V95 M130 95 H450 M130 95 V128 M450 95 V128"/>
+        <path d="M450 172 V200 M350 200 H540 M350 200 V228 M540 200 V228"/>
+        <path d="M350 272 V310 M540 272 V310 M350 310 H540 M445 310 V338"/>
+      </g>
+      <g font-family="Assistant,Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle">
+        <rect x="250" y="18" width="140" height="44" rx="9" fill="#f1e8ee" stroke="#7b4b6b"/>
+        <text x="320" y="46">מרובע</text>
+        <rect x="70" y="128" width="120" height="44" rx="9" fill="#fffdf7" stroke="#7b4b6b"/>
+        <text x="130" y="156">טרפז</text>
+        <rect x="390" y="128" width="120" height="44" rx="9" fill="#f1e8ee" stroke="#7b4b6b"/>
+        <text x="450" y="156">מקבילית</text>
+        <rect x="290" y="228" width="120" height="44" rx="9" fill="#fffdf7" stroke="#7b4b6b"/>
+        <text x="350" y="256">מלבן</text>
+        <rect x="480" y="228" width="120" height="44" rx="9" fill="#fffdf7" stroke="#7b4b6b"/>
+        <text x="540" y="256">מעוין</text>
+        <rect x="385" y="338" width="120" height="44" rx="9" fill="#7b4b6b"/>
+        <text x="445" y="366" fill="#fff">ריבוע</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="cover-grid">
+    <div>
+      <h4>מה יש בחוברת</h4>
+      <ul class="cover-list">
+        <li>עץ המשפחה של המרובעים</li>
+        <li>תכונות המקבילית ואיך מזהים אותה</li>
+        <li>מלבן, מעוין וריבוע — מה מוסיפים</li>
+        <li>טרפז וטרפז שווה־שוקיים</li>
+        <li>אלכסונים, שטחים והיקפים</li>
+      </ul>
+    </div>
+    <div class="cover-facts">
+      <div><b>8</b> טכניקות, אחת לעמוד</div>
+      <div><b>60+</b> תרגילים מדורגים</div>
+      <div><b>3–4</b> מפגשים של כ־30 דקות</div>
+      <div><b>צריך:</b> עיפרון, סרגל, מחק</div>
+      <div><b>חשוב:</b> טבלת התכונות בסוף</div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <span>שם</span><span class="fill"></span>
+    <span>כיתה</span><span class="fill" style="max-width:70px"></span>
+    <span>תאריך</span><span class="fill" style="max-width:100px"></span>
+  </div>
+</section>
+
+<!-- ================= איך עובדים ================= -->
+<section class="sheet">
+  <span class="kicker">לפני שמתחילים</span>
+  <h2>מרובעים הם משפחה, לא רשימה</h2>
+  <p class="lead">כל צורה במשפחה יורשת את התכונות של אלה שמעליה, ומוסיפה תכונה משל עצמה. לכן ריבוע הוא גם מלבן וגם מעוין — ובגלל זה כל כך קל להתבלבל.</p>
+
+  <div class="two" style="margin-top:1.4em">
+    <div>
+      <h3 style="font-size:1.02rem;margin-bottom:.5em">ארבעה צעדים בכל שאלה</h3>
+      <div class="flow">
+        <div class="flow-step"><span class="when">1 · מזהים</span><span class="then">איזו צורה? מה היא יורשת, ומה מיוחד בה?</span></div>
+        <div class="flow-step"><span class="when">2 · מסמנים</span><span class="then">צלעות שוות, זוויות ישרות, אלכסונים — <b>על השרטוט</b>.</span></div>
+        <div class="flow-step"><span class="when">3 · בוחרים תכונה</span><span class="then">זווית משלימה ל־180°, אלכסונים חוצים, פיתגורס או נוסחת שטח.</span></div>
+        <div class="flow-step"><span class="when">4 · בודקים</span><span class="then">האם התוצאה מתאימה לצורה? אלכסון מלבן ארוך מצלע? כן. במעוין — לא בהכרח.</span></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:1.02rem;margin-bottom:.5em">שלוש מלכודות</h3>
+      <div class="callout callout--warn"><span class="callout-title">טרפז אינו מקבילית</span>בטרפז יש <b>זוג אחד</b> של צלעות מקבילות. מקבילית דורשת שני זוגות.</div>
+      <div class="callout callout--warn"><span class="callout-title">שטח מעוין</span>זה <b>מכפלת האלכסונים חלקי 2</b> — לא צלע בריבוע. צלע בריבוע היא שטח ריבוע.</div>
+      <div class="callout callout--tip"><span class="callout-title">האלכסונים עוזרים</span>במלבן הם שווים; במעוין הם מאונכים; במקבילית הם חוצים זה את זה. זו דרך מהירה לזהות צורה.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 1 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">1</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>מרובע: 360° ומשפחה</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע למצוא זווית חסרה במרובע, ותסווג כל מרובע למקום הנכון במשפחה.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">α + β + γ + δ = 360°</div>
+    <p class="rule-note">כל מרובע מתחלק לשני משולשים, וכל משולש הוא 180° — ולכן הסכום הוא 360°.</p>
+  </div>
+
+  <table class="table">
+    <thead><tr><th>צורה</th><th>ההגדרה</th><th>מה מיוחד</th></tr></thead>
+    <tbody>
+      <tr><td><b>טרפז</b></td><td>זוג אחד של צלעות נגדיות מקבילות</td><td>לא מקבילית</td></tr>
+      <tr><td><b>מקבילית</b></td><td>שני זוגות של צלעות נגדיות מקבילות</td><td>הצורה "האם" של המשפחה</td></tr>
+      <tr><td><b>מלבן</b></td><td>מקבילית עם ארבע זוויות ישרות</td><td>אלכסונים שווים</td></tr>
+      <tr><td><b>מעוין</b></td><td>מקבילית עם ארבע צלעות שוות</td><td>אלכסונים מאונכים</td></tr>
+      <tr><td><b>ריבוע</b></td><td>מלבן וגם מעוין</td><td>כל התכונות ביחד</td></tr>
+    </tbody>
+  </table>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">זווית חסרה</span></div>
+    <ol class="steps">
+      <li>שלוש זוויות: <span class="m">100°, 80°, 90°</span></li>
+      <li>סכומן: <span class="m">270°</span></li>
+      <li>הרביעית: <span class="m">360 - 270 = 90°</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>לא כל מרובע עם שתי צלעות מקבילות הוא מקבילית. בטרפז יש <b>רק זוג אחד</b>. וגם לא כל מרובע עם זוויות ישרות הוא מלבן — מלבן חייב קודם להיות מקבילית.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · זווית רביעית</h3><span class="count">4 תרגילים</span></div>
+    <ol class="ex ex--wide">
+      <li>זוויות <span class="m">90°, 90°, 90°</span></li>
+      <li>זוויות <span class="m">110°, 70°, 110°</span></li>
+      <li>זוויות <span class="m">120°, 60°, 120°</span></li>
+      <li>זוויות <span class="m">90°, 90°, 100°</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="q5-t1"> סיימתי טכניקה 1 — מרובע ומשפחה</label>
+</section>
+
+<!-- ================= 2 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">2</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>תכונות המקבילית</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע ארבע תכונות של מקבילית, ותשתמש בהן כדי למצוא זוויות וצלעות.</p>
+
+  <figure class="fig" style="margin-top:.4em">
+    <svg viewBox="0 0 640 300" role="img" aria-label="מקבילית עם אלכסונים שנחתכים באמצע, זוויות נגדיות שוות">
+      <path d="M170 70 L430 70 L490 230 L230 230 Z" fill="#f1e8ee" stroke="#1b2a2a" stroke-width="2"/>
+      <line x1="170" y1="70" x2="490" y2="230" stroke="#7b4b6b" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <line x1="430" y1="70" x2="230" y2="230" stroke="#7b4b6b" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <circle cx="330" cy="150" r="3.5" fill="#7b4b6b"/>
+      <g font-family="Inter,Arial,sans-serif" font-size="14" fill="#65726c" text-anchor="middle">
+        <text x="155" y="62">A</text>
+        <text x="445" y="62">B</text>
+        <text x="505" y="240">C</text>
+        <text x="215" y="240">D</text>
+        <text x="343" y="144">O</text>
+      </g>
+      <g font-family="Inter,Arial,sans-serif" font-size="17" text-anchor="middle">
+        <text x="200" y="102" fill="#a3542f">α</text>
+        <text x="460" y="212" fill="#a3542f">α</text>
+        <text x="400" y="102" fill="#1f5d7a">β</text>
+        <text x="258" y="212" fill="#1f5d7a">β</text>
+      </g>
+      <g font-family="Assistant,Arial,sans-serif" font-size="13" fill="#65726c" text-anchor="middle">
+        <text x="330" y="272">האלכסונים חוצים זה את זה</text>
+      </g>
+    </svg>
+    <figcaption>במקבילית: צלעות נגדיות שוות ומקבילות, זוויות נגדיות שוות, זוויות סמוכות משלימות ל־180°, והאלכסונים חוצים זה את זה.</figcaption>
+  </figure>
+
+  <div class="rule-box">
+    <p class="rule-label">ארבע תכונות</p>
+    <div class="eq">AB = CD &nbsp;,&nbsp; AD = BC</div>
+    <div class="eq">∠A = ∠C &nbsp;,&nbsp; ∠B = ∠D</div>
+    <div class="eq">∠A + ∠B = 180°</div>
+    <div class="eq">AO = OC &nbsp;,&nbsp; BO = OD</div>
+    <p class="rule-note">האותיות <span class="m">A, B, C, D</span> הן הקודקודים לפי הסדר; <span class="m">O</span> היא נקודת חיתוך האלכסונים.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">זווית וצלע</span></div>
+    <ol class="steps">
+      <li>זווית <span class="m">A = 65°</span>. הזווית הנגדית: <span class="m">C = 65°</span></li>
+      <li>הזווית הסמוכה: <span class="m">B = 180 - 65 = 115°</span>, וגם <span class="m">D = 115°</span></li>
+      <li>אם <span class="m">AB = 8</span> ו־<span class="m">BC = 5</span>: <span class="m">CD = 8</span>, <span class="m">AD = 5</span>, היקף <span class="m">26</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>הזוויות ה<b>סמוכות</b> במקבילית משלימות ל־180°, לא שוות. רק הנגדיות שוות. טעות נפוצה: לכתוב <span class="m">A = B</span> ואז לקבל זווית שגויה.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · תכונות</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex">
+      <li>זווית <span class="m">A = 70°</span>. מצאו את B, C, D.</li>
+      <li><span class="m">AB = 8</span>, <span class="m">BC = 5</span>. מצאו את כל הצלעות וההיקף.</li>
+      <li>אלכסון <span class="m">AC = 12</span>, אלכסון <span class="m">BD = 16</span>. מה אורך <span class="m">AO</span> ו־<span class="m">BO</span>?</li>
+      <li>זווית <span class="m">A = 3x</span>, זווית <span class="m">B = x + 20</span>. מצאו <span class="m">x</span> ואת הזוויות.</li>
+      <li>זוויות נגדיות: <span class="m">2x + 10</span> ו־<span class="m">3x - 20</span>. מצאו <span class="m">x</span> ואת הזווית.</li>
+      <li>היקף המקבילית <span class="m">36</span>, צלע אחת <span class="m">10</span>. מה הצלע הסמוכה?</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="q5-t2"> סיימתי טכניקה 2 — תכונות המקבילית</label>
+</section>
+
+<!-- ================= 3 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">3</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>איך מזהים מקבילית</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע להחליט אם נתונים מספיקים כדי לקבוע שמרובע הוא מקבילית — ולא להסתפק בתחושה.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">חמישה מבחנים</p>
+    <div class="eq">שני זוגות צלעות נגדיות מקבילות</div>
+    <div class="eq">שני זוגות צלעות נגדיות שוות</div>
+    <div class="eq">זוג אחד של צלעות נגדיות שוות ומקבילות</div>
+    <div class="eq">האלכסונים חוצים זה את זה</div>
+    <div class="eq">זוויות נגדיות שוות</div>
+    <p class="rule-note">די ב<b>אחד</b> מהתנאים. האותיות מתייחסות למרובע <span class="m">ABCD</span> לפי הסדר סביב ההיקף. שימו לב: "זוג אחד של צלעות מקבילות" בלבד הוא טרפז, לא מקבילית.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">נימוק מלא</span></div>
+    <ol class="steps">
+      <li>נתון: <span class="m">AB ∥ CD</span> וגם <span class="m">AB = CD</span>.</li>
+      <li>זהו זוג אחד של צלעות נגדיות שוות ומקבילות.</li>
+      <li>לכן המרובע הוא <b>מקבילית</b>.</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>שתי צלעות נגדיות שוות <b>בלי</b> מקבילות — לא מספיקות. וגם שתי זוויות נגדיות שוות בלי קשר נוסף לא תמיד מספיקות; צריך את התנאי המלא: <b>שני</b> זוגות של זוויות נגדיות שוות.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · מקבילית או לא?</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex ex--wide">
+      <li><span class="m">AB = CD = 7</span> וגם <span class="m">BC = AD = 5</span></li>
+      <li><span class="m">AB ∥ CD</span> וגם <span class="m">AB = CD</span></li>
+      <li>האלכסונים חוצים זה את זה</li>
+      <li><span class="m">AB ∥ CD</span> בלבד</li>
+      <li>זוויות נגדיות <span class="m">80°</span> ו־<span class="m">100°</span></li>
+      <li>זוויות <span class="m">70°, 110°, 70°, 110°</span> לפי הסדר</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="q5-t3"> סיימתי טכניקה 3 — זיהוי מקבילית</label>
+</section>
+
+<!-- ================= 4 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">4</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>מלבן</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע מה מלבן מוסיף למקבילית, ותמצא אלכסון, היקף ושטח.</p>
+
+  <div class="two">
+    <figure class="fig" style="margin-top:0">
+      <svg viewBox="0 0 640 280" role="img" aria-label="מלבן עם אלכסונים שווים וזוויות ישרות">
+        <rect x="180" y="60" width="280" height="160" fill="#f1e8ee" stroke="#1b2a2a" stroke-width="2"/>
+        <line x1="180" y1="60" x2="460" y2="220" stroke="#7b4b6b" stroke-width="1.4"/>
+        <line x1="460" y1="60" x2="180" y2="220" stroke="#7b4b6b" stroke-width="1.4"/>
+        <g fill="none" stroke="#1b2a2a" stroke-width="1.3">
+          <path d="M180 74 H194 V60"/><path d="M446 60 H460 V74"/>
+          <path d="M460 206 H446 V220"/><path d="M194 220 H180 V206"/>
+        </g>
+        <circle cx="320" cy="140" r="3.5" fill="#7b4b6b"/>
+      </svg>
+      <figcaption>במלבן כל הזוויות ישרות, והאלכסונים <b>שווים</b> וחוצים זה את זה.</figcaption>
+    </figure>
+    <div>
+      <div class="rule-box" style="margin-top:0">
+        <p class="rule-label">מה מוסיף</p>
+        <div class="eq">ארבע זוויות ישרות &nbsp;|&nbsp; אלכסונים שווים</div>
+        <div class="eq">S = a · b &nbsp;&nbsp;|&nbsp;&nbsp; P = 2(a + b)</div>
+        <p class="rule-note">האלכסון יוצר משולש ישר־זווית עם שתי הצלעות — ולכן פיתגורס עובד כאן.</p>
+      </div>
+      <div class="callout callout--tip">
+        <span class="callout-title">האלכסון</span>
+        <p><span class="m">d<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup></span>. זה אותו פיתגורס, רק עם שמות של צלעות המלבן.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מלבן 6×8</span></div>
+    <ol class="steps">
+      <li><span class="m">d<sup>2</sup> = 6<sup>2</sup> + 8<sup>2</sup> = 36 + 64 = 100</span></li>
+      <li><span class="m">d = 10</span></li>
+      <li>שטח: <span class="m">6·8 = 48</span>; היקף: <span class="m">2(6+8) = 28</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>האלכסון <b>אינו</b> סכום הצלעות. <span class="m">6+8=14</span>, אבל האלכסון 10. וגם לא מתבלבלים בין שטח להיקף: השטח ביחידות בריבוע, ההיקף ביחידות רגילות.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · מלבנים</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex">
+      <li>צלעות <span class="m">5, 12</span>. מצאו אלכסון.</li>
+      <li>אלכסון <span class="m">10</span>, צלע <span class="m">6</span>. מצאו צלע שנייה.</li>
+      <li>היקף <span class="m">26</span>, אורך <span class="m">8</span>. מצאו רוחב ושטח.</li>
+      <li>שטח <span class="m">48</span>, רוחב <span class="m">6</span>. מצאו אורך ואלכסון.</li>
+      <li>צלעות <span class="m">7, 24</span>. מצאו אלכסון.</li>
+      <li>אלכסון <span class="m">15</span>, צלע <span class="m">9</span>. מצאו צלע שנייה ושטח.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="q5-t4"> סיימתי טכניקה 4 — מלבן</label>
+</section>
+
+<!-- ================= 5 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">5</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>מעוין</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע להשתמש באלכסונים של המעוין — לחישוב צלע, שטח והיקף.</p>
+
+  <div class="two">
+    <figure class="fig" style="margin-top:0">
+      <svg viewBox="0 0 640 280" role="img" aria-label="מעוין שאלכסוניו מאונכים וחוצים זה את זה">
+        <path d="M320 40 L480 140 L320 240 L160 140 Z" fill="#f1e8ee" stroke="#1b2a2a" stroke-width="2"/>
+        <line x1="160" y1="140" x2="480" y2="140" stroke="#7b4b6b" stroke-width="1.4" stroke-dasharray="5 4"/>
+        <line x1="320" y1="40" x2="320" y2="240" stroke="#7b4b6b" stroke-width="1.4" stroke-dasharray="5 4"/>
+        <path d="M320 125 H335 V140" fill="none" stroke="#7b4b6b" stroke-width="1.3"/>
+        <circle cx="320" cy="140" r="3.5" fill="#7b4b6b"/>
+      </svg>
+      <figcaption>במעוין: ארבע צלעות שוות, האלכסונים <b>מאונכים</b>, וחוצים את הזוויות ואחד את השני.</figcaption>
+    </figure>
+    <div>
+      <div class="rule-box" style="margin-top:0">
+        <p class="rule-label">התכונות והשטח</p>
+        <div class="eq">S = (d<sub>1</sub> · d<sub>2</sub>) / 2</div>
+        <div class="eq">צלע<sup>2</sup> = (d<sub>1</sub>/2)<sup>2</sup> + (d<sub>2</sub>/2)<sup>2</sup></div>
+        <p class="rule-note">ארבעה משולשים ישרי־זווית קטנים נוצרים על ידי האלכסונים. חצי מכל אלכסון הוא ניצב.</p>
+      </div>
+      <div class="callout callout--tip">
+        <span class="callout-title">למה פיתגורס</span>
+        <p>האלכסונים מאונכים, ולכן כל רבע מעוין הוא משולש ישר־זווית. זה מה שמאפשר לעבור מאלכסונים לצלע.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">אלכסונים 6 ו־8</span></div>
+    <ol class="steps">
+      <li><span class="m">S = (6·8)/2 = 24</span></li>
+      <li>חצאי אלכסונים: <span class="m">3</span> ו־<span class="m">4</span></li>
+      <li><span class="m">צלע = √(3<sup>2</sup>+4<sup>2</sup>) = 5</span></li>
+      <li>היקף: <span class="m">4·5 = 20</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>שטח מעוין אינו <span class="m">צלע<sup>2</sup></span>. <span class="m">5<sup>2</sup>=25</span>, אבל השטח כאן הוא 24. רק בריבוע (שהוא גם מעוין) השטח שווה לצלע בריבוע, בריבוע האלכסונים שווים, ואז מכפלתם חלקי 2 שווה בדיוק לצלע בריבוע.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · מעוינים</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex">
+      <li>אלכסונים <span class="m">10, 24</span>. מצאו צלע, שטח והיקף.</li>
+      <li>צלע <span class="m">5</span>, אלכסון <span class="m">6</span>. מצאו אלכסון שני.</li>
+      <li>שטח <span class="m">48</span>, אלכסון <span class="m">8</span>. מצאו אלכסון שני.</li>
+      <li>היקף <span class="m">40</span>. מצאו צלע.</li>
+      <li>אלכסונים <span class="m">12, 16</span>. מצאו צלע ושטח.</li>
+      <li>שטח <span class="m">24</span>, אלכסון <span class="m">6</span>. מצאו אלכסון שני.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="q5-t5"> סיימתי טכניקה 5 — מעוין</label>
+</section>
+
+<!-- ================= 6 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">6</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>ריבוע</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לעבור בין צלע, אלכסון ושטח של ריבוע — בשלושה כיוונים.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">S = a<sup>2</sup> &nbsp;&nbsp;|&nbsp;&nbsp; d = a√2</div>
+    <div class="eq">S = d<sup>2</sup> / 2</div>
+    <p class="rule-note">ריבוע הוא מלבן ומעוין בעת ובעונה אחת: כל הזוויות ישרות, כל הצלעות שוות, והאלכסונים שווים, מאונכים וחוצים זה את זה.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מצלע לאלכסון ולשטח</span></div>
+    <ol class="steps">
+      <li>צלע <span class="m">6</span>: שטח <span class="m">36</span>, היקף <span class="m">24</span></li>
+      <li>אלכסון: <span class="m">d = 6√2 ≈ 8.49</span></li>
+      <li>בדיקה: <span class="m">d<sup>2</sup>/2 = (36·2)/2 = 36</span> ✓</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>האלכסון אינו <span class="m">2a</span>. בריבוע שצלעו 6, האלכסון הוא <span class="m">6√2 ≈ 8.49</span>, ולא 12. וגם: אם נתון האלכסון, מחלקים ב־<span class="m">√2</span> (או כופלים ב־<span class="m">√2/2</span>) — לא ב־2.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · ריבועים</h3><span class="count">5 תרגילים</span></div>
+    <ol class="ex">
+      <li>צלע <span class="m">9</span>. שטח והיקף?</li>
+      <li>אלכסון <span class="m">10</span>. שטח?</li>
+      <li>שטח <span class="m">49</span>. צלע ואלכסון?</li>
+      <li>אלכסון <span class="m">8</span>. צלע ושטח?</li>
+      <li>היקף <span class="m">24</span>. צלע, שטח ואלכסון?</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="q5-t6"> סיימתי טכניקה 6 — ריבוע</label>
+</section>
+
+<!-- ================= 7 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">7</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>טרפז</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תחשב שטח טרפז, ותדע מה מיוחד בטרפז שווה־שוקיים.</p>
+
+  <div class="two">
+    <figure class="fig" style="margin-top:0">
+      <svg viewBox="0 0 640 280" role="img" aria-label="טרפז שווה שוקיים עם בסיסים, גובה וזוויות בסיס שוות">
+        <path d="M180 220 L460 220 L390 80 L250 80 Z" fill="#f1e8ee" stroke="#1b2a2a" stroke-width="2"/>
+        <line x1="320" y1="80" x2="320" y2="220" stroke="#7b4b6b" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <path d="M320 205 H305 V220" fill="none" stroke="#7b4b6b" stroke-width="1.3"/>
+        <path d="M210 220 A30 30 0 0 0 193.4 193.2" fill="none" stroke="#a3542f" stroke-width="1.7"/>
+        <path d="M430 220 A30 30 0 0 1 446.6 193.2" fill="none" stroke="#a3542f" stroke-width="1.7"/>
+        <g font-family="Inter,Arial,sans-serif" font-size="15" fill="#3c4b47" text-anchor="middle">
+          <text x="320" y="66">a</text>
+          <text x="320" y="248">b</text>
+          <text x="334" y="155" fill="#7b4b6b">h</text>
+        </g>
+      </svg>
+      <figcaption>בטרפז שווה־שוקיים: השוקיים שוות, זוויות הבסיס שוות, והאלכסונים שווים.</figcaption>
+    </figure>
+    <div>
+      <div class="rule-box" style="margin-top:0">
+        <p class="rule-label">הכלל</p>
+        <div class="eq">S = ((a + b) · h) / 2</div>
+        <p class="rule-note"><span class="m">a</span> ו־<span class="m">b</span> הם שני הבסיסים המקבילים, <span class="m">h</span> הוא הגובה ביניהם.</p>
+        <div class="eq">זוויות בסיס שוות &nbsp;|&nbsp; אלכסונים שווים</div>
+      </div>
+      <div class="callout callout--tip">
+        <span class="callout-title">למה הממוצע</span>
+        <p>שני עותקים של הטרפז יוצרים מקבילית שאורכה <span class="m">a+b</span> וגובהה <span class="m">h</span>. לכן שטח הטרפז הוא חצי מהשטח הזה.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">בסיסים 6 ו־10</span></div>
+    <ol class="steps">
+      <li><span class="m">S = ((6+10)·4)/2</span></li>
+      <li><span class="m">= (16·4)/2 = 64/2</span></li>
+      <li><span class="m">= 32</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>טרפז <b>אינו</b> מקבילית, ולכן אין בו את כל תכונות המקבילית. וגם לא מחשבים שטח עם השוק: <span class="m">h</span> הוא הגובה האנכי בין הבסיסים, לא אורך השוק.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · טרפזים</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex">
+      <li>בסיסים <span class="m">8, 14</span>, גובה <span class="m">5</span></li>
+      <li>שטח <span class="m">45</span>, גובה <span class="m">5</span>, בסיס <span class="m">6</span>. מצאו בסיס שני.</li>
+      <li>טרפז שווה־שוקיים, זווית בסיס <span class="m">70°</span>. מצאו את הזווית השנייה.</li>
+      <li>בסיסים <span class="m">5, 11</span>, שוק <span class="m">5</span>. מצאו גובה ושטח.</li>
+      <li>שטח <span class="m">60</span>, בסיסים <span class="m">7, 13</span>. מצאו גובה.</li>
+      <li>בסיסים <span class="m">10, 16</span>, שוק <span class="m">5</span>. מצאו היקף.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="q5-t7"> סיימתי טכניקה 7 — טרפז</label>
+</section>
+
+<!-- ================= 8 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">8</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>שטחים והיקפים — הכול במקום אחד</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תבחר את הנוסחה הנכונה לכל צורה, ותפרק צורה מורכבת למלבנים ולמשולשים.</p>
+
+  <table class="table">
+    <thead><tr><th>צורה</th><th>שטח</th><th>היקף</th></tr></thead>
+    <tbody>
+      <tr><td>מלבן</td><td class="m">a · b</td><td class="m">2(a + b)</td></tr>
+      <tr><td>מקבילית</td><td class="m">b · h</td><td class="m">2(a + b)</td></tr>
+      <tr><td>משולש</td><td class="m">(b · h) / 2</td><td class="m">a + b + c</td></tr>
+      <tr><td>טרפז</td><td class="m">((a + b) · h) / 2</td><td class="m">סכום הצלעות</td></tr>
+      <tr><td>מעוין</td><td class="m">(d<sub>1</sub> · d<sub>2</sub>) / 2</td><td class="m">4a</td></tr>
+      <tr><td>ריבוע</td><td class="m">a<sup>2</sup> &nbsp;או&nbsp; d<sup>2</sup>/2</td><td class="m">4a</td></tr>
+    </tbody>
+  </table>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">צורה מורכבת</span></div>
+    <ol class="steps">
+      <li>מלבן גדול <span class="m">10 × 6</span>: שטח <span class="m">60</span></li>
+      <li>גומחה חסרה <span class="m">4 × 2</span>: שטח <span class="m">8</span></li>
+      <li>שטח הצורה: <span class="m">60 - 8 = 52</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>לא מחברים שטחים של צורות חופפות, ולא שוכחים להחסיר גומחות. בדרך כלל קל יותר לפרק צורה מורכבת למלבנים מלאים, ואז לחבר — או לחסר מגומחה.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · נוסחאות</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex">
+      <li>מקבילית: בסיס <span class="m">12</span>, גובה <span class="m">7</span></li>
+      <li>משולש: בסיס <span class="m">10</span>, גובה <span class="m">6</span></li>
+      <li>טרפז: בסיסים <span class="m">6, 10</span>, גובה <span class="m">4</span></li>
+      <li>מעוין: אלכסונים <span class="m">8, 10</span></li>
+      <li>ריבוע: צלע <span class="m">7</span></li>
+      <li>צורת L: מלבן <span class="m">10 × 6</span> פחות גומחה <span class="m">4 × 2</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="q5-t8"> סיימתי טכניקה 8 — שטחים והיקפים</label>
+</section>
+
+<!-- ================= סיכום ================= -->
+<section class="sheet">
+  <span class="kicker">לפני התרגול המסכם</span>
+  <h2>טבלת התכונות — כל המשפחה במבט אחד</h2>
+  <p class="lead">זו הטבלה שכדאי לחזור אליה לפני כל תרגיל. אם תדע מה נכון לכל צורה, לא תצטרך לזכור כל מקרה בנפרד.</p>
+
+  <table class="table" style="margin-top:1.2em">
+    <thead>
+      <tr><th>תכונה</th><th class="c">מקבילית</th><th class="c">מלבן</th><th class="c">מעוין</th><th class="c">ריבוע</th><th class="c">טרפז שווה־שוקיים</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>שני זוגות צלעות נגדיות מקבילות</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">זוג אחד</td></tr>
+      <tr><td>כל הצלעות שוות</td><td class="c">—</td><td class="c">—</td><td class="c">✓</td><td class="c">✓</td><td class="c">—</td></tr>
+      <tr><td>זוויות נגדיות שוות</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">—</td></tr>
+      <tr><td>כל הזוויות ישרות</td><td class="c">—</td><td class="c">✓</td><td class="c">—</td><td class="c">✓</td><td class="c">—</td></tr>
+      <tr><td>האלכסונים חוצים זה את זה</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">—</td></tr>
+      <tr><td>האלכסונים שווים</td><td class="c">—</td><td class="c">✓</td><td class="c">—</td><td class="c">✓</td><td class="c">✓</td></tr>
+      <tr><td>האלכסונים מאונכים</td><td class="c">—</td><td class="c">—</td><td class="c">✓</td><td class="c">✓</td><td class="c">—</td></tr>
+      <tr><td>האלכסונים חוצים את הזוויות</td><td class="c">—</td><td class="c">—</td><td class="c">✓</td><td class="c">✓</td><td class="c">—</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">שימו לב</span>
+    <p>בטרפז שווה־שוקיים, <b>זוויות הבסיס</b> שוות וזוג הזוויות העליון שווה — אבל זוויות <b>נגדיות</b> אינן שוות. לכן בטבלה מסומן "—" בתכונת הזוויות הנגדיות.</p>
+  </div>
+
+  <h3 style="margin-top:1.5em;font-size:1.1rem">חמש הטעויות שעולות הכי הרבה נקודות</h3>
+  <div class="callout callout--warn"><span class="callout-title">1 · טרפז אינו מקבילית</span>זוג אחד של צלעות מקבילות — טרפז. שני זוגות — מקבילית.</div>
+  <div class="callout callout--warn"><span class="callout-title">2 · שטח מעוין</span><span class="m">d<sub>1</sub>·d<sub>2</sub>/2</span>, לא <span class="m">a<sup>2</sup></span>.</div>
+  <div class="callout callout--warn"><span class="callout-title">3 · ריבוע הוא גם מלבן וגם מעוין</span>לכן כל תכונות המלבן והמעוין נכונות בו — אבל לא כל מלבן הוא מעוין.</div>
+  <div class="callout callout--warn"><span class="callout-title">4 · אלכסוני מלבן</span>שווים, אבל <b>לא מאונכים</b> (אלא אם זה ריבוע).</div>
+  <div class="callout callout--warn"><span class="callout-title">5 · גובה מול צלע</span>במקבילית ובטרפז, השטח משתמש בגובה האנכי — לא באורך השוק.</div>
+</section>
+
+<!-- ================= תרגול מסכם ================= -->
+<section class="sheet">
+  <span class="kicker">מבחן קטן</span>
+  <h2>תרגול מסכם</h2>
+  <p class="lead">12 תרגילים מכל הטכניקות. בכל תרגיל שטח — רשמו יחידות בריבוע.</p>
+
+  <div class="drill" style="margin-top:1em">
+    <div class="drill-head"><h3>מעורב</h3><span class="count">12 תרגילים · 30 דקות</span></div>
+    <ol class="ex">
+      <li>זוויות מרובע: <span class="m">100°, 80°, 90°</span>. הרביעית?</li>
+      <li>מקבילית: זווית <span class="m">75°</span>. הזווית הסמוכה?</li>
+      <li>מקבילית: צלעות <span class="m">9, 4</span>. היקף?</li>
+      <li>האלכסונים חוצים זה את זה — האם מקבילית?</li>
+      <li>מלבן <span class="m">9 × 12</span>. אלכסון?</li>
+      <li>מלבן: היקף <span class="m">30</span>, אורך <span class="m">9</span>. רוחב ושטח?</li>
+      <li>מעוין: אלכסונים <span class="m">12, 16</span>. צלע ושטח?</li>
+      <li>מעוין: שטח <span class="m">60</span>, אלכסון <span class="m">10</span>. אלכסון שני?</li>
+      <li>ריבוע: אלכסון <span class="m">12</span>. שטח?</li>
+      <li>טרפז: בסיסים <span class="m">7, 13</span>, גובה <span class="m">6</span>. שטח?</li>
+      <li>טרפז שווה־שוקיים: זווית בסיס <span class="m">75°</span>. הזווית השנייה?</li>
+      <li>צורת L: מלבן <span class="m">8 × 5</span> פחות גומחה <span class="m">3 × 2</span>.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= בדיקת עצמי ================= -->
+<section class="sheet">
+  <span class="kicker">לפני שממשיכים</span>
+  <h2>בדיקת עצמי</h2>
+  <p class="lead">שש שאלות, עד 12 דקות, בלי להציץ.</p>
+
+  <div class="drill" style="margin-top:1em">
+    <div class="drill-head"><h3>שש שאלות</h3><span class="count">6 נקודות</span></div>
+    <ol class="ex">
+      <li>זוויות מרובע: <span class="m">110°, 70°, 100°</span>. הרביעית?</li>
+      <li>מקבילית: זווית <span class="m">68°</span>. הזווית הסמוכה?</li>
+      <li>מעוין: אלכסונים <span class="m">6, 8</span>. שטח וצלע?</li>
+      <li>מלבן <span class="m">5 × 12</span>. אלכסון?</li>
+      <li>טרפז: בסיסים <span class="m">4, 10</span>, גובה <span class="m">6</span>. שטח?</li>
+      <li>ריבוע ששטחו <span class="m">64</span>. אלכסון?</li>
+    </ol>
+  </div>
+
+  <div class="score">
+    <div><b>6</b>מוכן. אפשר לעבור לנושא הבא.</div>
+    <div><b>4–5</b>חזרו על הטכניקה שבה טעיתם, ופתרו שוב את התרגול שלה.</div>
+    <div><b>0–3</b>קראו שוב את טבלת התכונות, ואז עשו את התרגול המסכם.</div>
+  </div>
+</section>
+
+<!-- ================= תשובות ================= -->
+<section class="sheet answers">
+  <h2>נספח תשובות</h2>
+  <div class="cut">לקרוע רק אחרי שסיימתם</div>
+
+  <div class="ans-grid">
+    <p><b>1 · מרובע</b><br>1) 90° · 2) 70° · 3) 60° · 4) 80°</p>
+    <p><b>2 · מקבילית</b><br>1) B=110°, C=70°, D=110° · 2) CD=8, AD=5, היקף 26 · 3) AO=6, BO=8 · 4) x=40; A=C=120°, B=D=60° · 5) x=30; 70° · 6) 8</p>
+    <p><b>3 · זיהוי</b><br>1) כן · 2) כן · 3) כן · 4) לא — טרפז · 5) לא — נגדיות לא שוות · 6) כן</p>
+    <p><b>4 · מלבן</b><br>1) 13 · 2) 8 · 3) רוחב 5, שטח 40 · 4) אורך 8, אלכסון 10 · 5) 25 · 6) צלע 12, שטח 108</p>
+    <p><b>5 · מעוין</b><br>1) צלע 13, שטח 120, היקף 52 · 2) 8 · 3) 12 · 4) 10 · 5) צלע 10, שטח 96 · 6) 8</p>
+    <p><b>6 · ריבוע</b><br>1) שטח 81, היקף 36 · 2) 50 · 3) צלע 7, אלכסון <span class="m">7√2</span> · 4) צלע <span class="m">4√2</span>, שטח 32 · 5) צלע 6, שטח 36, אלכסון <span class="m">6√2</span></p>
+    <p><b>7 · טרפז</b><br>1) 55 · 2) 12 · 3) 110° · 4) גובה 4, שטח 32 · 5) 6 · 6) 36</p>
+    <p><b>8 · נוסחאות</b><br>1) 84 · 2) 30 · 3) 32 · 4) 40 · 5) 49 · 6) 52</p>
+    <p><b>תרגול מסכם</b><br>1) 90° · 2) 105° · 3) 26 · 4) כן · 5) 15 · 6) רוחב 6, שטח 54 · 7) צלע 10, שטח 96 · 8) 12 · 9) 72 · 10) 60 · 11) 105° · 12) 34</p>
+    <p><b>בדיקת עצמי</b><br>1) 80° · 2) 112° · 3) שטח 24, צלע 5 · 4) 13 · 5) 42 · 6) <span class="m">8√2</span></p>
+  </div>
+
+  <p style="margin-top:1.4em;font-size:.8rem;color:var(--ink-3)">לפני כל תרגיל — זהו את הצורה, ושאלו איזו תכונה שלה נותנת את הנתון החסר. הנוסחה באה אחר כך.</p>
+</section>
+
+</main>
+<script src="../assets/booklet.js"></script>
+</body>
+</html>

@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>חוברת 02 · אלגברה: ביטויים ומשוואות — מתמטיקה כיתה ח׳</title>
+<meta name="description" content="חוברת עבודה באלגברה: כינוס איברים, פתיחת סוגריים, כפל מקוצר, פירוק לגורמים, משוואות, בעיות מילוליות ואי־שוויונות.">
+<meta name="theme-color" content="#a3542f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23a3542f'/%3E%3Ctext x='16' y='23' font-family='Arial' font-size='17' font-weight='700' fill='%23fff' text-anchor='middle'%3Ex%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&amp;family=Frank+Ruhl+Libre:wght@500;700;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/booklet.css">
+</head>
+<body class="booklet" style="--accent:#a3542f;--accent-2:#763a1f;--accent-soft:#f8ebe3">
+<header class="topbar no-print">
+  <a class="backlink" href="../index.html">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6l6 6-6 6M16 12H4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    כל החוברות
+  </a>
+  <span class="topbar-title">חוברת 02 · אלגברה: ביטויים ומשוואות</span>
+  <button class="btn" data-print type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    הדפסה
+  </button>
+</header>
+<span class="sr-only doc-title">חוברת 02 · אלגברה: ביטויים ומשוואות</span>
+
+<main class="paper">
+
+<!-- ================= שער ================= -->
+<section class="sheet cover">
+  <div class="cover-head">
+    <div class="cover-series">מתמטיקה · כיתה ח׳ · חוברת 02</div>
+    <div class="cover-mark" aria-hidden="true">02</div>
+  </div>
+  <h1>אלגברה<br><em>ביטויים ומשוואות</em></h1>
+  <p class="cover-lede">מלשון בני אדם למשוואה, ומשם לפתרון. לא מנחשים — פותחים סוגריים, מכנסים איברים, ומגיעים ל־<span class="m">x</span> לבד באגף אחד.</p>
+
+  <div class="cover-art" aria-hidden="true">
+    <svg viewBox="0 0 640 320" role="img" aria-label="מודל שטח לשני ביטויים: מלבן שאורכו x ועוד 3 וגובהו x ועוד 2, מחולק לארבעה מלבנים">
+      <rect x="150" y="30" width="340" height="260" fill="#f8ebe3" stroke="#a3542f" stroke-width="1.6"/>
+      <rect x="350" y="30" width="140" height="200" fill="#a3542f" opacity=".12"/>
+      <rect x="150" y="230" width="200" height="60" fill="#a3542f" opacity=".09"/>
+      <rect x="350" y="230" width="140" height="60" fill="#a3542f" opacity=".04"/>
+      <line x1="350" y1="30" x2="350" y2="290" stroke="#a3542f" stroke-width="1.2" stroke-dasharray="4 4"/>
+      <line x1="150" y1="230" x2="490" y2="230" stroke="#a3542f" stroke-width="1.2" stroke-dasharray="4 4"/>
+      <g font-family="Inter,Arial,sans-serif" fill="#1b2a2a" text-anchor="middle">
+        <text x="250" y="140" font-size="30" font-weight="600">x²</text>
+        <text x="420" y="140" font-size="28">3x</text>
+        <text x="250" y="268" font-size="28">2x</text>
+        <text x="420" y="268" font-size="26">6</text>
+      </g>
+      <g font-family="Assistant,Arial,sans-serif" font-size="17" fill="#763a1f" text-anchor="middle">
+        <text x="320" y="312">x + 3</text>
+        <text x="128" y="160" transform="rotate(-90 128 160)">x + 2</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="cover-grid">
+    <div>
+      <h4>מה יש בחוברת</h4>
+      <ul class="cover-list">
+        <li>כינוס איברים ופתיחת סוגריים</li>
+        <li>שלוש נוסחאות הכפל המקוצר — עם שרטוט</li>
+        <li>פירוק לגורמים: גורם משותף והפרש ריבועים</li>
+        <li>משוואות, בעיות מילוליות ואי־שוויונות</li>
+        <li>בידוד משתנה בנוסחה</li>
+      </ul>
+    </div>
+    <div class="cover-facts">
+      <div><b>10</b> טכניקות, אחת לעמוד</div>
+      <div><b>80+</b> תרגילים מדורגים</div>
+      <div><b>4–5</b> מפגשים של כ־30 דקות</div>
+      <div><b>צריך:</b> עיפרון, מחק, דף טיוטה</div>
+      <div><b>טיפ:</b> כל שורה — פעולה אחת</div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <span>שם</span><span class="fill"></span>
+    <span>כיתה</span><span class="fill" style="max-width:70px"></span>
+    <span>תאריך</span><span class="fill" style="max-width:100px"></span>
+  </div>
+</section>
+
+<!-- ================= איך עובדים ================= -->
+<section class="sheet">
+  <span class="kicker">לפני שמתחילים</span>
+  <h2>אלגברה היא שפה</h2>
+  <p class="lead">אות היא לא "משהו מסתורי" — היא קיצור למספר שלא ידוע עדיין. כל ביטוי אפשר לתרגם לעברית, וכל משפט אפשר לתרגם לביטוי. ברגע שיש תרגום, הפתרון הוא שורת כללים.</p>
+
+  <div class="two" style="margin-top:1.5em">
+    <div>
+      <h3 style="font-size:1.02rem;margin-bottom:.5em">ארבעה צעדים בכל תרגיל</h3>
+      <div class="flow">
+        <div class="flow-step"><span class="when">1 · קוראים</span><span class="then">מה נתון, ומה מבקשים? <b>מסמנים</b> את הנעלם באות.</span></div>
+        <div class="flow-step"><span class="when">2 · מפשטים</span><span class="then">פותחים סוגריים ומכנסים איברים <b>בכל אגף בנפרד</b>.</span></div>
+        <div class="flow-step"><span class="when">3 · מבודדים</span><span class="then">מעבירים משתנים לאגף אחד ומספרים לשני — <b>בפעולה הפוכה</b>.</span></div>
+        <div class="flow-step"><span class="when">4 · בודקים</span><span class="then">מציבים את הפתרון במשוואה המקורית. <b>אם שני האגפים שווים — נכון.</b></span></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:1.02rem;margin-bottom:.5em">שלוש החלטות שמונעות טעויות</h3>
+      <div class="callout callout--warn"><span class="callout-title">סימן לפני סוגריים</span>מינוס לפני סוגריים הופך <b>כל</b> סימן בפנים: <span class="m">-(x-4) = -x+4</span>.</div>
+      <div class="callout callout--tip"><span class="callout-title">שורה אחת = פעולה אחת</span>לא מנסים לעשות הכול בראש. כל מעבר נכתב מתחת לקודם.</div>
+      <div class="callout callout--why"><span class="callout-title">כמו מאזניים</span>משוואה היא מאזניים: מה שעושים לאגף אחד — עושים גם לשני.</div>
+    </div>
+  </div>
+
+  <div class="callout callout--tip" style="margin-top:1.2em">
+    <span class="callout-title">איך יודעים שהצלחת</span>
+    לא לפי "נראה לי שהבנתי", אלא לפי הצבה חוזרת שנותנת שוויון אמיתי — ועל הדרך גם מגלה טעמי סימן.
+  </div>
+</section>
+
+<!-- ================= 1 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">1</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>מלשון לביטוי</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לתרגם משפט בעברית לביטוי אלגברי, ולזהות מקדם ומשתנה.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">המשמעות של 3x: &nbsp;3 · x</div>
+    <p class="rule-note"><b>משתנה</b> — האות (<span class="m">x</span>). <b>מקדם</b> — המספר שמוכפל באות (<span class="m">3</span>). <b>ביטוי</b> — צירוף של מספרים, משתנים ופעולות, בלי סימן שוויון.</p>
+  </div>
+
+  <table class="table">
+    <thead><tr><th>בעברית</th><th>באלגברה</th><th>למה</th></tr></thead>
+    <tbody>
+      <tr><td>מספר גדול ב־5</td><td class="m">x + 5</td><td>מוסיפים 5</td></tr>
+      <tr><td>מספר כפול 3</td><td class="m">3x</td><td>שלושה עותקים של אותו מספר</td></tr>
+      <tr><td>מספר קטן ב־2</td><td class="m">x - 2</td><td>מורידים 2</td></tr>
+      <tr><td>המחצית של מספר</td><td class="m">x/2</td><td>מחלקים ב־2</td></tr>
+      <tr><td>מספר זוגי</td><td class="m">2n</td><td>כפולה של 2</td></tr>
+      <tr><td>מספר אי־זוגי</td><td class="m">2n + 1</td><td>זוגי ועוד 1</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>"פי 3" הוא <span class="m">3x</span>; "גדול ב־3" הוא <span class="m">x+3</span>. אלה שני דברים שונים לגמרי. גם "מספר כפול עצמו" הוא <span class="m">x<sup>2</sup></span>, לא <span class="m">2x</span>.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · תרגום</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex">
+      <li>מספר גדול ב־5</li>
+      <li>מספר כפול 3</li>
+      <li>מספר קטן ב־2</li>
+      <li>המחצית של מספר</li>
+      <li>סכום של מספר ו־7</li>
+      <li>מספר כפול עצמו</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="a2-t1"> סיימתי טכניקה 1 — מלשון לביטוי</label>
+</section>
+
+<!-- ================= 2 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">2</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>כינוס איברים דומים</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לקצר ביטוי ארוך לשורה אחת, בלי לאבד איברים ובלי לחבר דברים שאינם דומים.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">3x + 5x = 8x &nbsp;&nbsp;|&nbsp;&nbsp; 4x<sup>2</sup> + 2x<sup>2</sup> = 6x<sup>2</sup></div>
+    <p class="rule-note">איברים דומים = <b>אותו משתנה באותה חזקה</b>. מחברים את המקדמים ומשאירים את המשתנה כמו שהוא.</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout-title">למה זה עובד</span>
+    <p><span class="m">3x + 5x</span> הוא שלושה עותקים של <span class="m">x</span> ועוד חמישה עותקים — בסך הכול שמונה עותקים: <span class="m">8x</span>. זה בדיוק כמו <span class="m">3 תפוחים + 5 תפוחים = 8 תפוחים</span>.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מסדרים לפי חזקה</span></div>
+    <ol class="steps">
+      <li><span class="m">5x + 2x<sup>2</sup> - 3x</span></li>
+      <li>מסמנים דומים: <span class="m">5x - 3x = 2x</span>, ו־<span class="m">2x<sup>2</sup></span> נשאר לבד</li>
+      <li><span class="m">= 2x<sup>2</sup> + 2x</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p><span class="m">x + x = 2x</span>, לא <span class="m">x<sup>2</sup></span>. וגם <span class="m">3x + 2y</span> נשאר כמו שהוא — אין דרך לכנס משתנים שונים.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · כינוס</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">7x + 3x</span></li>
+      <li><span class="m">12a - 5a</span></li>
+      <li><span class="m">4y<sup>2</sup> + 3y<sup>2</sup></span></li>
+      <li><span class="m">5x + 2x<sup>2</sup> - 3x</span></li>
+      <li><span class="m">3a + 4b - 2a + b</span></li>
+      <li><span class="m">8m - 3 - 2m + 7</span></li>
+      <li><span class="m">2x + 3x - 5</span></li>
+      <li><span class="m">6x<sup>2</sup> - x<sup>2</sup> + 2x</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="a2-t2"> סיימתי טכניקה 2 — כינוס איברים</label>
+</section>
+
+<!-- ================= 3 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">3</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>פתיחת סוגריים</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תפתח סוגריים עם מספר לפני הסוגריים — כולל מינוס — בלי להפיל סימנים.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">a(b + c) = ab + ac</div>
+    <p class="rule-note">המספר שלפני הסוגריים מוכפל ב<b>כל</b> איבר בפנים. אם לפני הסוגריים יש מינוס — הוא הופך את הסימן של כל איבר.</p>
+  </div>
+
+  <div class="two">
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">חיובי</span></div>
+      <ol class="steps">
+        <li><span class="m">3(2x - 5)</span></li>
+        <li><span class="m">= 3·2x - 3·5</span></li>
+        <li><span class="m">= 6x - 15</span></li>
+      </ol>
+    </div>
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">שלילי</span></div>
+      <ol class="steps">
+        <li><span class="m">-2(3x - 1)</span></li>
+        <li><span class="m">= -2·3x + 2·1</span></li>
+        <li><span class="m">= -6x + 2</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>כשמינוס לפני סוגריים, הוא נוגע <b>בשני</b> האיברים: <span class="m">-(x - 4) = -x + 4</span>, ולא <span class="m">-x - 4</span>. שווה לכתוב ביניים: <span class="m">-1·x + (-1)·(-4)</span>.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · פתיחה</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">4(x + 3)</span></li>
+      <li><span class="m">3(2x - 5)</span></li>
+      <li><span class="m">-2(x + 4)</span></li>
+      <li><span class="m">-(3x - 7)</span></li>
+      <li><span class="m">5(2x - 1) + 3</span></li>
+      <li><span class="m">2(x + 3) - 4(x - 1)</span></li>
+      <li><span class="m">3(2x + 1) - 2(x - 5)</span></li>
+      <li><span class="m">-(x - 6) + 2(x + 1)</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="a2-t3"> סיימתי טכניקה 3 — פתיחת סוגריים</label>
+</section>
+
+<!-- ================= 4 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">4</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>כפל מקוצר</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תפתח ריבוע של סכום, ריבוע של הפרש והפרש ריבועים — בלי לכפול כל איבר בכל איבר בכל פעם.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">שלוש הנוסחאות</p>
+    <div class="eq">(a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup></div>
+    <div class="eq">(a - b)<sup>2</sup> = a<sup>2</sup> - 2ab + b<sup>2</sup></div>
+    <div class="eq">(a + b)(a - b) = a<sup>2</sup> - b<sup>2</sup></div>
+    <p class="rule-note">בשני הריבועים תמיד יש <b>שלושה</b> איברים. בהפרש ריבועים — <b>שניים</b>, והאמצעי נעלם.</p>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 640 300" role="img" aria-label="ריבוע שצלעו a ועוד b, מחולק לארבעה חלקים: a בריבוע, שני מלבני ab ו־b בריבוע">
+      <rect x="110" y="30" width="220" height="220" fill="#f8ebe3" stroke="#a3542f" stroke-width="1.6"/>
+      <rect x="250" y="30" width="80" height="140" fill="#a3542f" opacity=".14"/>
+      <rect x="110" y="170" width="140" height="80" fill="#a3542f" opacity=".14"/>
+      <rect x="250" y="170" width="80" height="80" fill="#a3542f" opacity=".07"/>
+      <line x1="250" y1="30" x2="250" y2="250" stroke="#a3542f" stroke-width="1.2" stroke-dasharray="4 4"/>
+      <line x1="110" y1="170" x2="330" y2="170" stroke="#a3542f" stroke-width="1.2" stroke-dasharray="4 4"/>
+      <g font-family="Inter,Arial,sans-serif" fill="#1b2a2a" text-anchor="middle">
+        <text x="180" y="108" font-size="26" font-weight="600">a²</text>
+        <text x="290" y="108" font-size="24">ab</text>
+        <text x="180" y="218" font-size="24">ab</text>
+        <text x="290" y="218" font-size="24">b²</text>
+      </g>
+      <g font-family="Inter,Arial,sans-serif" font-size="17" fill="#763a1f" text-anchor="middle">
+        <text x="180" y="277">a</text>
+        <text x="290" y="277">b</text>
+        <text x="86" y="105">a</text>
+        <text x="86" y="215">b</text>
+      </g>
+      <line x1="110" y1="260" x2="250" y2="260" stroke="#763a1f" stroke-width="1"/>
+      <line x1="250" y1="260" x2="330" y2="260" stroke="#763a1f" stroke-width="1"/>
+      <g font-family="Assistant,Arial,sans-serif" font-size="16" fill="#65726c" direction="ltr">
+        <text x="370" y="105">הריבוע הגדול:</text>
+        <text x="370" y="135" font-family="Inter,Arial,sans-serif" font-size="20" fill="#1b2a2a">(a+b)²</text>
+        <text x="370" y="175">ארבעת החלקים:</text>
+        <text x="370" y="205" font-family="Inter,Arial,sans-serif" font-size="20" fill="#1b2a2a">a² + ab + ab + b²</text>
+      </g>
+    </svg>
+    <figcaption>אותו ריבוע מחושב בשתי דרכים — ומכאן נולד האיבר האמצעי <span class="m">2ab</span>.</figcaption>
+  </figure>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">שלושה מקרים</span></div>
+    <ol class="steps">
+      <li><span class="m">(x + 3)<sup>2</sup> = x<sup>2</sup> + 2·x·3 + 3<sup>2</sup> = x<sup>2</sup> + 6x + 9</span></li>
+      <li><span class="m">(2x - 5)<sup>2</sup> = 4x<sup>2</sup> - 20x + 25</span></li>
+      <li><span class="m">(3a + 4)(3a - 4) = 9a<sup>2</sup> - 16</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p><span class="m">(x + 3)<sup>2</sup> ≠ x<sup>2</sup> + 9</span>. חסר האיבר האמצעי <span class="m">6x</span> — והוא בדיוק החלק שמופיע פעמיים בריבוע. בדיקה מהירה: הציבו <span class="m">x = 1</span>; <span class="m">(1+3)<sup>2</sup> = 16</span>, אבל <span class="m">1+9 = 10</span>.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · נוסחאות</h3><span class="count">9 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">(x + 3)<sup>2</sup></span></li>
+      <li><span class="m">(x - 5)<sup>2</sup></span></li>
+      <li><span class="m">(x + 7)(x - 7)</span></li>
+      <li><span class="m">(2x + 1)<sup>2</sup></span></li>
+      <li><span class="m">(3a - 2)<sup>2</sup></span></li>
+      <li><span class="m">(5y + 2)(5y - 2)</span></li>
+      <li><span class="m">(x + 4)(x - 4)</span></li>
+      <li><span class="m">101<sup>2</sup></span> <span class="prompt">(כתבו 100+1)</span></li>
+      <li><span class="m">99 · 101</span> <span class="prompt">(כתבו 100−1 ו־100+1)</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="a2-t4"> סיימתי טכניקה 4 — כפל מקוצר</label>
+</section>
+
+<!-- ================= 5 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">5</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>פירוק לגורמים</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תהפוך סכום למכפלה — גורם משותף, הפרש ריבועים וריבוע שלם.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">ab + ac = a(b + c)</div>
+    <div class="eq">a<sup>2</sup> - b<sup>2</sup> = (a - b)(a + b)</div>
+    <p class="rule-note">פירוק הוא <b>הפעולה ההפוכה</b> לפתיחת סוגריים. תמיד בודקים קודם אם יש גורם משותף לכל האיברים.</p>
+  </div>
+
+  <div class="two">
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">גורם משותף</span></div>
+      <ol class="steps">
+        <li><span class="m">6x<sup>2</sup> + 9x</span></li>
+        <li>הגורם המשותף: <span class="m">3x</span></li>
+        <li><span class="m">= 3x(2x + 3)</span></li>
+      </ol>
+    </div>
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">הפרש ריבועים</span></div>
+      <ol class="steps">
+        <li><span class="m">x<sup>2</sup> - 25</span></li>
+        <li><span class="m">= x<sup>2</sup> - 5<sup>2</sup></span></li>
+        <li><span class="m">= (x - 5)(x + 5)</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout callout--tip">
+    <span class="callout-title">איך מזהים</span>
+    <p><b>הפרש ריבועים:</b> שני איברים, שניהם ריבועים, וביניהם מינוס. <b>ריבוע שלם:</b> שלושה איברים, והראשון והאחרון ריבועים. <b>גורם משותף:</b> אותו גורם מופיע בכל האיברים.</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p><span class="m">x<sup>2</sup> - 25 ≠ (x - 5)<sup>2</sup></span>. <span class="m">(x-5)<sup>2</sup></span> שווה <span class="m">x<sup>2</sup> - 10x + 25</span>. הפרש ריבועים נותן <b>מכפלה של שני גורמים</b>, לא ריבוע.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · פירוק</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">6x + 9</span></li>
+      <li><span class="m">10x<sup>2</sup> - 15x</span></li>
+      <li><span class="m">x<sup>2</sup> - 25</span></li>
+      <li><span class="m">4x<sup>2</sup> - 9</span></li>
+      <li><span class="m">3x<sup>2</sup> + 12x</span></li>
+      <li><span class="m">x<sup>2</sup> + 6x + 9</span></li>
+      <li><span class="m">x<sup>2</sup> + 7x + 12</span> <span class="prompt">(מתקדם)</span></li>
+      <li><span class="m">x<sup>2</sup> - 4x + 4</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="a2-t5"> סיימתי טכניקה 5 — פירוק לגורמים</label>
+</section>
+
+<!-- ================= 6 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">6</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>משוואה — כמו מאזניים</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תפתור משוואה לינארית עם סוגריים, ותבדוק את הפתרון בהצבה.</p>
+
+  <figure class="fig" style="margin-top:.4em">
+    <svg viewBox="0 0 640 260" role="img" aria-label="מאזניים מאוזנים: באגף אחד 3x ועוד 2, בשני 11">
+      <line x1="90" y1="105" x2="550" y2="105" stroke="#1b2a2a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M320 105 L300 145 L340 145 Z" fill="#1b2a2a"/>
+      <rect x="314" y="145" width="12" height="80" fill="#1b2a2a"/>
+      <rect x="280" y="225" width="80" height="8" rx="3" fill="#1b2a2a"/>
+      <line x1="160" y1="105" x2="160" y2="155" stroke="#65726c" stroke-width="1.4"/>
+      <line x1="480" y1="105" x2="480" y2="155" stroke="#65726c" stroke-width="1.4"/>
+      <path d="M120 155 H200 A40 40 0 0 1 120 155" fill="#f8ebe3" stroke="#a3542f" stroke-width="1.6"/>
+      <path d="M440 155 H520 A40 40 0 0 1 440 155" fill="#f8ebe3" stroke="#a3542f" stroke-width="1.6"/>
+      <g font-family="Inter,Arial,sans-serif" font-size="21" fill="#1b2a2a" text-anchor="middle">
+        <text x="160" y="192">3x + 2</text>
+        <text x="480" y="192">11</text>
+      </g>
+      <g font-family="Assistant,Arial,sans-serif" font-size="14" fill="#65726c" text-anchor="middle">
+        <text x="320" y="72">שני האגפים שווים</text>
+      </g>
+    </svg>
+    <figcaption>מותר להוסיף, לחסר, לכפול או לחלק — כל עוד עושים את אותה פעולה <b>לשני האגפים</b>.</figcaption>
+  </figure>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">אגף שמאל = אגף ימין, ולכן x = ?</div>
+    <p class="rule-note">מעבירים איבר מאגף לאגף ב<b>פעולה ההפוכה</b>: פלוס הופך למינוס, כפל הופך לחילוק. המטרה: <span class="m">x</span> לבד באגף אחד.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">עם בדיקה</span></div>
+    <ol class="steps">
+      <li><span class="m">3x + 5 = 7x - 11</span></li>
+      <li><span class="m">5 + 11 = 7x - 3x</span> <span class="why">— מעבירים אגפים</span></li>
+      <li><span class="m">16 = 4x</span></li>
+      <li><span class="m">x = 4</span></li>
+      <li><span class="why">בדיקה: <span class="m">3·4+5 = 17</span> וגם <span class="m">7·4-11 = 17</span> ✓</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>כשמעבירים איבר אגף — <b>הסימן מתהפך</b>: <span class="m">3x + 5 = 20</span> הופך ל־<span class="m">3x = 20 - 5</span>. טעות נפוצה: להעביר בלי להפוך, ואז לקבל פתרון הפוך.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · פתרון</h3><span class="count">8 משוואות</span></div>
+    <ol class="ex">
+      <li><span class="m">x + 7 = 12</span></li>
+      <li><span class="m">3x - 5 = 10</span></li>
+      <li><span class="m">4x + 3 = 2x + 11</span></li>
+      <li><span class="m">5(x - 2) = 20</span></li>
+      <li><span class="m">2(x + 3) = 3x - 1</span></li>
+      <li><span class="m">3x - 4 = 7x + 8</span></li>
+      <li><span class="m">x/3 + 2 = 5</span></li>
+      <li><span class="m">(x + 1)/2 = 4</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="a2-t6"> סיימתי טכניקה 6 — משוואות</label>
+</section>
+
+<!-- ================= 7 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">7</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>משוואות עם שברים ועשרוניים</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תפתור משוואה עם שברים או עשרוניים בלי להסתבך, ותדע לזהות מתי אין פתרון.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">כפלו את שני האגפים במכנה המשותף</div>
+    <p class="rule-note">ככה נעלמים השברים, והמשוואה הופכת למשוואה רגילה. עם עשרוניים — כופלים ב־10 או ב־100 לפי מספר הספרות אחרי הנקודה.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">שברים</span></div>
+    <ol class="steps">
+      <li><span class="m">x/2 + x/3 = 5</span></li>
+      <li>מכנה משותף 6: <span class="m">3x + 2x = 30</span></li>
+      <li><span class="m">5x = 30</span></li>
+      <li><span class="m">x = 6</span> <span class="why">בדיקה: <span class="m">6/2 + 6/3 = 3 + 2 = 5</span> ✓</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--tip">
+    <span class="callout-title">מתי אין פתרון</span>
+    <p>אם אחרי הפישוט מקבלים משהו כמו <span class="m">3 = 5</span> — אין פתרון. אם מקבלים <span class="m">0 = 0</span> — כל מספר הוא פתרון.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · נקיים משברים</h3><span class="count">6 משוואות</span></div>
+    <ol class="ex">
+      <li><span class="m">x/2 + x/3 = 5</span></li>
+      <li><span class="m">0.5x + 3 = 7</span></li>
+      <li><span class="m">2(x - 1) + 3 = x + 7</span></li>
+      <li><span class="m">3(2x - 1) = 4(x + 2) - 1</span></li>
+      <li><span class="m">x/4 + 1 = 3</span></li>
+      <li><span class="m">0.2x - 1 = 3</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="a2-t7"> סיימתי טכניקה 7 — שברים ועשרוניים</label>
+</section>
+
+<!-- ================= 8 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">8</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>בעיות מילוליות</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע להפוך סיפור למשוואה — לבחור מה הנעלם, לתרגם כל משפט, ולבדוק שהתשובה הגיונית.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">ארבעה צעדים</p>
+    <div class="eq">הגדרה → תרגום → פתרון → בדיקה</div>
+    <p class="rule-note"><b>הגדרה:</b> "יהי <span class="m">x</span> הגיל של…". <b>תרגום:</b> כל משפט הופך לביטוי. <b>פתרון:</b> פותרים משוואה. <b>בדיקה:</b> מציבים בסיפור, לא רק במשוואה.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">גילים</span></div>
+    <ol class="steps">
+      <li>אבא מבוגר פי 3 מהבן. סכום הגילים 48. מה הגיל של כל אחד?</li>
+      <li>נסמן: גיל הבן <span class="m">x</span>, גיל האבא <span class="m">3x</span></li>
+      <li><span class="m">x + 3x = 48</span> → <span class="m">4x = 48</span> → <span class="m">x = 12</span></li>
+      <li>הבן בן 12, האבא בן 36. בדיקה: <span class="m">12 + 36 = 48</span> ✓</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>"פי 3" הוא <span class="m">3x</span>, ו"גדול ב־3" הוא <span class="m">x+3</span>. קראו את המשפט פעמיים לפני שכותבים. בסוף — ענו <b>במילים</b>: "הבן בן 12", לא רק "x=12".</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · סיפורים</h3><span class="count">5 בעיות</span></div>
+    <ol class="ex ex--wide">
+      <li>שני מספרים שסכומם 40. האחד גדול פי 4 מהשני. מהם המספרים?</li>
+      <li>אמא בת 36 ובנה בן 12. בעוד כמה שנים תהיה אמא מבוגרת פי 2 מבנה?</li>
+      <li>אורך מלבן גדול ב־3 מהרוחב. היקף המלבן 30. מה האורך והרוחב?</li>
+      <li>3 עטים ו־2 מחברות עולים 34 ₪. עט עולה 4 ₪. כמה עולה מחברת?</li>
+      <li>נמכרו 10 כרטיסים להופעה. כרטיס למבוגר 50 ₪, לילד 30 ₪, וההכנסה הייתה 380 ₪. כמה כרטיסים מכל סוג נמכרו?</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="a2-t8"> סיימתי טכניקה 8 — בעיות מילוליות</label>
+</section>
+
+<!-- ================= 9 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">9</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>בידוד משתנה בנוסחה</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לקחת נוסחה כמו <span class="m">P = 2(a+b)</span> ולבודד ממנה כל משתנה — לא רק את זה שבאגף שמאל.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">אותה משוואה, פשוט עם אותיות</div>
+    <p class="rule-note">כל פעולה שמותר לעשות במשוואה — מותרת גם בנוסחה. מבצעים את הפעולות ההפוכות לפי הסדר, מהחיצוני לפנימי.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מההיקף לרוחב</span></div>
+    <ol class="steps">
+      <li><span class="m">P = 2(a + b)</span></li>
+      <li>מחלקים ב־2: <span class="m">P/2 = a + b</span></li>
+      <li>מחסרים <span class="m">b</span>: <span class="m">P/2 - b = a</span></li>
+      <li><span class="m">a = P/2 - b</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>כשמחלקים ב־2, מתחלק <b>כל</b> האגף — לא רק האיבר הראשון. <span class="m">P = 2a + b</span> לא הופך ל־<span class="m">P/2 = a + b</span>; הוא הופך ל־<span class="m">P/2 = a + b/2</span>.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · לבודד</h3><span class="count">6 נוסחאות</span></div>
+    <ol class="ex">
+      <li><span class="m">P = 2(a + b)</span> <span class="prompt">בודדו a</span></li>
+      <li><span class="m">A = b·h</span> <span class="prompt">בודדו h</span></li>
+      <li><span class="m">v = u + at</span> <span class="prompt">בודדו a</span></li>
+      <li><span class="m">C = 2πr</span> <span class="prompt">בודדו r</span></li>
+      <li><span class="m">S = v·t</span> <span class="prompt">בודדו t</span></li>
+      <li><span class="m">F = m·a</span> <span class="prompt">בודדו m</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="a2-t9"> סיימתי טכניקה 9 — בידוד משתנה</label>
+</section>
+
+<!-- ================= 10 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">10</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>אי־שוויונות</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תפתור אי־שוויון כמו משוואה, ותדע מתי הסימן מתהפך.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">כפל או חילוק במספר שלילי — מהפכים את הסימן</div>
+    <p class="rule-note">כל השאר זהה למשוואה: מעבירים אגפים, מכנסים, מחלקים במקדם. רק כשהמקדם שלילי — <span class="m">&lt;</span> הופך ל־<span class="m">&gt;</span>.</p>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 640 170" role="img" aria-label="שני אי־שוויונים על ציר מספרים: x קטן מ־5 ו־x גדול מ־3">
+      <line x1="70" y1="70" x2="570" y2="70" stroke="#1b2a2a" stroke-width="1.6"/>
+      <g stroke="#65726c" stroke-width="1.4">
+        <line x1="110" y1="63" x2="110" y2="77"/><line x1="170" y1="63" x2="170" y2="77"/>
+        <line x1="230" y1="63" x2="230" y2="77"/><line x1="290" y1="63" x2="290" y2="77"/>
+        <line x1="350" y1="63" x2="350" y2="77"/><line x1="410" y1="63" x2="410" y2="77"/>
+        <line x1="470" y1="63" x2="470" y2="77"/><line x1="530" y1="63" x2="530" y2="77"/>
+      </g>
+      <g font-family="Inter,Arial,sans-serif" font-size="13" fill="#65726c" text-anchor="middle">
+        <text x="110" y="94">−2</text><text x="170" y="94">−1</text><text x="230" y="94">0</text>
+        <text x="290" y="94">1</text><text x="350" y="94">2</text><text x="410" y="94">3</text>
+        <text x="470" y="94">4</text><text x="530" y="94">5</text>
+      </g>
+      <line x1="530" y1="70" x2="390" y2="70" stroke="#a3542f" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="530" cy="70" r="6" fill="#fffdf7" stroke="#a3542f" stroke-width="2.4"/>
+      <text x="440" y="48" font-family="Inter,Arial,sans-serif" font-size="16" fill="#a3542f" text-anchor="middle">x &lt; 5</text>
+      <line x1="410" y1="130" x2="550" y2="130" stroke="#1f5d7a" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="410" cy="130" r="6" fill="#fffdf7" stroke="#1f5d7a" stroke-width="2.4"/>
+      <text x="480" y="155" font-family="Inter,Arial,sans-serif" font-size="16" fill="#1f5d7a" text-anchor="middle">x &gt; 3</text>
+    </svg>
+    <figcaption>עיגול פתוח = הערך עצמו לא נכלל. <span class="m">x &lt; 5</span> כולל את 4.9 אבל לא את 5.</figcaption>
+  </figure>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">הסימן מתהפך</span></div>
+    <ol class="steps">
+      <li><span class="m">-2x &lt; 6</span></li>
+      <li>מחלקים ב־<span class="m">-2</span> — ומהפכים: <span class="m">x &gt; -3</span></li>
+      <li>בדיקה: <span class="m">x = 0</span> נותן <span class="m">0 &lt; 6</span> ✓</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>אם לא מהפכים, מקבלים את הפתרון ההפוך. שימו לב במיוחד כשיש מינוס לפני ה־<span class="m">x</span> — למשל <span class="m">-x &gt; 4</span> נותן <span class="m">x &lt; -4</span>.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · אי־שוויונות</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex">
+      <li><span class="m">x + 3 &lt; 7</span></li>
+      <li><span class="m">2x ≥ 10</span></li>
+      <li><span class="m">-3x &lt; 9</span></li>
+      <li><span class="m">4x - 2 ≤ 10</span></li>
+      <li><span class="m">5 - 2x &gt; 1</span></li>
+      <li><span class="m">-x/2 ≥ 3</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="a2-t10"> סיימתי טכניקה 10 — אי־שוויונות</label>
+</section>
+
+<!-- ================= סיכום ================= -->
+<section class="sheet">
+  <span class="kicker">לפני התרגול המסכם</span>
+  <h2>מפת החלטה: מה עושים קודם?</h2>
+  <p class="lead">רוב הטעויות באלגברה הן לא בחישוב — הן בבחירת הפעולה. המפה הזאת מסדרת את הסדר.</p>
+
+  <div class="flow" style="margin-top:1.3em">
+    <div class="flow-step"><span class="when">יש סוגריים</span><span class="then">פותחים <b>לפני</b> הכול, או מפרקים אם מבקשים מכפלה.</span></div>
+    <div class="flow-step"><span class="when">יש שברים</span><span class="then">כופלים את שני האגפים במכנה המשותף.</span></div>
+    <div class="flow-step"><span class="when">x בשני האגפים</span><span class="then">מעבירים את כל ה־x לאגף אחד ואת המספרים לשני — <b>עם היפוך סימן</b>.</span></div>
+    <div class="flow-step"><span class="when">מבקשים לפרק</span><span class="then">קודם גורם משותף, אחר כך הפרש ריבועים או ריבוע שלם.</span></div>
+    <div class="flow-step"><span class="when">יש אי־שוויון</span><span class="then">פותרים כמו משוואה; <b>מהפכים</b> רק בכפל/חילוק בשלילי.</span></div>
+    <div class="flow-step"><span class="when">סיימת</span><span class="then">מציבים בחזרה. תמיד.</span></div>
+  </div>
+
+  <h3 style="margin-top:1.6em;font-size:1.1rem">חמש הטעויות שעולות הכי הרבה נקודות</h3>
+  <div class="callout callout--warn"><span class="callout-title">1 · מינוס לפני סוגריים</span><span class="m">-(x-4) = -x+4</span>. המינוס נוגע בשני האיברים.</div>
+  <div class="callout callout--warn"><span class="callout-title">2 · האיבר האמצעי</span><span class="m">(x+3)<sup>2</sup> = x<sup>2</sup>+6x+9</span>, לא <span class="m">x<sup>2</sup>+9</span>.</div>
+  <div class="callout callout--warn"><span class="callout-title">3 · x ועוד x</span><span class="m">x+x = 2x</span>, לא <span class="m">x<sup>2</sup></span>. חזקה היא כפל, לא חיבור.</div>
+  <div class="callout callout--warn"><span class="callout-title">4 · העברת אגף</span>הסימן מתהפך כשעוברים אגף. <span class="m">3x+5=20 → 3x=15</span>.</div>
+  <div class="callout callout--warn"><span class="callout-title">5 · חלוקה חלקית</span>כשמחלקים אגף — מחלקים <b>כל</b> איבר בו.</div>
+</section>
+
+<!-- ================= תרגול מסכם ================= -->
+<section class="sheet">
+  <span class="kicker">מבחן קטן</span>
+  <h2>תרגול מסכם</h2>
+  <p class="lead">12 תרגילים מכל הטכניקות. כתבו כל שלב — לא רק תשובה סופית.</p>
+
+  <div class="drill" style="margin-top:1em">
+    <div class="drill-head"><h3>מעורב</h3><span class="count">12 תרגילים · 30 דקות</span></div>
+    <ol class="ex">
+      <li><span class="m">5x + 3 - 2x</span></li>
+      <li><span class="m">3(x - 4)</span></li>
+      <li><span class="m">(x + 6)<sup>2</sup></span></li>
+      <li><span class="m">x<sup>2</sup> - 81</span> <span class="prompt">פרקו</span></li>
+      <li><span class="m">4x - 9 = 15</span></li>
+      <li><span class="m">2(x + 1) = x + 9</span></li>
+      <li><span class="m">5x - 3 = 2x + 12</span></li>
+      <li><span class="m">x/4 + 1 = 3</span></li>
+      <li><span class="m">3x<sup>2</sup> - 6x</span> <span class="prompt">פרקו</span></li>
+      <li><span class="m">(2x - 5)<sup>2</sup></span></li>
+      <li><span class="m">A = b·h/2</span> <span class="prompt">בודדו h</span></li>
+      <li><span class="m">-2x + 7 &gt; 1</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= בדיקת עצמי ================= -->
+<section class="sheet">
+  <span class="kicker">לפני שממשיכים</span>
+  <h2>בדיקת עצמי</h2>
+  <p class="lead">שש שאלות, עד 12 דקות, בלי להציץ.</p>
+
+  <div class="drill" style="margin-top:1em">
+    <div class="drill-head"><h3>שש שאלות</h3><span class="count">6 נקודות</span></div>
+    <ol class="ex">
+      <li><span class="m">4x + 2x - 3</span></li>
+      <li><span class="m">-3(x - 2)</span></li>
+      <li><span class="m">(x + 5)<sup>2</sup></span></li>
+      <li><span class="m">x<sup>2</sup> - 36</span> <span class="prompt">פרקו</span></li>
+      <li><span class="m">7x - 4 = 3x + 8</span></li>
+      <li><span class="m">3(x - 1) = 2x + 4</span></li>
+    </ol>
+  </div>
+
+  <div class="score">
+    <div><b>6</b>מוכן. אפשר לעבור לנושא הבא.</div>
+    <div><b>4–5</b>חזרו על הטכניקה שבה טעיתם, ופתרו שוב את התרגול שלה.</div>
+    <div><b>0–3</b>קראו שוב את מפת ההחלטה, ואז עשו את התרגול המסכם.</div>
+  </div>
+</section>
+
+<!-- ================= תשובות ================= -->
+<section class="sheet answers">
+  <h2>נספח תשובות</h2>
+  <div class="cut">לקרוע רק אחרי שסיימתם</div>
+
+  <div class="ans-grid">
+    <p><b>1 · מלשון לביטוי</b><br>1) <span class="m">x+5</span> · 2) <span class="m">3x</span> · 3) <span class="m">x−2</span> · 4) <span class="m">x/2</span> · 5) <span class="m">x+7</span> · 6) <span class="m">x<sup>2</sup></span></p>
+    <p><b>2 · כינוס</b><br>1) <span class="m">10x</span> · 2) <span class="m">7a</span> · 3) <span class="m">7y<sup>2</sup></span> · 4) <span class="m">2x<sup>2</sup>+2x</span> · 5) <span class="m">a+5b</span> · 6) <span class="m">6m+4</span> · 7) <span class="m">5x−5</span> · 8) <span class="m">5x<sup>2</sup>+2x</span></p>
+    <p><b>3 · סוגריים</b><br>1) <span class="m">4x+12</span> · 2) <span class="m">6x−15</span> · 3) <span class="m">−2x−8</span> · 4) <span class="m">−3x+7</span> · 5) <span class="m">10x−2</span> · 6) <span class="m">−2x+10</span> · 7) <span class="m">4x+13</span> · 8) <span class="m">x+8</span></p>
+    <p><b>4 · כפל מקוצר</b><br>1) <span class="m">x<sup>2</sup>+6x+9</span> · 2) <span class="m">x<sup>2</sup>−10x+25</span> · 3) <span class="m">x<sup>2</sup>−49</span> · 4) <span class="m">4x<sup>2</sup>+4x+1</span> · 5) <span class="m">9a<sup>2</sup>−12a+4</span> · 6) <span class="m">25y<sup>2</sup>−4</span> · 7) <span class="m">x<sup>2</sup>−16</span> · 8) 10,201 · 9) 9,999</p>
+    <p><b>5 · פירוק</b><br>1) <span class="m">3(2x+3)</span> · 2) <span class="m">5x(2x−3)</span> · 3) <span class="m">(x−5)(x+5)</span> · 4) <span class="m">(2x−3)(2x+3)</span> · 5) <span class="m">3x(x+4)</span> · 6) <span class="m">(x+3)<sup>2</sup></span> · 7) <span class="m">(x+3)(x+4)</span> · 8) <span class="m">(x−2)<sup>2</sup></span></p>
+    <p><b>6 · משוואות</b><br>1) 5 · 2) 5 · 3) 4 · 4) 6 · 5) 7 · 6) −3 · 7) 9 · 8) 7</p>
+    <p><b>7 · שברים ועשרוניים</b><br>1) 6 · 2) 8 · 3) 6 · 4) 5 · 5) 8 · 6) 20</p>
+    <p><b>8 · בעיות</b><br>1) 8 ו־32 · 2) בעוד 12 שנים · 3) רוחב 6, אורך 9 · 4) 11 ₪ · 5) 4 מבוגרים, 6 ילדים</p>
+    <p><b>9 · בידוד</b><br>1) <span class="m">a = P/2 − b</span> · 2) <span class="m">h = A/b</span> · 3) <span class="m">a = (v−u)/t</span> · 4) <span class="m">r = C/(2π)</span> · 5) <span class="m">t = S/v</span> · 6) <span class="m">m = F/a</span></p>
+    <p><b>10 · אי־שוויונות</b><br>1) <span class="m">x&lt;4</span> · 2) <span class="m">x≥5</span> · 3) <span class="m">x&gt;−3</span> · 4) <span class="m">x≤3</span> · 5) <span class="m">x&lt;2</span> · 6) <span class="m">x≤−6</span></p>
+    <p><b>תרגול מסכם</b><br>1) <span class="m">3x+3</span> · 2) <span class="m">3x−12</span> · 3) <span class="m">x<sup>2</sup>+12x+36</span> · 4) <span class="m">(x−9)(x+9)</span> · 5) 6 · 6) 7 · 7) 5 · 8) 8 · 9) <span class="m">3x(x−2)</span> · 10) <span class="m">4x<sup>2</sup>−20x+25</span> · 11) <span class="m">h=2A/b</span> · 12) <span class="m">x&lt;3</span></p>
+    <p><b>בדיקת עצמי</b><br>1) <span class="m">6x−3</span> · 2) <span class="m">−3x+6</span> · 3) <span class="m">x<sup>2</sup>+10x+25</span> · 4) <span class="m">(x−6)(x+6)</span> · 5) 3 · 6) 7</p>
+  </div>
+
+  <p style="margin-top:1.4em;font-size:.8rem;color:var(--ink-3)">טעות סימן אחת יכולה להפיל תרגיל שלם. אם התשובה לא מסתדרת — בדקו קודם את הסימנים, ורק אחר כך את החשבון.</p>
+</section>
+
+</main>
+<script src="../assets/booklet.js"></script>
+</body>
+</html>

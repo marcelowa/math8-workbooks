@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>חוברת 03 · זוויות וישרים מקבילים — מתמטיקה כיתה ח׳</title>
+<meta name="description" content="חוברת עבודה: סוגי זוויות, זוויות קודקודיות וצמודות, ישרים מקבילים וחותך, זוויות במשולש ובמצולע — עם שרטוטים ותרגול.">
+<meta name="theme-color" content="#4b5d8a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234b5d8a'/%3E%3Cpath d='M8 24L24 8M8 24h14' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&amp;family=Frank+Ruhl+Libre:wght@500;700;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/booklet.css">
+</head>
+<body class="booklet" style="--accent:#4b5d8a;--accent-2:#33415f;--accent-soft:#e9ecf4">
+<header class="topbar no-print">
+  <a class="backlink" href="../index.html">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6l6 6-6 6M16 12H4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    כל החוברות
+  </a>
+  <span class="topbar-title">חוברת 03 · זוויות וישרים מקבילים</span>
+  <button class="btn" data-print type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    הדפסה
+  </button>
+</header>
+<span class="sr-only doc-title">חוברת 03 · זוויות וישרים מקבילים</span>
+
+<main class="paper">
+
+<!-- ================= שער ================= -->
+<section class="sheet cover">
+  <div class="cover-head">
+    <div class="cover-series">מתמטיקה · כיתה ח׳ · חוברת 03</div>
+    <div class="cover-mark" aria-hidden="true">03</div>
+  </div>
+  <h1>זוויות<br><em>וישרים מקבילים</em></h1>
+  <p class="cover-lede">למה זוויות מתחלפות שוות, איך יודעים ששני ישרים מקבילים, ואיך מחשבים זווית במשולש או במצולע — בלי לנחש ובלי למדוד.</p>
+
+  <div class="cover-art" aria-hidden="true">
+    <svg viewBox="0 0 640 300" role="img" aria-label="מד זווית חצי עגול עם קרניים בצבעים שונים">
+      <path d="M130 230 A190 190 0 0 1 510 230" fill="#fbf9f3" stroke="#4b5d8a" stroke-width="1.6"/>
+      <g stroke="#8c97b5" stroke-width="1">
+        <line x1="510" y1="230" x2="498" y2="230"/>
+        <line x1="503.5" y1="180.8" x2="491.9" y2="183.9"/>
+        <line x1="484.5" y1="135" x2="463.8" y2="147"/>
+        <line x1="454.3" y1="95.7" x2="445.8" y2="104.1"/>
+        <line x1="415" y1="65.5" x2="403" y2="93.2"/>
+        <line x1="369.2" y1="46.5" x2="366.1" y2="58.1"/>
+        <line x1="320" y1="40" x2="320" y2="64"/>
+        <line x1="270.8" y1="46.5" x2="273.9" y2="58.1"/>
+        <line x1="225" y1="65.5" x2="237" y2="93.2"/>
+        <line x1="185.7" y1="95.7" x2="194.2" y2="104.1"/>
+        <line x1="155.5" y1="135" x2="176.2" y2="147"/>
+        <line x1="136.5" y1="180.8" x2="148.1" y2="183.9"/>
+        <line x1="130" y1="230" x2="142" y2="230"/>
+      </g>
+      <g stroke-width="3.2" stroke-linecap="round">
+        <line x1="320" y1="230" x2="475.6" y2="121" stroke="#1f5d7a"/>
+        <line x1="320" y1="230" x2="353" y2="42.9" stroke="#a3542f"/>
+        <line x1="320" y1="230" x2="211" y2="74.4" stroke="#5c6b39"/>
+        <line x1="320" y1="230" x2="147.8" y2="149.7" stroke="#7b4b6b"/>
+      </g>
+      <path d="M402 230 A82 82 0 0 0 387.2 183" fill="none" stroke="#1f5d7a" stroke-width="1.6"/>
+      <circle cx="320" cy="230" r="4.5" fill="#1b2a2a"/>
+      <line x1="130" y1="230" x2="510" y2="230" stroke="#1b2a2a" stroke-width="1.4"/>
+    </svg>
+  </div>
+
+  <div class="cover-grid">
+    <div>
+      <h4>מה יש בחוברת</h4>
+      <ul class="cover-list">
+        <li>סוגי זוויות, משלימות ומשלימות ל־180°</li>
+        <li>זוויות קודקודיות וצמודות</li>
+        <li>ישרים מקבילים וחותך: שלושת הכללים</li>
+        <li>זווית חיצונית, משולש ומצולע</li>
+        <li>חישוב זוויות עם נעלם</li>
+      </ul>
+    </div>
+    <div class="cover-facts">
+      <div><b>7</b> טכניקות, אחת לעמוד</div>
+      <div><b>65+</b> תרגילים מדורגים</div>
+      <div><b>3–4</b> מפגשים של כ־25 דקות</div>
+      <div><b>צריך:</b> עיפרון, סרגל, מחק</div>
+      <div><b>לא צריך:</b> מד זווית</div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <span>שם</span><span class="fill"></span>
+    <span>כיתה</span><span class="fill" style="max-width:70px"></span>
+    <span>תאריך</span><span class="fill" style="max-width:100px"></span>
+  </div>
+</section>
+
+<!-- ================= איך עובדים ================= -->
+<section class="sheet">
+  <span class="kicker">לפני שמתחילים</span>
+  <h2>השרטוט הוא כלי העבודה</h2>
+  <p class="lead">בגיאומטריה לא "רואים בעין" — מסמנים. בכל שרטוט מסמנים את הזוויות הנתונות, צובעים זוגות שווים, ורושמים ליד כל חישוב את <b>הסיבה</b>. בלי סיבה, אין ניקוד.</p>
+
+  <div class="two" style="margin-top:1.4em">
+    <div>
+      <h3 style="font-size:1.02rem;margin-bottom:.5em">ארבעה צעדים בכל שאלה</h3>
+      <div class="flow">
+        <div class="flow-step"><span class="when">1 · מזהים</span><span class="then">איזו זווית נתונה, ואיזו מבקשים? <b>מסמנים אותן</b> בשרטוט.</span></div>
+        <div class="flow-step"><span class="when">2 · מוצאים קשר</span><span class="then">קודקודיות? צמודות? מתחלפות? <b>כותבים את שם הקשר.</b></span></div>
+        <div class="flow-step"><span class="when">3 · מחשבים</span><span class="then">שוויון, השלמה ל־180° או סכום במשולש.</span></div>
+        <div class="flow-step"><span class="when">4 · בודקים</span><span class="then">האם התוצאה הגיונית? זווית חדה קטנה מ־90°, קהה גדולה מ־90°.</span></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:1.02rem;margin-bottom:.5em">שלושה כללים לכתיבה</h3>
+      <div class="callout callout--tip"><span class="callout-title">רושמים סיבה</span>לא "כי הן שוות", אלא "זוויות מתחלפות בין מקבילים". זה מה שמראה שהבנת.</div>
+      <div class="callout callout--why"><span class="callout-title">צובעים זוגות</span>שתי זוויות שוות — אותו צבע. זה חוסך טעויות ומראה את המבנה.</div>
+      <div class="callout callout--warn"><span class="callout-title">לא סומכים על העין</span>בשרטוט "נראה" 90° אבל כתוב 85°. הנתון תמיד גובר על הציור.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 1 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">1</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>סוגי זוויות ומדידה</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תזהה סוג זווית, ותדע לחשב את המשלימה (90°) ואת המשלימה ל־180°.</p>
+
+  <figure class="fig" style="margin-top:.4em">
+    <svg viewBox="0 0 640 190" role="img" aria-label="ארבע זוויות: ישרה, חדה, קהה ושטוחה">
+      <g stroke="#1b2a2a" stroke-width="2.4" stroke-linecap="round">
+        <line x1="40" y1="130" x2="130" y2="130"/><line x1="90" y1="130" x2="90" y2="50"/>
+        <line x1="180" y1="130" x2="270" y2="130"/><line x1="230" y1="130" x2="330" y2="70"/>
+        <line x1="320" y1="130" x2="410" y2="130"/><line x1="370" y1="130" x2="300" y2="50"/>
+        <line x1="450" y1="130" x2="610" y2="130"/>
+      </g>
+      <path d="M90 112 L72 112 L72 130" fill="none" stroke="#4b5d8a" stroke-width="1.6"/>
+      <path d="M230 130 A36 36 0 0 0 262 108" fill="none" stroke="#4b5d8a" stroke-width="1.6"/>
+      <path d="M410 130 A40 40 0 0 0 343.2 100.3" fill="none" stroke="#4b5d8a" stroke-width="1.6"/>
+      <path d="M540 130 A30 30 0 0 0 480 130" fill="none" stroke="#4b5d8a" stroke-width="1.6"/>
+      <g font-family="Assistant,Arial,sans-serif" font-size="15" fill="#3c4b47" text-anchor="middle">
+        <text x="90" y="165">ישרה · 90°</text>
+        <text x="245" y="165">חדה · פחות מ־90°</text>
+        <text x="365" y="165">קהה · בין 90° ל־180°</text>
+        <text x="530" y="165">שטוחה · 180°</text>
+      </g>
+    </svg>
+    <figcaption>זווית נמדדת במעלות. סיבוב שלם הוא 360°, וחצי סיבוב — קו ישר — הוא 180°.</figcaption>
+  </figure>
+
+  <div class="rule-box">
+    <p class="rule-label">שני מושגים</p>
+    <div class="eq">משלימה: a + b = 90° &nbsp;&nbsp;|&nbsp;&nbsp; משלימה ל־180°: a + b = 180°</div>
+    <p class="rule-note">"משלימה" = שתי זוויות שמרכיבות <b>זווית ישרה</b>. "משלימה ל־180°" = שתי זוויות שמרכיבות <b>קו ישר</b>.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">שתי השאלות הנפוצות</span></div>
+    <ol class="steps">
+      <li>המשלימה של 37°: <span class="m">90 - 37 = 53°</span></li>
+      <li>המשלימה ל־180° של 118°: <span class="m">180 - 118 = 62°</span></li>
+      <li>בדיקה: <span class="m">37 + 53 = 90</span> ✓ &nbsp; <span class="m">118 + 62 = 180</span> ✓</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>לא מתבלבלים: <b>משלימה</b> מחסירה מ־90°, <b>משלימה ל־180°</b> מחסירה מ־180°. אם הזווית הנתונה קהה (מעל 90°) — אין לה משלימה, אלא רק משלימה ל־180°.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · השלמה</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li>המשלימה של <span class="m">25°</span></li>
+      <li>המשלימה של <span class="m">60°</span></li>
+      <li>המשלימה ל־180° של <span class="m">110°</span></li>
+      <li>המשלימה ל־180° של <span class="m">85°</span></li>
+      <li>המשלימה של <span class="m">48°</span></li>
+      <li>המשלימה ל־180° של <span class="m">132°</span></li>
+      <li>לזווית בת <span class="m">90°</span> — מה המשלימה שלה?</li>
+      <li>שתי זוויות צמודות על קו ישר. האחת <span class="m">65°</span> — מה השנייה?</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="g3-t1"> סיימתי טכניקה 1 — סוגי זוויות</label>
+</section>
+
+<!-- ================= 2 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">2</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>זוויות קודקודיות וצמודות</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לזהות זוג זוויות קודקודיות (שוות) וזוג צמודות (משלימות ל־180°), ותמצא את כל הזוויות סביב נקודה.</p>
+
+  <div class="two">
+    <figure class="fig" style="margin-top:0">
+      <svg viewBox="0 0 400 300" role="img" aria-label="שני ישרים נחתכים ויוצרים ארבע זוויות">
+        <line x1="60" y1="60" x2="340" y2="240" stroke="#1b2a2a" stroke-width="2"/>
+        <line x1="60" y1="240" x2="340" y2="60" stroke="#1b2a2a" stroke-width="2"/>
+        <circle cx="200" cy="150" r="3.5" fill="#1b2a2a"/>
+        <g font-family="Inter,Arial,sans-serif" font-size="15" font-weight="600" text-anchor="middle">
+          <circle cx="200" cy="116" r="15" fill="#e9ecf4" stroke="#1f5d7a"/><text x="200" y="121" fill="#1f5d7a">1</text>
+          <circle cx="238" cy="150" r="15" fill="#f8ebe3" stroke="#a3542f"/><text x="238" y="155" fill="#a3542f">2</text>
+          <circle cx="200" cy="184" r="15" fill="#e9ecf4" stroke="#1f5d7a"/><text x="200" y="189" fill="#1f5d7a">3</text>
+          <circle cx="162" cy="150" r="15" fill="#f8ebe3" stroke="#a3542f"/><text x="162" y="155" fill="#a3542f">4</text>
+        </g>
+      </svg>
+      <figcaption><b>1 ו־3</b> קודקודיות (שוות). <b>2 ו־4</b> קודקודיות (שוות). <b>1 ו־2</b> צמודות (משלימות ל־180°).</figcaption>
+    </figure>
+    <div>
+      <div class="rule-box" style="margin-top:0">
+        <p class="rule-label">הכלל</p>
+        <div class="eq">קודקודיות: שוות</div>
+        <div class="eq">צמודות על קו: סכומן 180°</div>
+        <div class="eq">סביב נקודה: סכומן 360°</div>
+      </div>
+      <div class="callout callout--why">
+        <span class="callout-title">למה זה עובד</span>
+        <p>שני ישרים נחתכים יוצרים שני זוגות של זוויות "מול". אם 1 ו־2 ביחד משלימות לקו ישר (180°), וגם 2 ו־3 — אז 1 ו־3 חייבות להיות שוות.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מזווית אחת לכולן</span></div>
+    <ol class="steps">
+      <li>נתון: זווית 1 = <span class="m">65°</span></li>
+      <li>זווית 3 קודקודית ל־1: <span class="m">65°</span></li>
+      <li>זווית 2 צמודה ל־1: <span class="m">180 - 65 = 115°</span></li>
+      <li>זווית 4 קודקודית ל־2: <span class="m">115°</span></li>
+    </ol>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · סביב נקודה</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex">
+      <li>שני ישרים נחתכים. זווית 1 = <span class="m">40°</span>. מצאו את 2, 3, 4.</li>
+      <li>שני ישרים נחתכים. זווית 1 = <span class="m">125°</span>. מצאו את 2, 3, 4.</li>
+      <li>סביב נקודה: <span class="m">120°, 90°, x</span>. מצאו <span class="m">x</span>.</li>
+      <li>שתי זוויות צמודות על קו: <span class="m">3x</span> ו־<span class="m">2x</span>. מצאו <span class="m">x</span> ואת הזוויות.</li>
+      <li>זוויות קודקודיות: <span class="m">2x + 10</span> ו־<span class="m">70°</span>. מצאו <span class="m">x</span>.</li>
+      <li>סביב נקודה: <span class="m">2x, 3x, 4x, 90°</span>. מצאו <span class="m">x</span>.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="g3-t2"> סיימתי טכניקה 2 — קודקודיות וצמודות</label>
+</section>
+
+<!-- ================= 3 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">3</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>ישרים מקבילים וחותך</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לזהות זוגות מתאימות, מתחלפות וחד־צדדיות, ותמצא זווית אחת מתוך שמונה.</p>
+
+  <figure class="fig" style="margin-top:.4em">
+    <svg viewBox="0 0 640 320" role="img" aria-label="שני ישרים מקבילים שנחתכים על ידי חותך, עם שמונה זוויות ממוספרות">
+      <line x1="40" y1="100" x2="600" y2="100" stroke="#1b2a2a" stroke-width="2"/>
+      <line x1="40" y1="250" x2="600" y2="250" stroke="#1b2a2a" stroke-width="2"/>
+      <line x1="140" y1="30" x2="470" y2="320" stroke="#1b2a2a" stroke-width="2"/>
+      <g stroke="#65726c" stroke-width="1.6" fill="none" stroke-linecap="round">
+        <path d="M580 94 l12 6 -12 6"/><path d="M580 244 l12 6 -12 6"/>
+        <path d="M180 95 l8 -8 M196 95 l8 -8"/>
+        <path d="M180 245 l8 -8 M196 245 l8 -8"/>
+      </g>
+      <g font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" text-anchor="middle">
+        <circle cx="165" cy="68" r="15" fill="#fffdf7" stroke="#65726c"/><text x="165" y="73">1</text>
+        <circle cx="250" cy="68" r="15" fill="#fffdf7" stroke="#65726c"/><text x="250" y="73">2</text>
+        <circle cx="285" cy="132" r="15" fill="#fffdf7" stroke="#65726c"/><text x="285" y="137">3</text>
+        <circle cx="185" cy="132" r="15" fill="#fffdf7" stroke="#65726c"/><text x="185" y="137">4</text>
+        <circle cx="335" cy="222" r="15" fill="#fffdf7" stroke="#65726c"/><text x="335" y="227">5</text>
+        <circle cx="425" cy="222" r="15" fill="#fffdf7" stroke="#65726c"/><text x="425" y="227">6</text>
+        <circle cx="458" cy="282" r="15" fill="#fffdf7" stroke="#65726c"/><text x="458" y="287">7</text>
+        <circle cx="320" cy="282" r="15" fill="#fffdf7" stroke="#65726c"/><text x="320" y="287">8</text>
+      </g>
+      <text x="52" y="86" font-family="Assistant,Arial,sans-serif" font-size="13" fill="#65726c">a</text>
+      <text x="52" y="236" font-family="Assistant,Arial,sans-serif" font-size="13" fill="#65726c">b</text>
+    </svg>
+    <figcaption>שני הישרים <span class="m">a</span> ו־<span class="m">b</span> מקבילים. החותך יוצר שמונה זוויות — וארבעה זוגות של זוויות שוות.</figcaption>
+  </figure>
+
+  <div class="rule-box">
+    <p class="rule-label">שלושת הזוגות</p>
+    <div class="eq">מתאימות: 1=5, 2=6, 3=7, 4=8</div>
+    <div class="eq">מתחלפות: 3=5, 4=6</div>
+    <div class="eq">חד־צדדיות: 3+6=180°, 4+5=180°</div>
+    <p class="rule-note"><b>מתאימות</b> — אותו מקום בשתי הצמתים. <b>מתחלפות</b> — משני צדי החותך, בין הישרים. <b>חד־צדדיות</b> — אותו צד של החותך, בין הישרים.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מזווית אחת לשמונה</span></div>
+    <ol class="steps">
+      <li>נתון: זווית 1 = <span class="m">72°</span></li>
+      <li>קודקודית: <span class="m">3 = 72°</span>; צמודה: <span class="m">2 = 108°</span>, וגם <span class="m">4 = 108°</span></li>
+      <li>מתאימות: <span class="m">5 = 72°</span>, <span class="m">6 = 108°</span>, <span class="m">7 = 72°</span>, <span class="m">8 = 108°</span></li>
+      <li>בדיקה: <span class="m">3+6 = 72+108 = 180</span> ✓</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>לא כל שתי זוויות "בפנים" הן מתחלפות. מתחלפות נמצאות <b>משני צדי החותך</b>. זוג כמו 3 ו־6 נמצא באותו צד — הן חד־צדדיות, ולכן <b>משלימות ל־180°</b> ולא שוות.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · שמונה זוויות</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li>זווית 1 = <span class="m">70°</span>. מצאו את 5.</li>
+      <li>זווית 2 = <span class="m">110°</span>. מצאו את 6.</li>
+      <li>זווית 3 = <span class="m">65°</span>. מצאו את 5.</li>
+      <li>זווית 4 = <span class="m">120°</span>. מצאו את 6.</li>
+      <li>זווית 3 = <span class="m">75°</span>. מצאו את 6.</li>
+      <li>זווית 4 = <span class="m">85°</span>. מצאו את 5.</li>
+      <li>זווית 1 = <span class="m">3x</span> וזווית 5 = <span class="m">x + 40</span>. מצאו <span class="m">x</span> ואת הזווית.</li>
+      <li>זווית 3 = <span class="m">2x + 10</span> וזווית 6 = <span class="m">3x - 20</span>. מצאו <span class="m">x</span> ואת הזוויות.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="g3-t3"> סיימתי טכניקה 3 — מקבילים וחותך</label>
+</section>
+
+<!-- ================= 4 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">4</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>איך מוכיחים שמקבילים</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לקבל זוג זוויות נתון, ולהחליט אם הוא מוכיח שהישרים מקבילים — ובאיזה נימוק.</p>
+
+  <div class="two">
+    <figure class="fig" style="margin-top:0">
+      <svg viewBox="0 0 420 230" role="img" aria-label="שרטוט מקוצר של שני ישרים וחותך עם זוויות ממוספרות">
+        <line x1="20" y1="70" x2="400" y2="70" stroke="#1b2a2a" stroke-width="1.8"/>
+        <line x1="20" y1="170" x2="400" y2="170" stroke="#1b2a2a" stroke-width="1.8"/>
+        <line x1="90" y1="20" x2="330" y2="220" stroke="#1b2a2a" stroke-width="1.8"/>
+        <g font-family="Inter,Arial,sans-serif" font-size="11" font-weight="600" text-anchor="middle">
+          <circle cx="122" cy="50" r="11" fill="#fffdf7" stroke="#65726c"/><text x="122" y="54">1</text>
+          <circle cx="182" cy="50" r="11" fill="#fffdf7" stroke="#65726c"/><text x="182" y="54">2</text>
+          <circle cx="203" cy="92" r="11" fill="#fffdf7" stroke="#65726c"/><text x="203" y="96">3</text>
+          <circle cx="143" cy="92" r="11" fill="#fffdf7" stroke="#65726c"/><text x="143" y="96">4</text>
+          <circle cx="240" cy="150" r="11" fill="#fffdf7" stroke="#65726c"/><text x="240" y="154">5</text>
+          <circle cx="300" cy="150" r="11" fill="#fffdf7" stroke="#65726c"/><text x="300" y="154">6</text>
+          <circle cx="321" cy="192" r="11" fill="#fffdf7" stroke="#65726c"/><text x="321" y="196">7</text>
+          <circle cx="261" cy="192" r="11" fill="#fffdf7" stroke="#65726c"/><text x="261" y="196">8</text>
+        </g>
+      </svg>
+      <figcaption>אותו שרטוט, בגרסה קטנה — שיהיה מול העיניים.</figcaption>
+    </figure>
+    <div>
+      <div class="rule-box" style="margin-top:0">
+        <p class="rule-label">הכלל ההפוך</p>
+        <div class="eq">מתאימות שוות ← מקבילים</div>
+        <div class="eq">מתחלפות שוות ← מקבילים</div>
+        <div class="eq">חד־צדדיות משלימות ← מקבילים</div>
+      </div>
+      <div class="callout callout--why">
+        <span class="callout-title">למה זה עובד</span>
+        <p>שלושת הכללים הם אותו רעיון משני כיוונים: אם הישרים מקבילים — הזוגות שווים; ואם הזוגות שווים — הישרים חייבים להיות מקבילים.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">נימוק מלא</span></div>
+    <ol class="steps">
+      <li>נתון: זווית 3 = <span class="m">70°</span> וזווית 5 = <span class="m">70°</span>.</li>
+      <li>3 ו־5 הן זוויות <b>מתחלפות</b> בין הישרים.</li>
+      <li>מכיוון שהן שוות — הישרים <b>מקבילים</b>.</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>לא מספיק לכתוב "שוות". צריך לרשום <b>איזה סוג זוג</b>: "מתחלפות שוות, לכן מקבילים". זוג שלא שייך לאף אחד משלושת הסוגים — לא מוכיח כלום.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · מקבילים או לא?</h3><span class="count">6 תרגילים</span></div>
+    <ol class="ex">
+      <li>זווית 1 = <span class="m">65°</span>, זווית 5 = <span class="m">65°</span></li>
+      <li>זווית 3 = <span class="m">70°</span>, זווית 5 = <span class="m">70°</span></li>
+      <li>זווית 4 = <span class="m">80°</span>, זווית 6 = <span class="m">90°</span></li>
+      <li>זווית 3 = <span class="m">60°</span>, זווית 6 = <span class="m">120°</span></li>
+      <li>זווית 2 = <span class="m">95°</span>, זווית 6 = <span class="m">95°</span></li>
+      <li>זווית 4 = <span class="m">100°</span>, זווית 5 = <span class="m">80°</span></li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="g3-t4"> סיימתי טכניקה 4 — הוכחת מקבילות</label>
+</section>
+
+<!-- ================= 5 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">5</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>זוויות במשולש</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע שסכום הזוויות במשולש הוא 180°, ותשתמש בזווית חיצונית כדי לחסוך חישוב.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">α + β + γ = 180°</div>
+    <div class="eq">זווית חיצונית = סכום שתי הזוויות הפנימיות שאינן צמודות לה</div>
+    <p class="rule-note">הזווית החיצונית נוצרת כשממשיכים צלע של המשולש. היא תמיד שווה לסכום שתי הזוויות "הרחוקות".</p>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 640 320" role="img" aria-label="משולש, קו מקביל לבסיס דרך הקודקוד, והזוויות המתחלפות שמראות שהסכום 180 מעלות">
+      <line x1="110" y1="70" x2="530" y2="70" stroke="#65726c" stroke-width="1.6" stroke-dasharray="6 5"/>
+      <path d="M320 70 L150 250 L490 250 Z" fill="#eef0f7" stroke="#1b2a2a" stroke-width="2"/>
+      <g stroke="#8c97b5" stroke-width="1.6" fill="none" stroke-linecap="round">
+        <path d="M470 64 l10 6 -10 6"/><path d="M492 64 l10 6 -10 6"/>
+      </g>
+      <g font-family="Inter,Arial,sans-serif" font-size="18" text-anchor="middle">
+        <text x="320" y="118" fill="#1f5d7a">α</text>
+        <text x="205" y="232" fill="#a3542f">β</text>
+        <text x="445" y="232" fill="#5c6b39">γ</text>
+        <text x="245" y="56" fill="#a3542f">β</text>
+        <text x="393" y="56" fill="#5c6b39">γ</text>
+      </g>
+      <g font-family="Assistant,Arial,sans-serif" font-size="13" fill="#65726c" text-anchor="middle">
+        <text x="320" y="300">β + α + γ = 180°</text>
+      </g>
+    </svg>
+    <figcaption>דרך הקודקוד העליון מעבירים ישר מקביל לבסיס. הזוויות המתחלפות "מעבירות" את β ואת γ אל הישר — ושם הן ביחד עם α יוצרות 180°.</figcaption>
+  </figure>
+
+  <div class="two">
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מציאת זווית שלישית</span></div>
+      <ol class="steps">
+        <li><span class="m">48° + 67° + x = 180°</span></li>
+        <li><span class="m">115° + x = 180°</span></li>
+        <li><span class="m">x = 65°</span></li>
+      </ol>
+    </div>
+    <div class="example" style="margin-top:0">
+      <div class="example-head"><span class="tag">דוגמה</span><span class="hint">זווית חיצונית</span></div>
+      <ol class="steps">
+        <li>זווית חיצונית <span class="m">110°</span>, אחת הרחוקות <span class="m">45°</span></li>
+        <li><span class="m">45° + x = 110°</span></li>
+        <li><span class="m">x = 65°</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>הזווית החיצונית אינה משלימה לאף זווית פנימית "סתם". היא משלימה ל־180° רק לזווית הפנימית <b>הצמודה לה</b>, ושווה לסכום <b>שתי האחרות</b>. לא מתבלבלים בין השניים.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · משולשים</h3><span class="count">8 תרגילים</span></div>
+    <ol class="ex">
+      <li>זוויות <span class="m">48°</span> ו־<span class="m">67°</span>. מצאו את השלישית.</li>
+      <li>משולש ישר־זווית: זווית <span class="m">35°</span>. מצאו את השלישית.</li>
+      <li>משולש שווה־שוקיים, זווית הראש <span class="m">46°</span>. מצאו כל זווית בסיס.</li>
+      <li>משולש שווה־שוקיים, זווית בסיס <span class="m">50°</span>. מצאו את זווית הראש.</li>
+      <li>משולש שווה־צלעות. מה גודל כל זווית?</li>
+      <li>זווית חיצונית <span class="m">125°</span>, אחת הרחוקות <span class="m">60°</span>. מצאו את השנייה.</li>
+      <li>זווית חיצונית <span class="m">100°</span>, הרחוקות <span class="m">40°</span> ו־<span class="m">x</span>. מצאו <span class="m">x</span>.</li>
+      <li>יחס הזוויות <span class="m">2 : 3 : 4</span>. מצאו את שלושתן.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="g3-t5"> סיימתי טכניקה 5 — זוויות במשולש</label>
+</section>
+
+<!-- ================= 6 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">6</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>זוויות במצולע</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תדע לחשב את סכום הזוויות בכל מצולע, ואת גודל הזווית במצולע משוכלל.</p>
+
+  <div class="two">
+    <figure class="fig" style="margin-top:0">
+      <svg viewBox="0 0 640 290" role="img" aria-label="מחומש שמחולק לשלושה משולשים באמצעות אלכסונים">
+        <path d="M320 55 L410 121 L376 227 L264 227 L230 121 Z" fill="#eef0f7" stroke="#1b2a2a" stroke-width="2"/>
+        <line x1="320" y1="55" x2="376" y2="227" stroke="#4b5d8a" stroke-width="1.4" stroke-dasharray="5 4"/>
+        <line x1="320" y1="55" x2="264" y2="227" stroke="#4b5d8a" stroke-width="1.4" stroke-dasharray="5 4"/>
+        <g fill="#4b5d8a" font-family="Inter,Arial,sans-serif" font-size="13" text-anchor="middle">
+          <text x="292" y="118">1</text><text x="340" y="118">2</text><text x="318" y="196">3</text>
+        </g>
+      </svg>
+      <figcaption>מחומש מתחלק ל־<b>3</b> משולשים. לכן סכום הזוויות שלו: <span class="m">3 · 180° = 540°</span>.</figcaption>
+    </figure>
+    <div>
+      <div class="rule-box" style="margin-top:0">
+        <p class="rule-label">הכלל</p>
+        <div class="eq">סכום = (n - 2) · 180°</div>
+        <p class="rule-note"><span class="m">n</span> הוא מספר הצלעות. במצולע <b>משוכלל</b> (כל הצלעות והזוויות שוות) מחלקים במספר הזוויות.</p>
+        <div class="eq">זווית במשוכלל = (n-2)·180° / n</div>
+      </div>
+      <div class="callout callout--tip">
+        <span class="callout-title">בדיקה מהירה</span>
+        <p>במרובע: <span class="m">(4-2)·180 = 360°</span>. במשולש: <span class="m">(3-2)·180 = 180°</span>. זה מסתדר עם מה שכבר יודעים.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מחומש ומשושה</span></div>
+    <ol class="steps">
+      <li>מחומש: <span class="m">(5-2)·180 = 3·180 = 540°</span></li>
+      <li>משושה משוכלל: סכום <span class="m">(6-2)·180 = 720°</span></li>
+      <li>כל זווית: <span class="m">720 : 6 = 120°</span></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>לא מחלקים ב־<span class="m">n-2</span> אלא ב־<span class="m">n</span>: במחומש משוכלל כל זווית היא <span class="m">540:5 = 108°</span>, ולא <span class="m">540:3</span>. וגם לא מתבלבלים בין סכום הזוויות (180·(n−2)) לסכום הזוויות <b>החיצוניות</b>, שתמיד 360°.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · מצולעים</h3><span class="count">7 תרגילים</span></div>
+    <ol class="ex">
+      <li>סכום הזוויות במרובע</li>
+      <li>סכום הזוויות במחומש</li>
+      <li>סכום הזוויות במשושה</li>
+      <li>זווית במתומן משוכלל</li>
+      <li>זווית במחומש משוכלל</li>
+      <li>מצולע שסכום זוויותיו <span class="m">900°</span> — כמה צלעות יש לו?</li>
+      <li>זווית חיצונית במשושה משוכלל</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="g3-t6"> סיימתי טכניקה 6 — מצולעים</label>
+</section>
+
+<!-- ================= 7 ================= -->
+<section class="sheet tech">
+  <header class="tech-head">
+    <span class="tech-num">7</span>
+    <div>
+      <p class="tech-kicker">טכניקה</p>
+      <h2>זוויות עם נעלם</h2>
+    </div>
+  </header>
+  <p class="tech-goal"><b>בסוף הקטע:</b> תבנה משוואה מזוג זוויות — ותפתור אותה כמו כל משוואה.</p>
+
+  <div class="rule-box">
+    <p class="rule-label">הכלל</p>
+    <div class="eq">שוות? משווים. משלימות? מחברים ל־180°.</div>
+    <p class="rule-note">קודם מחליטים <b>איזה קשר</b> יש בין הזוויות, ורק אחר כך כותבים משוואה. אחרי מציאת <span class="m">x</span> — מציבים כדי לחשב את הזווית עצמה.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-head"><span class="tag">דוגמה</span><span class="hint">מתחלפות</span></div>
+    <ol class="steps">
+      <li>זוויות מתחלפות: <span class="m">2x + 10</span> ו־<span class="m">3x - 20</span></li>
+      <li><span class="m">2x + 10 = 3x - 20</span></li>
+      <li><span class="m">30 = x</span></li>
+      <li>הזווית: <span class="m">2·30 + 10 = 70°</span> — בדיקה: <span class="m">3·30 - 20 = 70°</span> ✓</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout-title">מלכודת</span>
+    <p>אם הזוג חד־צדדי — המשוואה היא <b>סכום</b> שווה 180, לא שוויון. טעות נפוצה: לכתוב <span class="m">2x+30 = 3x</span> במקום <span class="m">2x+30+3x = 180</span>.</p>
+  </div>
+
+  <div class="drill">
+    <div class="drill-head"><h3>תרגול · משוואות בזוויות</h3><span class="count">7 תרגילים</span></div>
+    <ol class="ex">
+      <li>משלימות: <span class="m">x</span> ו־<span class="m">2x</span>. מצאו את שתיהן.</li>
+      <li>משלימות ל־180°: <span class="m">x + 20</span> ו־<span class="m">2x + 10</span>. מצאו את שתיהן.</li>
+      <li>קודקודיות: <span class="m">3x - 10</span> ו־<span class="m">2x + 15</span>. מצאו את הזווית.</li>
+      <li>מתחלפות: <span class="m">4x</span> ו־<span class="m">x + 60</span>. מצאו את הזווית.</li>
+      <li>חד־צדדיות: <span class="m">2x + 30</span> ו־<span class="m">3x</span>. מצאו את שתיהן.</li>
+      <li>במשולש: <span class="m">x, 2x, 3x</span>. מצאו את שלוש הזוויות.</li>
+      <li>זווית חיצונית <span class="m">3x + 10</span>, שתי הרחוקות <span class="m">x</span> ו־<span class="m">70</span>. מצאו <span class="m">x</span>.</li>
+    </ol>
+  </div>
+
+  <label class="done"><input type="checkbox" data-key="g3-t7"> סיימתי טכניקה 7 — זוויות עם נעלם</label>
+</section>
+
+<!-- ================= סיכום ================= -->
+<section class="sheet">
+  <span class="kicker">לפני התרגול המסכם</span>
+  <h2>מפת החלטה: איזה קשר בין הזוויות?</h2>
+  <p class="lead">כל שאלת זוויות מתחילה בשאלה אחת: <b>מה הקשר בין הזווית הנתונה לזווית המבוקשת?</b> משם המשוואה כמעט כותבת את עצמה.</p>
+
+  <div class="flow" style="margin-top:1.3em">
+    <div class="flow-step"><span class="when">שתי זוויות נפגשות</span><span class="then">מול זו את זו — <b>קודקודיות, שוות</b>. זו לצד זו על קו — <b>צמודות, סכומן 180°</b>.</span></div>
+    <div class="flow-step"><span class="when">יש מקבילים וחותך</span><span class="then">אותו מקום — <b>מתאימות, שוות</b>. משני צדדים — <b>מתחלפות, שוות</b>. אותו צד — <b>חד־צדדיות, סכומן 180°</b>.</span></div>
+    <div class="flow-step"><span class="when">בתוך משולש</span><span class="then">סכום 180°. אם יש זווית חיצונית — היא סכום שתי הרחוקות.</span></div>
+    <div class="flow-step"><span class="when">בתוך מצולע</span><span class="then">סכום <b class="m">(n-2)·180°</b>; במשוכלל מחלקים ב־<b class="m">n</b>.</span></div>
+    <div class="flow-step"><span class="when">יש נעלם</span><span class="then">בוחרים קשר, כותבים משוואה, פותרים — ו<b>מציבים</b> כדי למצוא את הזווית.</span></div>
+  </div>
+
+  <h3 style="margin-top:1.6em;font-size:1.1rem">חמש הטעויות שעולות הכי הרבה נקודות</h3>
+  <div class="callout callout--warn"><span class="callout-title">1 · 90 או 180</span>משלימה מחסירה מ־90°; משלימה ל־180° מחסירה מ־180°. קראו את השאלה עד הסוף.</div>
+  <div class="callout callout--warn"><span class="callout-title">2 · קודקודיות מול צמודות</span>קודקודיות שוות; צמודות משלימות. לא להתבלבל בין "מול" ל"ליד".</div>
+  <div class="callout callout--warn"><span class="callout-title">3 · מתחלפות מול חד־צדדיות</span>מתחלפות — משני צדי החותך ושוות. חד־צדדיות — אותו צד ומשלימות ל־180°.</div>
+  <div class="callout callout--warn"><span class="callout-title">4 · זווית חיצונית</span>היא <b>סכום</b> שתי הרחוקות, לא ההשלמה שלהן ל־180° (זו הזווית הפנימית הצמודה).</div>
+  <div class="callout callout--warn"><span class="callout-title">5 · חלוקה במצולע</span>במצולע משוכלל מחלקים את הסכום ב־<span class="m">n</span>, לא ב־<span class="m">n-2</span>.</div>
+</section>
+
+<!-- ================= תרגול מסכם ================= -->
+<section class="sheet">
+  <span class="kicker">מבחן קטן</span>
+  <h2>תרגול מסכם</h2>
+  <p class="lead">12 תרגילים מכל הטכניקות. בכל חישוב — כתבו לידו את <b>הסיבה</b>.</p>
+
+  <div class="drill" style="margin-top:1em">
+    <div class="drill-head"><h3>מעורב</h3><span class="count">12 תרגילים · 25 דקות</span></div>
+    <ol class="ex">
+      <li>המשלימה של <span class="m">35°</span></li>
+      <li>המשלימה ל־180° של <span class="m">128°</span></li>
+      <li>זווית קודקודית ל־<span class="m">47°</span></li>
+      <li>זווית 1 = <span class="m">115°</span>. מצאו את 4 (צמודה).</li>
+      <li>זווית 3 = <span class="m">70°</span>. מצאו את 6 (חד־צדדית).</li>
+      <li>במשולש: <span class="m">42°</span> ו־<span class="m">73°</span>. מצאו את השלישית.</li>
+      <li>משולש שווה־שוקיים, זווית בסיס <span class="m">65°</span>. מצאו את זווית הראש.</li>
+      <li>זווית חיצונית <span class="m">120°</span>, אחת הרחוקות <span class="m">55°</span>. מצאו את השנייה.</li>
+      <li>סכום הזוויות במחומש</li>
+      <li>זווית במשושה משוכלל</li>
+      <li><span class="m">(2x + 20) + (3x - 10) = 180</span>. מצאו את הזוויות.</li>
+      <li>זוויות מתחלפות: <span class="m">5x</span> ו־<span class="m">3x + 40</span>. מצאו את הזווית.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= בדיקת עצמי ================= -->
+<section class="sheet">
+  <span class="kicker">לפני שממשיכים</span>
+  <h2>בדיקת עצמי</h2>
+  <p class="lead">שש שאלות, עד 10 דקות, בלי להציץ.</p>
+
+  <div class="drill" style="margin-top:1em">
+    <div class="drill-head"><h3>שש שאלות</h3><span class="count">6 נקודות</span></div>
+    <ol class="ex">
+      <li>המשלימה של <span class="m">28°</span></li>
+      <li>המשלימה ל־180° של <span class="m">95°</span></li>
+      <li>זווית 1 = <span class="m">68°</span>. מצאו את 3 ואת 5.</li>
+      <li>במשולש: <span class="m">55°</span> ו־<span class="m">65°</span>. מצאו את השלישית.</li>
+      <li>זווית במחומש משוכלל</li>
+      <li>זווית חיצונית <span class="m">118°</span>, אחת הרחוקות <span class="m">62°</span>. מצאו את השנייה.</li>
+    </ol>
+  </div>
+
+  <div class="score">
+    <div><b>6</b>מוכן. אפשר לעבור לנושא הבא.</div>
+    <div><b>4–5</b>חזרו על הטכניקה שבה טעיתם, ופתרו שוב את התרגול שלה.</div>
+    <div><b>0–3</b>קראו שוב את מפת ההחלטה, ואז עשו את התרגול המסכם.</div>
+  </div>
+</section>
+
+<!-- ================= תשובות ================= -->
+<section class="sheet answers">
+  <h2>נספח תשובות</h2>
+  <div class="cut">לקרוע רק אחרי שסיימתם</div>
+
+  <div class="ans-grid">
+    <p><b>1 · סוגי זוויות</b><br>1) 65° · 2) 30° · 3) 70° · 4) 95° · 5) 42° · 6) 48° · 7) 0° · 8) 115°</p>
+    <p><b>2 · קודקודיות וצמודות</b><br>1) 140°, 40°, 140° · 2) 55°, 125°, 55° · 3) 150° · 4) x=36; 108° ו־72° · 5) x=30 · 6) x=30</p>
+    <p><b>3 · מקבילים וחותך</b><br>1) 70° · 2) 110° · 3) 65° · 4) 120° · 5) 105° · 6) 95° · 7) x=20, הזווית 60° · 8) x=38; 86° ו־94°</p>
+    <p><b>4 · הוכחת מקבילות</b><br>1) כן — מתאימות שוות · 2) כן — מתחלפות שוות · 3) לא — מתחלפות לא שוות · 4) כן — חד־צדדיות משלימות ל־180° · 5) כן — מתאימות שוות · 6) כן — חד־צדדיות משלימות ל־180°</p>
+    <p><b>5 · משולש</b><br>1) 65° · 2) 55° · 3) 67° כל אחת · 4) 80° · 5) 60° · 6) 65° · 7) 60° · 8) 40°, 60°, 80°</p>
+    <p><b>6 · מצולע</b><br>1) 360° · 2) 540° · 3) 720° · 4) 135° · 5) 108° · 6) 7 צלעות · 7) 60°</p>
+    <p><b>7 · עם נעלם</b><br>1) x=30; 30° ו־60° · 2) x=50; 70° ו־110° · 3) x=25; 65° · 4) x=20; 80° · 5) x=30; 90° ו־90° · 6) 30°, 60°, 90° · 7) x=30</p>
+    <p><b>תרגול מסכם</b><br>1) 55° · 2) 52° · 3) 47° · 4) 65° · 5) 110° · 6) 65° · 7) 50° · 8) 65° · 9) 540° · 10) 120° · 11) x=34; 88° ו־92° · 12) x=20; 100°</p>
+    <p><b>בדיקת עצמי</b><br>1) 62° · 2) 85° · 3) 68° ו־68° · 4) 60° · 5) 108° · 6) 56°</p>
+  </div>
+
+  <p style="margin-top:1.4em;font-size:.8rem;color:var(--ink-3)">אם חישוב לא יוצא — בדקו קודם את הקשר (שוות או משלימות), ורק אחר כך את החשבון. רוב הטעויות הן בבחירת הקשר.</p>
+</section>
+
+</main>
+<script src="../assets/booklet.js"></script>
+</body>
+</html>
